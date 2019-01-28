@@ -46,3 +46,9 @@ In a seperate terminal, Frontend
 - Log in as user and approve the request.
 - Log in as central bank and release the details.
 - Log in as org and see the details.
+
+## Steps to stop
+
+```sh
+./master-stop.sh
+```
