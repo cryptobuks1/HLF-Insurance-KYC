@@ -1,0 +1,27 @@
+PACKAGE DOCUMENTATION
+
+package common
+    import "."
+
+
+TYPES
+
+type BankApproval struct {
+    ID        string        `json:"id"`
+    UserID    string        `json:"userId"`
+    AadharID  string        `json:"aadharId"`
+    Banks     []BankRequest `json:"banks"`
+    CreatedAt string        `json:"createdAt"`
+    UpdatedAt string        `json:"updatedAt"`
+    Class     string        `json:"class"`
+}
+    BankApproval definition
+
+type BankRequest struct {
+    BankID string `json:"bankID"`
+    Name   string `json:"name"`
+    Status string `json:"status"`
+}
+    BankRequest definition
+
+
