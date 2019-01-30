@@ -42,7 +42,7 @@ func GetUserFromAttribute(APIstub shim.ChaincodeStubInterface, attribute string)
 		return shim.Error("The client identity does not possess the attribute - id")
 	}
 
-	currentUserUserDetails, _ := fc.Decrypter(APIstub, userID)
+	currentUserUserDetails, _ := APIstub.GetState(userID)
 
 	currentUserUser := user.User{}
 	_ = json.Unmarshal(currentUserUserDetails, &currentUserUser)
@@ -75,7 +75,7 @@ func GetPrerequisites(APIstub shim.ChaincodeStubInterface) (Prereqs, sc.Response
 		return Prereqs{}, shim.Error(err.Error())
 	}
 
-	orgAsBytes, err := fc.Decrypter(APIstub, currentUser.OrganizationID)
+	orgAsBytes, err := APIstub.GetState(currentUser.OrganizationID)
 	currentUserOrg := org.Organization{}
 	if err != nil {
 		return Prereqs{}, shim.Error(err.Error())
@@ -480,7 +480,7 @@ func GetOrgRequests(APIstub shim.ChaincodeStubInterface, args []string, currentO
 
 	for i := 0; i < len(approvalIDs); i++ {
 		bankApproval := common.BankApproval{}
-		bankApprovalAsBytes, err := fc.Decrypter(APIstub, approvalIDs[i])
+		bankApprovalAsBytes, err := APIstub.GetState(approvalIDs[i])
 		if err != nil {
 			return shim.Error(err.Error())
 		}
@@ -585,7 +585,7 @@ func GetAllOrgRequests(APIstub shim.ChaincodeStubInterface, args []string, curre
 
 	for i := 0; i < len(approvalIDs); i++ {
 		bankApproval := common.BankApproval{}
-		bankApprovalAsBytes, err := fc.Decrypter(APIstub, approvalIDs[i])
+		bankApprovalAsBytes, err := APIstub.GetState(approvalIDs[i])
 		if err != nil {
 			return shim.Error(err.Error())
 		}

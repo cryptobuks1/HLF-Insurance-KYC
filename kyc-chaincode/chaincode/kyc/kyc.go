@@ -131,7 +131,7 @@ func Add(APIstub shim.ChaincodeStubInterface, args []string, userID string, mspI
 		return aadharRecordAsSCResponse, shim.Success(recordAsBytes)
 	}
 
-	err = fc.Encrypter(APIstub, args[0], recordAsBytes)
+	err = APIstub.PutState(args[0], recordAsBytes)
 	if err != nil {
 		return shim.Error(err.Error()), shim.Success(recordAsBytes)
 	}
@@ -151,7 +151,7 @@ func addAadharRecord(APIstub shim.ChaincodeStubInterface, args []string, mspID s
 	subRecord := SubRecord{args[1], mspID}
 
 	aadharAsHash := fc.GetMD5Hash(args[0])
-	existingAadharRecordAsBytes, err := fc.Decrypter(APIstub, aadharAsHash)
+	existingAadharRecordAsBytes, err := APIstub.GetState(aadharAsHash)
 	// if err != nil {
 	// 	return shim.Error(err.Error())
 	// }
@@ -165,7 +165,7 @@ func addAadharRecord(APIstub shim.ChaincodeStubInterface, args []string, mspID s
 		// }
 		aadharRecord.SubRecords = append(aadharRecord.SubRecords, subRecord)
 		aadharRecordAsBytes, _ := json.Marshal(aadharRecord)
-		err = fc.Encrypter(APIstub, aadharAsHash, aadharRecordAsBytes)
+		err = APIstub.PutState(aadharAsHash, aadharRecordAsBytes)
 		return eh.SystemError(err, aadharRecordAsBytes)
 	}
 
@@ -175,7 +175,7 @@ func addAadharRecord(APIstub shim.ChaincodeStubInterface, args []string, mspID s
 	aadharRecord.SubRecords = append(aadharRecord.SubRecords, subRecord)
 
 	aadharRecordAsBytes, _ := json.Marshal(aadharRecord)
-	err = fc.Encrypter(APIstub, aadharAsHash, aadharRecordAsBytes)
+	err = APIstub.PutState(aadharAsHash, aadharRecordAsBytes)
 	return eh.SystemError(err, aadharRecordAsBytes)
 
 }
@@ -226,7 +226,7 @@ func UpdateRecord(APIstub shim.ChaincodeStubInterface, args []string, kycRecordA
 
 	updatedRecordAsBytes, _ := json.Marshal(record)
 
-	err = fc.Encrypter(APIstub, record.ID, updatedRecordAsBytes)
+	err = APIstub.PutState(record.ID, updatedRecordAsBytes)
 	return eh.SystemError(err, updatedRecordAsBytes)
 }
 
@@ -259,7 +259,7 @@ func AddAddress(APIstub shim.ChaincodeStubInterface, recordAsBytes []byte, args 
 	}
 
 	addressAsBytes, _ := json.Marshal(address)
-	err := fc.Encrypter(APIstub, args[1], addressAsBytes)
+	err := APIstub.PutState(args[1], addressAsBytes)
 	if err != nil {
 		return shim.Error(err.Error())
 	}
@@ -269,7 +269,7 @@ func AddAddress(APIstub shim.ChaincodeStubInterface, recordAsBytes []byte, args 
 	record.AddressIDs = append(record.AddressIDs, address.ID)
 	updatedRecordAsBytes, _ := json.Marshal(record)
 
-	err = fc.Encrypter(APIstub, args[0], updatedRecordAsBytes)
+	err = APIstub.PutState(args[0], updatedRecordAsBytes)
 	return eh.SystemError(err, updatedRecordAsBytes)
 }
 
@@ -303,7 +303,7 @@ func AddVerificationRecord(APIstub shim.ChaincodeStubInterface, kycRecordAsBytes
 	}
 
 	verificationRecordAsBytes, _ := json.Marshal(verificationRecord)
-	err = fc.Encrypter(APIstub, verificationRecordID, verificationRecordAsBytes)
+	err = APIstub.PutState(verificationRecordID, verificationRecordAsBytes)
 	return eh.SystemError(err, verificationRecordAsBytes)
 }
 
@@ -335,6 +335,6 @@ func UpdateVerificationRecordStatus(APIstub shim.ChaincodeStubInterface, args []
 	verificationRecord.VerifiedBy = userID
 	verificationRecordAsBytes, _ := json.Marshal(verificationRecord)
 
-	err = fc.Encrypter(APIstub, args[0], verificationRecordAsBytes)
+	err = APIstub.PutState(args[0], verificationRecordAsBytes)
 	return eh.SystemError(err, verificationRecordAsBytes)
 }

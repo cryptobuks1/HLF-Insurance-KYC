@@ -75,7 +75,7 @@ func Add(APIstub shim.ChaincodeStubInterface, args []string, mspid string) sc.Re
 	organization.UserIDs = append(organization.UserIDs, "User-"+args[0])
 	organizationAsBytes, _ := json.Marshal(organization)
 	fmt.Println(organization)
-	err := fc.Encrypter(APIstub, args[0], organizationAsBytes)
+	err := APIstub.PutState(args[0], organizationAsBytes)
 	if err != nil {
 		return shim.Error(err.Error())
 	}
@@ -103,7 +103,7 @@ func AddRequest(APIstub shim.ChaincodeStubInterface, args []string, currentOrg O
 	bankApprovalID := fc.GetMD5Hash(userID + "-BankApproval")
 	var bankApprovalAsBytes []byte
 
-	existingBankApprovalAsBytes, err := fc.Decrypter(APIstub, bankApprovalID)
+	existingBankApprovalAsBytes, err := APIstub.GetState(bankApprovalID)
 	// if err != nil {
 	// 	return shim.Error(err.Error())
 	// }
@@ -133,14 +133,14 @@ func AddRequest(APIstub shim.ChaincodeStubInterface, args []string, currentOrg O
 		}
 	}
 
-	err = fc.Encrypter(APIstub, bankApproval.ID, bankApprovalAsBytes)
+	err = APIstub.PutState(bankApproval.ID, bankApprovalAsBytes)
 	if err != nil {
 		return shim.Error(err.Error())
 	}
 	currentOrg.UpdatedAt = utils.GetTimestampAsISO(APIstub)
 	currentOrg.ApprovalRequestIDs = append(currentOrg.ApprovalRequestIDs, bankApproval.ID)
 	currentOrgAsBytes, err := json.Marshal(currentOrg)
-	err = fc.Encrypter(APIstub, currentOrg.ID, currentOrgAsBytes)
+	err = APIstub.PutState(currentOrg.ID, currentOrgAsBytes)
 	if err != nil {
 		return shim.Error(err.Error())
 	}
@@ -172,7 +172,7 @@ func ApproveRequest(APIstub shim.ChaincodeStubInterface, args []string) sc.Respo
 	}
 	bankApprovalID := fc.GetMD5Hash(userID + "-BankApproval")
 	bankApproval := common.BankApproval{}
-	bankApprovalAsBytes, err := fc.Decrypter(APIstub, bankApprovalID)
+	bankApprovalAsBytes, err := APIstub.GetState(bankApprovalID)
 	if err != nil {
 		return shim.Error(err.Error())
 	}
@@ -197,7 +197,7 @@ func ApproveRequest(APIstub shim.ChaincodeStubInterface, args []string) sc.Respo
 			if err != nil {
 				return shim.Error(err.Error())
 			}
-			err = fc.Encrypter(APIstub, bankApproval.ID, updatedApprovalAsBytes)
+			err = APIstub.PutState(bankApproval.ID, updatedApprovalAsBytes)
 			if err != nil {
 				return shim.Error(err.Error())
 			}
@@ -223,7 +223,7 @@ func AddUserID(APIstub shim.ChaincodeStubInterface, userAsBytes []byte, userOrg 
 	}
 
 	fmt.Println("UserOrg after marshal", string(userOrgAsBytes[:]))
-	err = fc.Encrypter(APIstub, userOrg.ID, userOrgAsBytes)
+	err = APIstub.PutState(userOrg.ID, userOrgAsBytes)
 	if err != nil {
 		return shim.Error(err.Error())
 	}
@@ -243,7 +243,7 @@ func AddRecordID(APIstub shim.ChaincodeStubInterface, recordAsBytes []byte, user
 	if err != nil {
 		return shim.Error(err.Error())
 	}
-	err = fc.Encrypter(APIstub, userOrg.ID, userOrgAsBytes)
+	err = APIstub.PutState(userOrg.ID, userOrgAsBytes)
 	if err != nil {
 		return shim.Error(err.Error())
 	}
@@ -255,7 +255,7 @@ func AddRecordID(APIstub shim.ChaincodeStubInterface, recordAsBytes []byte, user
 // args: [role]
 func AddRole(APIstub shim.ChaincodeStubInterface, args []string, organizationID string) sc.Response {
 
-	existingOrganizationAsBytes, _ := fc.Decrypter(APIstub, organizationID)
+	existingOrganizationAsBytes, _ := APIstub.GetState(organizationID)
 
 	organization := Organization{}
 	_ = json.Unmarshal(existingOrganizationAsBytes, &organization)
@@ -268,7 +268,7 @@ func AddRole(APIstub shim.ChaincodeStubInterface, args []string, organizationID 
 
 	organizationAsBytes, _ := json.Marshal(organization)
 
-	err := fc.Encrypter(APIstub, organizationID, organizationAsBytes)
+	err := APIstub.PutState(organizationID, organizationAsBytes)
 	return eh.SystemError(err, organizationAsBytes)
 
 }

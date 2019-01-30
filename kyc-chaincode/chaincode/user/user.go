@@ -78,11 +78,11 @@ func Add(APIstub shim.ChaincodeStubInterface, args []string, organizationID stri
 	}
 	userAsBytes, _ := json.Marshal(user)
 
-	err := fc.Encrypter(APIstub, userID, userAsBytes)
+	err := APIstub.PutState(userID, userAsBytes)
 	// Add UserID to aadhar record
 	if args[5] != "" {
 		aadharAsHash := fc.GetMD5Hash(args[5])
-		existingAadharRecordAsBytes, err := fc.Decrypter(APIstub, aadharAsHash)
+		existingAadharRecordAsBytes, err := APIstub.GetState(aadharAsHash)
 		// if err != nil {
 		// 	return shim.Error(err.Error())
 		// }
@@ -93,7 +93,7 @@ func Add(APIstub shim.ChaincodeStubInterface, args []string, organizationID stri
 				aadharRecord.UserID = userID
 			}
 			aadharRecordAsBytes, _ := json.Marshal(aadharRecord)
-			err = fc.Encrypter(APIstub, aadharAsHash, aadharRecordAsBytes)
+			err = APIstub.PutState(aadharAsHash, aadharRecordAsBytes)
 			eh.SystemError(err, aadharRecordAsBytes)
 		}
 	}
@@ -119,12 +119,12 @@ func AddIDRecord(APIstub shim.ChaincodeStubInterface, args []string, userAsBytes
 	user.EnrollmentIDs = append(user.EnrollmentIDs, args[0])
 	user.UpdatedAt = utils.GetTimestampAsISO(APIstub)
 	updatedUserAsBytes, _ := json.Marshal(user)
-	err = fc.Encrypter(APIstub, user.ID, updatedUserAsBytes)
+	err = APIstub.PutState(user.ID, updatedUserAsBytes)
 	if err != nil {
 		return shim.Error(err.Error())
 	}
 
-	err = fc.Encrypter(APIstub, enrollmentIDHash, idRecordAsBytes)
+	err = APIstub.PutState(enrollmentIDHash, idRecordAsBytes)
 	return eh.SystemError(err, idRecordAsBytes)
 
 }
@@ -144,9 +144,9 @@ func RevokeIdentityRecord(APIstub shim.ChaincodeStubInterface, args []string) sc
 
 	revokedIDRecordAsBytes, _ := json.Marshal(identityRecord)
 
-	err = fc.Encrypter(APIstub, identityRecord.ID, revokedIDRecordAsBytes)
+	err = APIstub.PutState(identityRecord.ID, revokedIDRecordAsBytes)
 	return eh.SystemError(err, revokedIDRecordAsBytes)
-	// fc.Encrypter(APIstub, identityRecord.ID, revokedIDRecordAsBytes)
+	// APIstub.PutState( identityRecord.ID, revokedIDRecordAsBytes)
 	// fmt.Println("Successfully Revoked")
 	// return shim.Success(revokedIDRecordAsBytes)
 }
@@ -156,16 +156,16 @@ func RevokeIdentityRecord(APIstub shim.ChaincodeStubInterface, args []string) sc
 // args : [userId]
 func Revoke(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
-	existingUserAsBytes, _ := fc.Decrypter(APIstub, args[0])
+	existingUserAsBytes, _ := APIstub.GetState(args[0])
 	user := User{}
 	_ = json.Unmarshal(existingUserAsBytes, &user)
 	user.Status = "Block"
 	user.UpdatedAt = utils.GetTimestampAsISO(APIstub)
 	userAsBytes, _ := json.Marshal(user)
-	// fc.Encrypter(APIstub, args[0], userAsBytes)
+	// APIstub.PutState( args[0], userAsBytes)
 
 	// return shim.Success(userAsBytes)
-	err := fc.Encrypter(APIstub, args[0], userAsBytes)
+	err := APIstub.PutState(args[0], userAsBytes)
 	return eh.SystemError(err, userAsBytes)
 }
 
@@ -206,7 +206,7 @@ func AddRecordID(APIstub shim.ChaincodeStubInterface, recordAsBytes []byte, curr
 	if err != nil {
 		return shim.Error(err.Error())
 	}
-	err = fc.Encrypter(APIstub, currentUser.ID, currentUserAsBytes)
+	err = APIstub.PutState(currentUser.ID, currentUserAsBytes)
 	if err != nil {
 		return shim.Error(err.Error())
 	}
@@ -216,7 +216,7 @@ func AddRecordID(APIstub shim.ChaincodeStubInterface, recordAsBytes []byte, curr
 func getIdentityRecordByEnrollmentID(APIstub shim.ChaincodeStubInterface, info []string) (IdentityRecord, error) {
 
 	id := fc.GetMD5Hash(info[0])
-	val, err := fc.Decrypter(APIstub, id)
+	val, err := APIstub.GetState(id)
 	identityRecord := IdentityRecord{}
 	if err != nil {
 		return identityRecord, err
@@ -259,7 +259,7 @@ func ApproveRequest(APIstub shim.ChaincodeStubInterface, args []string, userID s
 	}
 	bankApprovalID := fc.GetMD5Hash(userID + "-BankApproval")
 	bankApproval := common.BankApproval{}
-	bankApprovalAsBytes, err := fc.Decrypter(APIstub, bankApprovalID)
+	bankApprovalAsBytes, err := APIstub.GetState(bankApprovalID)
 	if err != nil {
 		return shim.Error(err.Error())
 	}
@@ -286,7 +286,7 @@ func ApproveRequest(APIstub shim.ChaincodeStubInterface, args []string, userID s
 			if err != nil {
 				return shim.Error(err.Error())
 			}
-			err = fc.Encrypter(APIstub, bankApproval.ID, updatedApprovalAsBytes)
+			err = APIstub.PutState(bankApproval.ID, updatedApprovalAsBytes)
 			if err != nil {
 				return shim.Error(err.Error())
 			}

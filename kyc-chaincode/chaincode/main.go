@@ -191,7 +191,7 @@ func (s *SmartContract) testEncrypt(APIstub shim.ChaincodeStubInterface) sc.Resp
 	// _, err := rand.Read(valueAsBytes)
 	// fmt.Println(valueAsBytes)
 	key := "testId"
-	err := fc.Encrypter(APIstub, key, []byte(value))
+	err := APIstub.PutState(key, []byte(value))
 	if err != nil {
 		return shim.Error(err.Error())
 	}
@@ -201,7 +201,7 @@ func (s *SmartContract) testEncrypt(APIstub shim.ChaincodeStubInterface) sc.Resp
 func (s *SmartContract) testDecrypt(APIstub shim.ChaincodeStubInterface) sc.Response {
 	// valueAsBytes := make([]byte, 32)
 	key := "testId"
-	val, err := fc.Decrypter(APIstub, key)
+	val, err := APIstub.GetState(key)
 	if err != nil {
 		return shim.Error(err.Error())
 	}

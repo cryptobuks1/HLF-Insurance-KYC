@@ -11,3 +11,4 @@ The bash files with their function are described below <br>
 - ``test.sh`` - Tests for all possible chaincode API calls, currently only consider successfull cases
 - ``restart.sh`` - Basically restarts containers and redeploys them and  installs and instantiates the chaincode
 - ``restartandtest.sh`` - Combination of restart and test, cause I'm lazy.
+

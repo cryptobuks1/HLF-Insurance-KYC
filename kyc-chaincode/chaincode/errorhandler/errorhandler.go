@@ -3,7 +3,6 @@ package errorhandler
 import (
 	"strconv"
 
-	fc "github.com/chaincode/fabcrypt"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 	sc "github.com/hyperledger/fabric/protos/peer"
 )
@@ -27,7 +26,7 @@ func SystemError(err error, itemAsBytes []byte) sc.Response {
 
 // ExistError queries the state and sends an error if the queried id exists
 func ExistError(APIstub shim.ChaincodeStubInterface, id string) sc.Response {
-	itemAsBytes, _ := fc.Decrypter(APIstub, id)
+	itemAsBytes, _ := APIstub.GetState(id)
 	if itemAsBytes != nil {
 		return shim.Error(id + " Already Exists")
 	}
@@ -38,7 +37,7 @@ func ExistError(APIstub shim.ChaincodeStubInterface, id string) sc.Response {
 // doesn't exist
 func AbsentError(APIstub shim.ChaincodeStubInterface, id string) sc.Response {
 
-	itemAsBytes, err := fc.Decrypter(APIstub, id)
+	itemAsBytes, err := APIstub.GetState(id)
 	if itemAsBytes == nil {
 		return shim.Error(id + " Doesn't Exist")
 	}
