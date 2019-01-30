@@ -1,6 +1,6 @@
 let fabricClient = require("./config/fabric-client");
 let card = require("./utils/export");
-const csv = require('csvtojson')
+const csv = require("csvtojson");
 // let FabricCAClient = require('fabric-ca-client');
 let config = require("./utils/config");
 let remote = require("./utils/fetchFromRemote");
@@ -48,7 +48,7 @@ class KYC {
       txId: tx_id,
       chainId: config.chainId
     };
-    console.log(requestData)
+    console.log(requestData);
     return this.connection.submitTransaction(requestData).then(data => {
       return this.createUserCard(data[0], args.email);
     });
@@ -157,7 +157,7 @@ class KYC {
     // let remoteResponse = await remote.fetch(args.aadhar_number)
     // console.log("response " , remoteResponse)
     if (!args.status) {
-      args['status'] = 'Processed' 
+      args["status"] = "Processed";
     }
     let requestData = {
       chaincodeId: config.chaincodeId,
@@ -175,16 +175,15 @@ class KYC {
     try {
       kyc = await csv()
         .fromString(csvStr)
-        .then((jsonObj) => {
-          return jsonObj
-        })
-      console.log("KYC", kyc)
-      console.log("-------------------------------")
+        .then(jsonObj => {
+          return jsonObj;
+        });
+      console.log("KYC", kyc);
+      console.log("-------------------------------");
       try {
-
-        for (let i=0; i<kyc.length; i++) {
+        for (let i = 0; i < kyc.length; i++) {
           let requestData = {
-            name : kyc[i].name.trim(),
+            name: kyc[i].name.trim(),
             aadhar_number: kyc[i].aadharId.trim(),
             phone_numbers: kyc[i].phoneNumbers.trim(),
             dateOfBirth: kyc[i].dateOfBirth.trim(),
@@ -203,16 +202,20 @@ class KYC {
             city_town_village: kyc[i].city_town_village.trim(),
             postal_code: kyc[i].postalCode.trim(),
             state_ut: kyc[i].state_ut.trim()
-          }
-          await this.addKYCRecord(requestData)
-          console.log(`---------------Imported KYC ${i + 1} off ${kyc.length}---------------`)
+          };
+          await this.addKYCRecord(requestData);
+          console.log(
+            `---------------Imported KYC ${i + 1} off ${
+              kyc.length
+            }---------------`
+          );
         }
-        return "File Imported!"
+        return "File Imported!";
       } catch (error) {
-        throw new Error(error)
+        throw new Error(error);
       }
     } catch (error) {
-      throw new Error("Unable to parse file")
+      throw new Error("Unable to parse file");
     }
   }
 
@@ -273,7 +276,7 @@ class KYC {
       txId: tx_id,
       chainId: config.chainId
     };
-    console.log(requestData)
+    console.log(requestData);
     return this.connection.submitTransaction(requestData);
   }
 
@@ -286,7 +289,7 @@ class KYC {
       txId: tx_id,
       chainId: config.chainId
     };
-    console.log(requestData)
+    console.log(requestData);
     return this.connection.submitTransaction(requestData);
   }
 
@@ -299,7 +302,7 @@ class KYC {
       txId: tx_id,
       chainId: config.chainId
     };
-    console.log(requestData)
+    console.log(requestData);
     return this.connection.submitTransaction(requestData);
   }
 
@@ -328,7 +331,7 @@ class KYC {
       fcn: "getNameFromAadhar",
       args: [args.aadhar_number]
     };
-    console.log(requestData)
+    console.log(requestData);
     return this.connection.query(requestData);
   }
 
@@ -347,7 +350,7 @@ class KYC {
       fcn: "getAllOrgRequests",
       args: []
     };
-    console.log(requestData)
+    console.log(requestData);
     return this.connection.query(requestData);
   }
 
@@ -411,7 +414,7 @@ class KYC {
       fcn: "getOrgRequests",
       args: []
     };
-    console.log(requestData)
+    console.log(requestData);
     return this.connection.query(requestData);
   }
 
