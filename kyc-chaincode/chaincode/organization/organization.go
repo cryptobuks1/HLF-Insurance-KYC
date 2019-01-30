@@ -74,7 +74,6 @@ func Add(APIstub shim.ChaincodeStubInterface, args []string, mspid string) sc.Re
 	}
 	organization.UserIDs = append(organization.UserIDs, "User-"+args[0])
 	organizationAsBytes, _ := json.Marshal(organization)
-	fmt.Println(organization)
 	err := APIstub.PutState(args[0], organizationAsBytes)
 	if err != nil {
 		return shim.Error(err.Error())

@@ -7,6 +7,8 @@ printf "Emptying and recreating database"
 curl -X DELETE http://localhost:5984/mychannel_mycc
 curl -X PUT    http://localhost:5984/mychannel_mycc
 
+sleep 3 
+
 printf "\n\n\n\n Add Organization\n\n"
 docker exec -it cli peer chaincode invoke -C mychannel -n mycc -c '{"Args" : ["addOrganization", "InsuranceCompany1", "LIC", "lic@gmail.com", "InsuranceCompany", "Wed Jan 30 16:09:05 IST 2019"]}'
 
