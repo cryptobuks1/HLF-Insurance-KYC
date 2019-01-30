@@ -8,11 +8,13 @@ import (
 	"encoding/json"
 	"fmt"
 
+	"github.com/chaincode/claim"
 	"github.com/chaincode/common"
 	eh "github.com/chaincode/errorhandler"
 	fc "github.com/chaincode/fabcrypt"
 	"github.com/chaincode/kyc"
 	org "github.com/chaincode/organization"
+	txn "github.com/chaincode/transaction"
 	"github.com/chaincode/user"
 	"github.com/chaincode/utils"
 
@@ -72,28 +74,30 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 		return s.addIDRecordForUser(APIstub, args)
 	}
 
-	// // *---- for testing without attrs ----*
-	// currentUser := user.User{
-	// 	ID:             "User-testOrg",
-	// 	OrganizationID: "testOrg",
-	// }
-	// currentUserOrg := org.Organization{
-	// 	ID:    "testOrg",
-	// 	Roles: []string{"testRole"},
-	// }
-
-	// *---- for testing with attrs ----*
-	prereqs, shimError := GetPrerequisites(APIstub)
-	if shimError.GetMessage() != "" {
-		return shimError
+	// *---- for testing without attrs ----*
+	currentUser := user.User{
+		ID:             "User-Client1",
+		OrganizationID: "InsuranceCompany1",
+		Role:           "Client",
+	}
+	currentUserOrg := org.Organization{
+		ID:    "InsuranceCompany1",
+		Roles: []string{"Admin", "Client"},
 	}
 
-	currentUser := prereqs.User
-	currentUserOrg := prereqs.Org
+	// // *---- for testing with attrs ----*
+	// prereqs, shimError := GetPrerequisites(APIstub)
+	// if shimError.GetMessage() != "" {
+	// 	return shimError
+	// }
+
+	// currentUser := prereqs.User
+	// currentUserOrg := prereqs.Org
 
 	if function == "getCurrentUser" {
 		return GetCurrentUser(APIstub, []string{currentUser.ID}, currentUserOrg)
 	}
+	txnID := APIstub.GetTxID()
 
 	// auth middleware
 	// authStatus := VerifyAuth(APIstub, function, currentUser, currentUserOrg)
@@ -102,7 +106,30 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 	// 	return authStatus
 	// }
 
-	if function == "addUser" {
+	// Insurance Functions
+	if function == "addClaim" {
+		return s.addClaim(APIstub, args, txnID, currentUser, currentUserOrg)
+	} else if function == "addProofToClaim" {
+		return s.addProofToClaim(APIstub, args, txnID)
+	} else if function == "updateClaimStatus" {
+		return s.updateClaimStatus(APIstub, args, txnID)
+	} else if function == "getClaimDetails" {
+		return s.getClaimDetails(APIstub, args, txnID)
+	} else if function == "getTxnsByMonth" {
+		return s.getTxnsByMonth(APIstub, args)
+	} else if function == "getAllClaims" {
+		return GetAllClaims(APIstub, args, currentUserOrg.ID)
+	} else if function == "getUserClaims" {
+		return GetUserClaims(APIstub, args, currentUser.ID)
+	} else if function == "getClaimsByOrg" {
+		return GetOrgClaims(APIstub, args, currentUserOrg.ID)
+	} else if function == "getUserEnrollments" {
+		return GetUserEnrollments(APIstub, args)
+	} else if function == "getStatusTimeline" {
+		return GetStatusTimeline(APIstub, args)
+	} else if function == "getClaimProofs" {
+		return GetClaimProofs(APIstub, args)
+	} else if function == "addUser" {
 		return s.addUser(APIstub, args, currentUserOrg)
 	} else if function == "revokeIdentityRecord" {
 		return s.revokeIdentityRecord(APIstub, args)
@@ -453,6 +480,125 @@ func (s *SmartContract) updateVerificationRecord(APIstub shim.ChaincodeStubInter
 	}
 
 	return kyc.UpdateVerificationRecordStatus(APIstub, args, recordAsResponse.GetPayload(), verificationRecordAsResponse.GetPayload(), currentUser.ID, mspID)
+}
+
+func (s *SmartContract) addUserToClaim(APIstub shim.ChaincodeStubInterface, args []string, txnID string, currentUser user.User) sc.Response {
+
+	argAsResponse := eh.ArgumentError(2, args)
+	if argAsResponse.GetMessage() != "" {
+		return argAsResponse
+	}
+
+	existingClaimAsBytes, err := APIstub.GetState(args[0])
+	if existingClaimAsBytes == nil {
+		return shim.Error("Claim with id " + args[0] + " not found")
+	}
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+
+	return claim.AddUser(APIstub, args, txnID, currentUser.ID)
+}
+func (s *SmartContract) addProofToClaim(APIstub shim.ChaincodeStubInterface, args []string, txnID string) sc.Response {
+
+	argAsResponse := eh.ArgumentError(3, args)
+	if argAsResponse.GetMessage() != "" {
+		return argAsResponse
+	}
+
+	existingProofAsBytes, err := APIstub.GetState(args[0])
+	if existingProofAsBytes != nil {
+		return shim.Error("Proof with id " + args[0] + " already exists")
+	}
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+
+	existingClaimAsBytes, err := APIstub.GetState(args[1])
+	if existingClaimAsBytes == nil {
+		return shim.Error("Claim with id " + args[1] + " not found")
+	}
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+
+	return claim.AddProof(APIstub, args, txnID)
+}
+func (s *SmartContract) addClaim(APIstub shim.ChaincodeStubInterface, args []string, txnID string, currentUser user.User, currentOrg org.Organization) sc.Response {
+
+	argAsResponse := eh.ArgumentError(4, args)
+	if argAsResponse.GetMessage() != "" {
+		return argAsResponse
+	}
+
+	existingClaimAsBytes, err := APIstub.GetState(args[0])
+	if existingClaimAsBytes != nil {
+		return shim.Error("Claim with id " + args[0] + " already exists")
+	}
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+
+	orgAsResponse := eh.AbsentError(APIstub, args[3])
+	if orgAsResponse.GetMessage() != "" {
+		return orgAsResponse
+	}
+
+	// acceptedStatus := []string{"Pending"}
+	// if !utils.StringInSlice(args[2], acceptedStatus) {
+	// 	return shim.Error("Status update rejected.")
+	// }
+
+	return claim.Add(APIstub, args, txnID, currentUser.ID, currentOrg.ID)
+}
+
+func (s *SmartContract) updateClaimStatus(APIstub shim.ChaincodeStubInterface, args []string, txnID string) sc.Response {
+
+	argAsResponse := eh.ArgumentError(2, args)
+	if argAsResponse.GetMessage() != "" {
+		return argAsResponse
+	}
+
+	existingClaimAsBytes, err := APIstub.GetState(args[0])
+	if existingClaimAsBytes == nil {
+		return shim.Error("Claim with id " + args[0] + " not found")
+	}
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+
+	// acceptedStatus := []string{"Approved", "Processed", "Rejected"}
+	// if !utils.StringInSlice(args[1], acceptedStatus) {
+	// 	return shim.Error("Status update rejected.")
+	// }
+
+	return claim.UpdateStatus(APIstub, args, txnID)
+}
+
+func (s *SmartContract) getClaimDetails(APIstub shim.ChaincodeStubInterface, args []string, txnID string) sc.Response {
+
+	argAsResponse := eh.ArgumentError(1, args)
+	if argAsResponse.GetMessage() != "" {
+		return argAsResponse
+	}
+
+	existingClaimAsBytes, err := APIstub.GetState(args[0])
+	if existingClaimAsBytes == nil {
+		return shim.Error("Claim with id " + args[0] + " not found")
+	}
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+
+	return claim.GetDetails(APIstub, args, txnID)
+}
+func (s *SmartContract) getTxnsByMonth(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
+
+	argAsResponse := eh.ArgumentError(2, args)
+	if argAsResponse.GetMessage() != "" {
+		return argAsResponse
+	}
+	return txn.GetTxnByMonth(APIstub, args)
 }
 
 func main() {

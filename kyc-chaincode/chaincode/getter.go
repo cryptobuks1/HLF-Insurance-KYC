@@ -8,11 +8,13 @@ import (
 
 	// "errors"
 	// "fmt"
+	"github.com/chaincode/claim"
 	"github.com/chaincode/common"
 	eh "github.com/chaincode/errorhandler"
 	fc "github.com/chaincode/fabcrypt"
 	"github.com/chaincode/kyc"
 	org "github.com/chaincode/organization"
+	txn "github.com/chaincode/transaction"
 	"github.com/chaincode/user"
 	"github.com/chaincode/utils"
 
@@ -679,4 +681,137 @@ func JoinResponseBytes(byteArgs []string) []byte {
 	}
 	buffer.WriteString("]")
 	return buffer.Bytes()
+}
+
+// GetAllClaims lists all the claims of an org
+func GetAllClaims(APIstub shim.ChaincodeStubInterface, args []string, orgID string) sc.Response {
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"status\":\""+args[0]+"\"},{\"insurerOrgId\":\""+orgID+"\"},{\"class\": \"Claim\"}]}}")
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+	return populateClaims(APIstub, searchResultsBytes)
+}
+
+// GetUserClaims returns all the claims for a user
+func GetUserClaims(APIstub shim.ChaincodeStubInterface, args []string, userID string) sc.Response {
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"status\":\""+args[0]+"\"},{\"insureeId\":\""+userID+"\"},{\"class\": \"Claim\"}]}}")
+	if err != nil {
+		fmt.Println(err.Error())
+		if err.Error() == "No records found" {
+			return shim.Success(searchResultsBytes)
+		}
+		return shim.Error(err.Error())
+	}
+	return populateClaims(APIstub, searchResultsBytes)
+}
+
+// GetOrgClaims returns all claims of an org
+func GetOrgClaims(APIstub shim.ChaincodeStubInterface, args []string, orgID string) sc.Response {
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"status\":\""+args[0]+"\"},{\"organizationId\":\""+orgID+"\"},{\"class\": \"Claim\"}]}}")
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+	return populateClaims(APIstub, searchResultsBytes)
+}
+
+// GetClaimProofs returns all proofs that have specified claimid
+//
+// args : [claimId]
+func GetClaimProofs(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"claimId\":\""+args[0]+"\"},{\"class\": \"Proof\"}]}}")
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+	return shim.Success(searchResultsBytes)
+}
+
+// GetStatusTimeline sends an object with all status updates related to a claim
+//
+// args : [claimID]
+func GetStatusTimeline(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
+
+	// claimAsBytes := APIstub.GetState(args[0])
+	// claim, _ := json.Marshal(claimAsBytes)
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"claimId\":\""+args[0]+"\"},{\"class\": \"Transaction\"},{\"action\":\"CSU - Claim Status Update\"}]}}")
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+	return shim.Success(searchResultsBytes)
+
+}
+
+func populateClaims(APIstub shim.ChaincodeStubInterface, searchResultsBytes []byte) sc.Response {
+
+	type SearchResult struct {
+		Key    string      `json:"key"`
+		Record claim.Claim `json:"record"`
+	}
+	type TxnSearchResult struct {
+		Key    string          `json:"key"`
+		Record txn.Transaction `json:"record"`
+	}
+
+	type PopulatedClaim struct {
+		claim.Claim
+		InsureeDetails    user.User        `json:"insureeDetails"`
+		HospitalDetails   org.Organization `json:"hospitalDetails"`
+		InsureeOrg        org.Organization `json:"insureeOrg"`
+		TransactionDetail txn.Transaction  `json:"transactionDetail"`
+	}
+
+	// claims := []claim.Claim{}
+	searchResults := []SearchResult{}
+	json.Unmarshal([]byte(searchResultsBytes), &searchResults)
+
+	if len(searchResults) < 1 {
+		fmt.Println("no records")
+		return shim.Success(searchResultsBytes)
+	}
+
+	populatedClaims := []PopulatedClaim{}
+
+	for i := 0; i < len(searchResults); i++ {
+
+		claim := searchResults[i].Record
+		populatedClaim := PopulatedClaim{}
+
+		// adding the hospital
+		hospital := org.Organization{}
+		hospitalAsBytes, _ := APIstub.GetState(claim.OrganizationID)
+		err := json.Unmarshal(hospitalAsBytes, &hospital)
+		if err != nil {
+			return shim.Error(err.Error())
+		}
+		populatedClaim.HospitalDetails = hospital
+
+		// adding the user details
+		user := user.User{}
+		userAsBytes, _ := APIstub.GetState(claim.InsureeID)
+		err = json.Unmarshal(userAsBytes, &user)
+		if err != nil {
+			return shim.Error(err.Error())
+		}
+		populatedClaim.InsureeDetails = user
+
+		// adding the insuree org details
+		insureeOrg := org.Organization{}
+		insureeOrgAsBytes, _ := APIstub.GetState(user.OrganizationID)
+		err = json.Unmarshal(insureeOrgAsBytes, &insureeOrg)
+		if err != nil {
+			return shim.Error(err.Error())
+		}
+		populatedClaim.InsureeOrg = insureeOrg
+
+		populatedClaim.Claim = claim
+
+		populatedClaims = append(populatedClaims, populatedClaim)
+
+	}
+	populatedClaimsAsBytes, err := json.Marshal(populatedClaims)
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+
+	return shim.Success(populatedClaimsAsBytes)
+
 }

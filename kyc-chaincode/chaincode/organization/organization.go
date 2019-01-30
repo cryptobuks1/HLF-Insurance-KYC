@@ -19,7 +19,6 @@ import (
 )
 
 // Organization can have multiple roles, and users can be added only according to these roles
-// for now, roles have been hardcoded to relate to Health insurance use-case
 type Organization struct {
 	ID                 string   `json:"id"`
 	Name               string   `json:"name"`
@@ -43,6 +42,8 @@ func GetRoles(roleType string) []string {
 		return []string{"Admin", "Manager"}
 	} else if roleType == "CentralBank" {
 		return []string{"Admin", "Client"}
+	} else if roleType == "InsuranceCompany" {
+		return []string{"Admin", "Client"}
 	}
 	return []string{"Error", "Unexpected role type specified."}
 }
@@ -50,8 +51,6 @@ func GetRoles(roleType string) []string {
 // Add adds an organization to the state
 //
 // args : [id, name, email, type, createdAt]
-//
-// accepted types: "Bank", "UserClient", "ExternalSource"
 func Add(APIstub shim.ChaincodeStubInterface, args []string, mspid string) sc.Response {
 
 	roles := GetRoles(args[3])

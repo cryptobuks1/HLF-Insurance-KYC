@@ -14,6 +14,7 @@ import (
 	// "time"
 )
 
+// MasterRecord definition
 type MasterRecord struct {
 	AadharSubrecord    SubRecord          `json:"aadhar_subrecord"`
 	KycRecord          Record             `json:"kyc_record"`
@@ -337,6 +338,3 @@ func UpdateVerificationRecordStatus(APIstub shim.ChaincodeStubInterface, args []
 	err = fc.Encrypter(APIstub, args[0], verificationRecordAsBytes)
 	return eh.SystemError(err, verificationRecordAsBytes)
 }
-
-// GetRecordsByAadharID
-// GetVerificatioRecords by KYCID
