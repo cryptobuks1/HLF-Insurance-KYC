@@ -9,9 +9,7 @@ FUNCTIONS
 func Add(APIstub shim.ChaincodeStubInterface, args []string, mspid string) sc.Response
     Add adds an organization to the state
 
-    args : [id, name, email, type]
-
-    accepted types: "Bank", "UserClient", "ExternalSource"
+    args : [id, name, email, type, createdAt]
 
 func AddRecordID(APIstub shim.ChaincodeStubInterface, recordAsBytes []byte, userOrg Organization) sc.Response
     AddRecordID adds a recordID to an organization
@@ -28,6 +26,12 @@ func AddRole(APIstub shim.ChaincodeStubInterface, args []string, organizationID 
 
 func AddUserID(APIstub shim.ChaincodeStubInterface, userAsBytes []byte, userOrg Organization) sc.Response
     AddUserID adds a userID to an organization
+
+func ApproveRequest(APIstub shim.ChaincodeStubInterface, args []string) sc.Response
+    ApproveRequest will update the status
+
+    args : [userID, bankId, statusUpdate] accepted status : ["Approved",
+    "Rejected"]
 
 func GetRoles(roleType string) []string
     GetRoles returns 'constant' values for defined Role Type
@@ -51,7 +55,6 @@ type Organization struct {
     Class              string   `json:"class"`
 }
     Organization can have multiple roles, and users can be added only
-    according to these roles for now, roles have been hardcoded to relate to
-    Health insurance use-case
+    according to these roles
 
 

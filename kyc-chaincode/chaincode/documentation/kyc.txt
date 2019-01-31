@@ -7,10 +7,12 @@ package kyc
 
 FUNCTIONS
 
-func Add(APIstub shim.ChaincodeStubInterface, args []string, userID string, mspID string) (sc.Response, sc.Response)
+func Add(APIstub shim.ChaincodeStubInterface, args []string, userID string, mspID string, OwnerID string, processed string) (sc.Response, sc.Response)
     Add is used to add a KYC record and store to the state - CouchDB
 
-    args : [id, name, aadharId, phoneNumbers(stringified array)]
+    args : [id, name, aadharId, phoneNumbers(stringified array),
+    dateOfBirth, birthMarks, mothersMaidenName, driversLicense, passport,
+    cardInformation, nationality, emailAddress, loyaltyCards, preferences]
 
 func AddAddress(APIstub shim.ChaincodeStubInterface, recordAsBytes []byte, args []string, userID string) sc.Response
     AddAddress will add an address to an existing KYC record. Since a user
@@ -61,17 +63,35 @@ type Address struct {
 }
     Address belongs to a KYC record
 
+type MasterRecord struct {
+    AadharSubrecord    SubRecord          `json:"aadhar_subrecord"`
+    KycRecord          Record             `json:"kyc_record"`
+    VerificationRecord VerificationRecord `json:"verification_record"`
+}
+    MasterRecord definition
+
 type Record struct {
-    ID           string   `json:"id"`
-    Name         string   `json:"name"`
-    AadharID     string   `json:"aadharId"`
-    PhoneNumbers []string `json:"phoneNumbers"`
-    AddressIDs   []string `json:"addressIds"`
-    UserID       string   `json:"userId"`
-    MSPID        string   `json:"mspId"`
-    CreatedAt    string   `json:"createdAt"`
-    UpdatedAt    string   `json:"updatedAt"`
-    Class        string   `json:"class"`
+    ID                string   `json:"id"`
+    Name              string   `json:"name"`
+    AadharID          string   `json:"aadharId"`
+    PhoneNumbers      []string `json:"phoneNumbers"`
+    AddressIDs        []string `json:"addressIds"`
+    Owner             string   `json:"owner"`
+    CreatedBy         string   `json:"created_by"`
+    MSPID             string   `json:"mspId"`
+    CreatedAt         string   `json:"createdAt"`
+    UpdatedAt         string   `json:"updatedAt"`
+    Class             string   `json:"class"`
+    DateOfBirth       string   `json:"date_of_birth"`
+    BirthMarks        string   `json:"birth_marks"`
+    MothersMaidenName string   `json:"mothers_maiden_name"`
+    DriversLicense    string   `json:"drivers_license"`
+    Passport          string   `json:"passport"`
+    CardInformation   string   `json:"card_information"`
+    Nationality       string   `json:"nationality"`
+    EmailAddress      string   `json:"email_address"`
+    LoyaltyCards      string   `json:"loyalty_cards"`
+    Preferences       string   `json:"preferences"`
 }
     Record is the model for a sample KYC Record
 

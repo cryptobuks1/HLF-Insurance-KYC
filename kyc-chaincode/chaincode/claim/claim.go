@@ -65,8 +65,8 @@ func Add(APIstub shim.ChaincodeStubInterface, args []string, txnID string, userI
 		Status:         "Pending",
 		Cost:           args[2],
 		InsureeID:      userID,
-		OrganizationID: args[3],
-		InsurerOrgID:   currentOrgID,
+		InsurerOrgID:   args[3],
+		OrganizationID: currentOrgID,
 		CreatedAt:      isotimestamp,
 		Class:          "Claim",
 	}

@@ -13,14 +13,16 @@ SUBDIRECTORIES
 	godex
 	godoc
 	goimports
+	golsp
 	gomvpkg
+	gopls
 	gorename
 	gotype
 	goyacc
 	guru
-	heapview
 	html2article
 	present
+	splitdwarf
 	ssadump
 	stress
 	stringer

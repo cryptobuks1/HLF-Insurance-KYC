@@ -23,6 +23,9 @@ func SliceFromString(stringifiedSlice string) ([]string, error)
 func StringInSlice(stringToCheck string, sliceToCheck []string) bool
     StringInSlice checks if a string is present in an array
 
+func UniqueSlicer(input []string) []string
+    UniqueSlicer will unique the slicer
+
 TYPES
 
 type Slice struct {

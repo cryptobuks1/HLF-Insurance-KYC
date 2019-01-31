@@ -3,9 +3,9 @@ const KYC = require("../kyc");
 let registerCentralBank = () => {
   let requestData = {
     name: "Central Bank",
-    email: "centralBank@skcript.com",
+    email: "priyansh.jain0246@gmail.com",
     organization_type: "CentralBank",
-    created_at : (new Date()).toISOString()
+    created_at: new Date().toISOString()
   };
   let kyc = new KYC("admin");
   kyc

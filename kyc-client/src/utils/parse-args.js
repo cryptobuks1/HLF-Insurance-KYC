@@ -12,8 +12,8 @@ let addOrganizationArray = args => {
     args.name,
     args.email,
     args.organization_type,
-    args.created_at,
-  ];  
+    args.created_at
+  ];
 
   return returnData;
 };
@@ -26,7 +26,14 @@ let addRoleToOrganizationArray = args => {
 
 let addUserArray = args => {
   if (args.aadhaarId) {
-    return [getRandomValue(), args.name, args.role, args.email, args.timestamp, args.aadhaarId];
+    return [
+      getRandomValue(),
+      args.name,
+      args.role,
+      args.email,
+      args.timestamp,
+      args.aadhaarId
+    ];
   } else {
     return [getRandomValue(), args.name, args.role, args.email, args.timestamp];
   }
@@ -80,7 +87,7 @@ let addKYCRecordArray = function(args) {
     })
   ];
   if (args.status) {
-    returnData.push(args.status)
+    returnData.push(args.status);
   }
   // console.log(returnData)
   return returnData;
@@ -137,12 +144,24 @@ let createRequestArray = function(args) {
 
 let approveRequestArray = function(args) {
   let returnData = [
-    args.organization_id, 
-    args.status, 
+    args.organization_id,
+    args.status,
     args.timeLimit ? args.timeLimit : "",
     args.allowed ? JSON.stringify({ data: args.allowed }) : []
   ];
   return returnData;
+};
+
+let addClaimArray = function(args) {
+  return [getRandomValue(), args.description, args.cost, args.organization_id];
+};
+
+let updateClaimStatusArray = function(args) {
+  return [args.claim_id, args.status_update];
+};
+
+let addProofToClaimArray = function(args) {
+  return [getRandomValue(), args.claim_id, args.certificate_id];
 };
 
 module.exports = {
@@ -158,5 +177,8 @@ module.exports = {
   addVerificationRecordArray,
   updateVerificationRecordArray,
   createRequestArray,
-  approveRequestArray
+  approveRequestArray,
+  addClaimArray,
+  updateClaimStatusArray,
+  addProofToClaimArray
 };

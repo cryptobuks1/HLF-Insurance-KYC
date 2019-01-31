@@ -17,12 +17,13 @@ func AddIDRecord(APIstub shim.ChaincodeStubInterface, args []string, userAsBytes
     args: [newEnrollmentId, userId]
 
 func AddRecordID(APIstub shim.ChaincodeStubInterface, recordAsBytes []byte, currentUser User) sc.Response
-    AddRecordID adds a recordID to an organization
+    AddRecordID adds a recordID to an user
 
 func ApproveRequest(APIstub shim.ChaincodeStubInterface, args []string, userID string) sc.Response
     ApproveRequest will update the status
 
-    args : [bankId, statusUpdate] accepted status : ["Approved", "Rejected"]
+    args : [bankId, statusUpdate, expireTime, allowedParams] accepted status
+    : ["Approved", "Rejected"]
 
 func GetEnrollments(APIstub shim.ChaincodeStubInterface, userAsBytes []byte) sc.Response
     GetEnrollments returns all enrollments of a user
@@ -67,7 +68,8 @@ type User struct {
     Name           string   `json:"name"`
     Role           string   `json:"role"`
     Email          string   `json:"email"`
-    OrganizationID string   `json:"organizationID"`
+    OrganizationID string   `json:"organizationId"`
+    NationalID     string   `json:"national_id"`
     Status         string   `json:"status"`
     EnrollmentIDs  []string `json:"enrollmentIds"`
     RecordIDs      []string `json:"recordIds"`

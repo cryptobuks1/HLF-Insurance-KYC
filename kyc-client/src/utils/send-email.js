@@ -4,7 +4,7 @@ let send = (cardName, to, data) => {
   // Send Email
   return transporter.sendMail(
     {
-      sender: '"Card Dispatcher"<no-reply@skcript.com>',
+      sender: '"Card Dispatcher"<priyanshjain412@gmail.com>',
       to: `${to}`,
       subject: "Identity card",
       body: "Find the card in the attachment below.",

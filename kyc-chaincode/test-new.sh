@@ -76,3 +76,23 @@ sleep 3
 
 printf "\n\n\n\n16. Update Claim Status to 'Granted and Reimbursed' by Insurer\n\n"
 docker exec -it cli peer chaincode invoke -C mychannel -n mycc -c '{"Args":["updateClaimStatus", "claim1", "Claim Approved"]}'
+
+sleep 3
+
+ # else if function == "getTxnsByMonth" {
+ #    return s.getTxnsByMonth(APIstub, args)
+ #  } else if function == "getAllClaims" {
+ #    return GetAllClaims(APIstub, args, currentUserOrg.ID)
+ #  } else if function == "getUserClaims" {
+ #    return GetUserClaims(APIstub, args, currentUser.ID)
+ #  } else if function == "getClaimsByOrg" {
+ #    return GetOrgClaims(APIstub, args, currentUserOrg.ID)
+ #  }
+ 
+printf "\n\n\n\n17. Get Transactions on claims of by Insuree\n\n"
+docker exec -it cli peer chaincode query -C mychannel -n mycc -c '{"Args":["getUserDetails", "User-Client1"]}'
+
+sleep 3
+
+printf "\n\n\n\n17. Get Transactions on claims of by Insuree\n\n"
+docker exec -it cli peer chaincode query -C mychannel -n mycc -c '{"Args":["getAllClaims"]}'

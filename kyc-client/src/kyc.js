@@ -3,7 +3,7 @@ let card = require("./utils/export");
 const csv = require("csvtojson");
 // let FabricCAClient = require('fabric-ca-client');
 let config = require("./utils/config");
-let remote = require("./utils/fetchFromRemote");
+// let remote = require("./utils/fetchFromRemote");
 let Variables = require("./utils/variables");
 let parseArgs = require("./utils/parse-args");
 
@@ -117,7 +117,7 @@ class KYC {
     return this.connection.submitTransaction(requestData);
   }
 
-  getAllUsers(args) {
+  getAllUsers() {
     let tx_id = this.connection.newTransactionID();
     let requestData = {
       chaincodeId: config.chaincodeId,
@@ -130,7 +130,7 @@ class KYC {
     return this.connection.submitTransaction(requestData);
   }
 
-  getUserRecords(args) {
+  getUserRecords() {
     let tx_id = this.connection.newTransactionID();
     let requestData = {
       chaincodeId: config.chaincodeId,
@@ -143,7 +143,116 @@ class KYC {
     return this.connection.submitTransaction(requestData);
   }
 
-  getAllRecords(args) {
+  addClaim(args) {
+    let tx_id = this.connection.newTransactionID();
+    let requestData = {
+      chaincodeId: config.chaincodeId,
+      fcn: "addClaim",
+      args: parseArgs.addClaimArray(args),
+      txId: tx_id,
+      chainId: config.chainId
+    };
+    return this.connection.submitTransaction(requestData);
+  }
+
+  getUserClaims() {
+    let requestData = {
+      chaincodeId: config.chaincodeId,
+      fcn: "getUserClaims",
+      args: []
+    };
+    return this.connection.query(requestData);
+  }
+
+  getClaimsByOrg() {
+    let requestData = {
+      chaincodeId: config.chaincodeId,
+      fcn: "getClaimsByOrg",
+      args: []
+    };
+    return this.connection.query(requestData);
+  }
+
+  getAllClaims() {
+    let requestData = {
+      chaincodeId: config.chaincodeId,
+      fcn: "getAllClaims",
+      args: []
+    };
+    return this.connection.query(requestData);
+  }
+
+  getClaimProofs(args) {
+    let requestData = {
+      chaincodeId: config.chaincodeId,
+      fcn: "getClaimProofs",
+      args: [args.claim_id]
+    };
+    return this.connection.query(requestData);
+  }
+
+  getStatusTimeline(args) {
+    let requestData = {
+      chaincodeId: config.chaincodeId,
+      fcn: "getStatusTimeline",
+      args: [args.claim_id]
+    };
+    return this.connection.query(requestData);
+  }
+
+  updateClaimStatus(args) {
+    let tx_id = this.connection.newTransactionID();
+    let requestData = {
+      chaincodeId: config.chaincodeId,
+      fcn: "updateClaimStatus",
+      args: parseArgs.updateClaimStatusArray(args),
+      txId: tx_id,
+      chainId: config.chainId
+    };
+    return this.connection.submitTransaction(requestData);
+  }
+
+  getClaimDetails(args) {
+    let requestData = {
+      chaincodeId: config.chaincodeId,
+      fcn: "getClaimDetails",
+      args: [args.claim_id]
+    };
+    return this.connection.query(requestData);
+  }
+
+  getTxnsByMonth(args) {
+    let requestData = {
+      chaincodeId: config.chaincodeId,
+      fcn: "getTxnsByMonth",
+      args: [args.year, args.month]
+    };
+    return this.connection.query(requestData);
+  }
+
+  addProofToClaim(args) {
+    let tx_id = this.connection.newTransactionID();
+    let requestData = {
+      chaincodeId: config.chaincodeId,
+      fcn: "addProofToClaim",
+      args: parseArgs.addProofToClaimArray(args),
+      txId: tx_id,
+      chainId: config.chainId
+    };
+    return this.connection.submitTransaction(requestData);
+  }
+
+  searchOrganization(args) {
+    let requestData = {
+      chaincodeId: config.chaincodeId,
+      fcn: "searchOrganization",
+      args: [args.organization_id]
+    };
+    return this.connection.query(requestData);
+  }
+
+  // KYC related endpoints
+  getAllRecords() {
     let requestData = {
       chaincodeId: config.chaincodeId,
       fcn: "getAllRecords",
@@ -152,7 +261,7 @@ class KYC {
     return this.connection.query(requestData);
   }
 
-  async addKYCRecord(args) {
+  addKYCRecord(args) {
     let tx_id = this.connection.newTransactionID();
     // let remoteResponse = await remote.fetch(args.aadhar_number)
     // console.log("response " , remoteResponse)
@@ -178,45 +287,41 @@ class KYC {
         .then(jsonObj => {
           return jsonObj;
         });
-      console.log("KYC", kyc);
-      console.log("-------------------------------");
-      try {
-        for (let i = 0; i < kyc.length; i++) {
-          let requestData = {
-            name: kyc[i].name.trim(),
-            aadhar_number: kyc[i].aadharId.trim(),
-            phone_numbers: kyc[i].phoneNumbers.trim(),
-            dateOfBirth: kyc[i].dateOfBirth.trim(),
-            birthMarks: kyc[i].birthMarks.trim(),
-            mothersMaidenName: kyc[i].mothersMaidenName.trim(),
-            driversLicense: kyc[i].driversLicense.trim(),
-            passport: kyc[i].passport.trim(),
-            cardInformation: kyc[i].cardInformation.trim(),
-            nationality: kyc[i].nationality.trim(),
-            emailAddress: kyc[i].emailAddress.trim(),
-            loyaltyCards: kyc[i].loyaltyCards.trim(),
-            preferences: kyc[i].preferences.trim(),
-            line1: kyc[i].AddressLine1.trim(),
-            line2: kyc[i].AddressLine2.trim(),
-            line3: kyc[i].AddressLine3.trim(),
-            city_town_village: kyc[i].city_town_village.trim(),
-            postal_code: kyc[i].postalCode.trim(),
-            state_ut: kyc[i].state_ut.trim()
-          };
-          await this.addKYCRecord(requestData);
-          console.log(
-            `---------------Imported KYC ${i + 1} off ${
-              kyc.length
-            }---------------`
-          );
-        }
-        return "File Imported!";
-      } catch (error) {
-        throw new Error(error);
-      }
     } catch (error) {
       throw new Error("Unable to parse file");
     }
+    console.log("KYC", kyc);
+    console.log("-------------------------------");
+    kyc.map(async (current, index) => {
+      let requestData = {
+        name: current.name.trim(),
+        aadhar_number: current.aadharId.trim(),
+        phone_numbers: current.phoneNumbers.trim(),
+        dateOfBirth: current.dateOfBirth.trim(),
+        birthMarks: current.birthMarks.trim(),
+        mothersMaidenName: current.mothersMaidenName.trim(),
+        driversLicense: current.driversLicense.trim(),
+        passport: current.passport.trim(),
+        cardInformation: current.cardInformation.trim(),
+        nationality: current.nationality.trim(),
+        emailAddress: current.emailAddress.trim(),
+        loyaltyCards: current.loyaltyCards.trim(),
+        preferences: current.preferences.trim(),
+        line1: current.AddressLine1.trim(),
+        line2: current.AddressLine2.trim(),
+        line3: current.AddressLine3.trim(),
+        city_town_village: current.city_town_village.trim(),
+        postal_code: current.postalCode.trim(),
+        state_ut: current.state_ut.trim()
+      };
+      await this.addKYCRecord(requestData);
+      console.log(
+        `---------------Imported KYC ${index + 1} off ${
+          kyc.length
+        }---------------`
+      );
+    });
+    return "File Imported!";
   }
 
   updateKYCRecord(args) {
@@ -417,6 +522,8 @@ class KYC {
     console.log(requestData);
     return this.connection.query(requestData);
   }
+
+  // insurance endpoints
 
   createIdentityRecord(enrollmentId, userId) {
     let tx_id = this.connection.newTransactionID();

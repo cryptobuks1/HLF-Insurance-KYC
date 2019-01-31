@@ -4,7 +4,7 @@ const express = require("express");
 const KYC = require("../kyc");
 const card = require("../utils/import");
 let query = require("url");
-let Parser = require("../utils/Parser")
+let Parser = require("../utils/Parser");
 
 // Config
 const router = express.Router();
@@ -192,7 +192,7 @@ router.post("/update-kyc-record", function(req, res) {
 });
 
 router.post("/create-request", function(req, res) {
-  console.log("heklk")
+  console.log("heklk");
   let kyc = new KYC(req.user);
   kyc
     .init()
@@ -222,17 +222,17 @@ router.post("/approve-request", function(req, res) {
     });
 });
 
-router.post("/release-request", function (req, res) {
+router.post("/release-request", function(req, res) {
   let kyc = new KYC(req.user);
   kyc
     .init()
-    .then(function () {
+    .then(function() {
       return kyc.approveCBBankRequest(req.body);
     })
-    .then(function (data) {
+    .then(function(data) {
       res.status(200).json({ response: data });
     })
-    .catch(function (err) {
+    .catch(function(err) {
       res.status(500).json({ error: err.toString() });
     });
 });
@@ -279,24 +279,24 @@ router.get("/get-records-by-aadhar", function(req, res) {
       res.status(200).json({ response: data });
     })
     .catch(function(err) {
-      console.log("err", err)
+      console.log("err", err);
       res.status(500).json({ error: err });
     });
 });
 
-router.get("/search-aadhaar", function (req, res) {
+router.get("/search-aadhaar", function(req, res) {
   console.log("came");
   let kyc = new KYC(req.user);
   kyc
     .init()
-    .then(function () {
+    .then(function() {
       return kyc.getNameFromAadhar(query.parse(req.url, true).query);
     })
-    .then(function (data) {
+    .then(function(data) {
       res.status(200).json({ response: data });
     })
-    .catch(function (err) {
-      console.log("err", err)
+    .catch(function(err) {
+      console.log("err", err);
       res.status(500).json({ error: err });
     });
 });
@@ -421,29 +421,37 @@ router.get("/list-user-requests", function(req, res) {
     });
 });
 
-router.get('/get-client-kyc', function (req, res) {
-  console.log(query.parse(req.url, true).query)
+router.get("/get-client-kyc", function(req, res) {
+  console.log(query.parse(req.url, true).query);
   let kyc = new KYC(req.user);
-  kyc.init().then(function () {
-    return kyc.getCurrentUserKYC(query.parse(req.url, true).query)
-  }).then(function (data) {
-    res.status(200).json({ response: data })
-  }).catch(function (err) {
-    res.status(500).json({ error: err.toString() })
-  })
-})
+  kyc
+    .init()
+    .then(function() {
+      return kyc.getCurrentUserKYC(query.parse(req.url, true).query);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
 
-router.get('/get-client-approved-request', function (req, res) {
+router.get("/get-client-approved-request", function(req, res) {
   let kyc = new KYC(req.user);
-  kyc.init().then(function () {
-    return kyc.getAllOrgRequests()
-  }).then(function (data) {
-    console.log("data", data)
-    res.status(200).json({ response: data })
-  }).catch(function (err) {
-    res.status(500).json({ error: err.toString() })
-  })
-})
+  kyc
+    .init()
+    .then(function() {
+      return kyc.getAllOrgRequests();
+    })
+    .then(function(data) {
+      console.log("data", data);
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
 
 router.get("/list-org-requests", function(req, res) {
   let kyc = new KYC(req.user);
@@ -453,7 +461,7 @@ router.get("/list-org-requests", function(req, res) {
       return kyc.getOrgRequests();
     })
     .then(function(data) {
-      data = Parser.parseOrgReq(data)
+      data = Parser.parseOrgReq(data);
       res.status(200).json({ response: data });
     })
     .catch(function(err) {
@@ -461,20 +469,254 @@ router.get("/list-org-requests", function(req, res) {
     });
 });
 
-router.post("/import-kyc", function (req, res) {
+router.post("/import-kyc", function(req, res) {
   let kyc = new KYC(req.user);
   kyc
     .init()
-    .then(function () {
+    .then(function() {
       return kyc.importKYC(req.files.kyc.data.toString());
     })
-    .then(function (data) {
+    .then(function(data) {
       res.status(200).json({ response: data });
     })
-    .catch(function (err) {
+    .catch(function(err) {
       res.status(500).json({ error: err.toString() });
     });
+});
 
+// Insurance routes
+// 9. Add an Claim to state x
+router.post("/add-claim", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.addClaim(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+// 11. Update the Status of a Claim x
+router.post("/update-claim-status", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.updateClaimStatus(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+// 12. Get Details of a Claim x
+router.get("/get-claim-details", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.getClaimDetails(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+// 13. Get Transactions for a Month x
+router.get("/get-tx-details", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.getTxnsByMonth(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+// 14. Add Proof to a claim x
+router.post("/add-proof", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.addProofToClaim(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+// 16. Get Details of a User x
+router.get("/get-all-users", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.getAllUsers(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+// 17. Search organisation
+router.get("/search-organisation", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.searchOrganization(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+// 18. Get identity records
+router.get("/list-identity", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.getUserEnrollments(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+// 19. Get claims of a Hospital x
+router.get("/get-org-claims", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.getClaimsByOrg(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+// 20. Get claims of a Insuree x
+router.get("/get-user-claims", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.getUserClaims(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+// 20. Get claims of a Insurer x
+router.get("/get-all-claims", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.getAllClaims(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+// 21. Get proof of a claim x
+router.get("/get-claim-proof", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.getClaimProofs(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+// 21. Get status timelinex
+router.get("/get-status-timeline", function(req, res) {
+  let kyc = new KYC(req.user);
+  console.log(req.body);
+
+  kyc
+    .init()
+    .then(function() {
+      return kyc.getStatusTimeline(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
 });
 
 module.exports = router;

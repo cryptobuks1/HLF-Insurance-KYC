@@ -74,25 +74,25 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 		return s.addIDRecordForUser(APIstub, args)
 	}
 
-	// // *---- for testing without attrs ----*
-	// currentUser := user.User{
-	// 	ID:             "User-Client1",
-	// 	OrganizationID: "InsuranceCompany1",
-	// 	Role:           "Client",
-	// }
-	// currentUserOrg := org.Organization{
-	// 	ID:    "InsuranceCompany1",
-	// 	Roles: []string{"Admin", "Client"},
-	// }
-
-	// *---- for testing with attrs ----*
-	prereqs, shimError := GetPrerequisites(APIstub)
-	if shimError.GetMessage() != "" {
-		return shimError
+	// *---- for testing without attrs ----*
+	currentUser := user.User{
+		ID:             "User-Client1",
+		OrganizationID: "InsuranceCompany1",
+		Role:           "Client",
+	}
+	currentUserOrg := org.Organization{
+		ID:    "InsuranceCompany1",
+		Roles: []string{"Admin", "Client"},
 	}
 
-	currentUser := prereqs.User
-	currentUserOrg := prereqs.Org
+	// // *---- for testing with attrs ----*
+	// prereqs, shimError := GetPrerequisites(APIstub)
+	// if shimError.GetMessage() != "" {
+	// 	return shimError
+	// }
+
+	// currentUser := prereqs.User
+	// currentUserOrg := prereqs.Org
 
 	if function == "getCurrentUser" {
 		return GetCurrentUser(APIstub, []string{currentUser.ID}, currentUserOrg)
@@ -129,6 +129,12 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 		return GetStatusTimeline(APIstub, args)
 	} else if function == "getClaimProofs" {
 		return GetClaimProofs(APIstub, args)
+	} else if function == "searchOrganization" {
+		return s.searchOrganization(APIstub, args)
+	} else if function == "getAllOrganizationUsers" {
+		return GetAllOrganizationUsers(APIstub, currentUserOrg.ID, currentUser.ID)
+	} else if function == "getAllOrganization" {
+		return GetAllOrganization(APIstub)
 	} else if function == "addUser" {
 		return s.addUser(APIstub, args, currentUserOrg)
 	} else if function == "revokeIdentityRecord" {
@@ -524,6 +530,7 @@ func (s *SmartContract) addProofToClaim(APIstub shim.ChaincodeStubInterface, arg
 
 	return claim.AddProof(APIstub, args, txnID)
 }
+
 func (s *SmartContract) addClaim(APIstub shim.ChaincodeStubInterface, args []string, txnID string, currentUser user.User, currentOrg org.Organization) sc.Response {
 
 	argAsResponse := eh.ArgumentError(4, args)
@@ -599,6 +606,17 @@ func (s *SmartContract) getTxnsByMonth(APIstub shim.ChaincodeStubInterface, args
 		return argAsResponse
 	}
 	return txn.GetTxnByMonth(APIstub, args)
+}
+
+// args : [orgId]
+func (s *SmartContract) searchOrganization(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
+	organizations, length := SearchOrganizationsByDomainName(APIstub, args[0])
+	if length < 0 {
+		return shim.Error("No organization found.")
+	}
+	organizationsBytes, _ := json.Marshal(organizations)
+	fmt.Println(string(organizationsBytes))
+	return shim.Success(organizationsBytes)
 }
 
 func main() {

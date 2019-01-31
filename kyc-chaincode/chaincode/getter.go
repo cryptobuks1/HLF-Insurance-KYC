@@ -526,7 +526,7 @@ func GetOrgRequests(APIstub shim.ChaincodeStubInterface, args []string, currentO
 					json.Unmarshal(kycRecordBytes, &responseMapper)
 
 					type temporaryApprovedInfos struct {
-						Infos []string `json:"infos`
+						Infos []string `json:"infos"`
 					}
 
 					var infos temporaryApprovedInfos
@@ -685,7 +685,7 @@ func JoinResponseBytes(byteArgs []string) []byte {
 
 // GetAllClaims lists all the claims of an org
 func GetAllClaims(APIstub shim.ChaincodeStubInterface, args []string, orgID string) sc.Response {
-	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"status\":\""+args[0]+"\"},{\"insurerOrgId\":\""+orgID+"\"},{\"class\": \"Claim\"}]}}")
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"class\": \"Claim\"}]}}")
 	if err != nil {
 		return shim.Error(err.Error())
 	}
@@ -707,7 +707,7 @@ func GetUserClaims(APIstub shim.ChaincodeStubInterface, args []string, userID st
 
 // GetOrgClaims returns all claims of an org
 func GetOrgClaims(APIstub shim.ChaincodeStubInterface, args []string, orgID string) sc.Response {
-	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"status\":\""+args[0]+"\"},{\"organizationId\":\""+orgID+"\"},{\"class\": \"Claim\"}]}}")
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"organizationId\":\""+orgID+"\"},{\"class\": \"Claim\"}]}}")
 	if err != nil {
 		return shim.Error(err.Error())
 	}
@@ -738,6 +738,80 @@ func GetStatusTimeline(APIstub shim.ChaincodeStubInterface, args []string) sc.Re
 	}
 	return shim.Success(searchResultsBytes)
 
+}
+
+// SearchOrganizationsByDomainName gets the organization by name - Useful while Ajaxing with partial word search
+func SearchOrganizationsByDomainName(APIstub shim.ChaincodeStubInterface, name string) ([]org.Organization, int) {
+
+	/*
+	   Arguments:
+	     * Name
+	*/
+
+	type SearchResult struct {
+		Key    string           `json:"key"`
+		Record org.Organization `json:"record"`
+	}
+	organizations := []org.Organization{}
+	length := 0
+	queryString := "{\"selector\": {\"$and\" : [{\"name\": {\"$regex\": \"(?i)" + name + "\"},\"class\": \"Organization\", \"type\":\"Hospital\"}]}}"
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, queryString)
+	if err != nil {
+		return organizations, length
+	}
+
+	searchResults := []SearchResult{}
+	json.Unmarshal([]byte(searchResultsBytes), &searchResults)
+
+	if len(searchResults) < 1 {
+		return organizations, length
+	}
+	for i := 0; i < len(searchResults); i++ {
+		organizations = append(organizations, searchResults[i].Record)
+		length++
+	}
+
+	return organizations, length
+}
+
+// GetAllOrganization will return all orgs
+func GetAllOrganization(APIstub shim.ChaincodeStubInterface) sc.Response {
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"class\": \"Organization\" }}")
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+
+	return shim.Success(searchResultsBytes)
+}
+
+// GetAllOrganizationUsers will return all users of an organization
+func GetAllOrganizationUsers(APIstub shim.ChaincodeStubInterface, organizationID string, currentUserID string) sc.Response {
+	type SearchResult struct {
+		Key    string    `json:"key"`
+		Record user.User `json:"record"`
+	}
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"organizationId\":\""+organizationID+"\"},{\"class\": \"User\"}]}}")
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+	users := []user.User{}
+	searchResults := []SearchResult{}
+	json.Unmarshal([]byte(searchResultsBytes), &searchResults)
+
+	if len(searchResults) < 1 {
+		return shim.Error("No records found")
+	}
+	for i := 0; i < len(searchResults); i++ {
+		if searchResults[i].Key == currentUserID {
+			continue
+		}
+		users = append(users, searchResults[i].Record)
+	}
+	usersAsBytes, err := json.Marshal(users)
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+	return shim.Success(usersAsBytes)
 }
 
 func populateClaims(APIstub shim.ChaincodeStubInterface, searchResultsBytes []byte) sc.Response {
