@@ -1,7 +1,18 @@
-import React from 'react';
-import { Redirect, Link } from 'react-router-dom';
-import { signUp } from '../../Models/Auth';
-import { Upload, message, Icon, Row, Col, Spin, Form, Input, Button, Checkbox } from 'antd';
+import React from "react";
+import { Redirect, Link } from "react-router-dom";
+import { signUp } from "../../Models/Auth";
+import {
+  Upload,
+  message,
+  Icon,
+  Row,
+  Col,
+  Spin,
+  Form,
+  Input,
+  Button,
+  Checkbox
+} from "antd";
 const FormItem = Form.Item;
 
 const Dragger = Upload.Dragger;
@@ -14,47 +25,45 @@ class Signup extends React.Component {
     this.state = {
       newLink: null,
       loading: false
-    }
+    };
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        this.submit(values)
+        this.submit(values);
       }
     });
-  }
+  };
 
   submit(values) {
     this.setState({
       loading: true
-    })
-    values['created_at'] = new Date()
+    });
+    values["created_at"] = new Date();
     signUp({
       data: values,
-      onSuccess: (data) => {
+      onSuccess: data => {
         this.setState({
           loading: false,
-          newLink: '/login'
-        })
+          newLink: "/login"
+        });
       },
-      onError: (data) => {
+      onError: data => {
         this.setState({
-          loading: false,
-        })
+          loading: false
+        });
         console.log(data);
       }
-    })
+    });
   }
 
   // Renderer
   render() {
     const { getFieldDecorator } = this.props.form;
     if (this.state.newLink) {
-      return (
-        <Redirect to={this.state.newLink} />
-      )
+      return <Redirect to={this.state.newLink} />;
     }
 
     return (
@@ -64,29 +73,38 @@ class Signup extends React.Component {
             <div className="login-box">
               <div className="login-width">
                 <div className="logo-wrapper">
-                <h1>AtCash KYC Management</h1>
+                  <h1>Decentralized Insurance - TARP</h1>
                   <h2>Tell us about your organization...</h2>
                 </div>
-                <Form onSubmit={this.handleSubmit} className="login-form register-wrapper" style={{ flexDirection: "column" }}>
+                <Form
+                  onSubmit={this.handleSubmit}
+                  className="login-form register-wrapper"
+                  style={{ flexDirection: "column" }}
+                >
                   <FormItem label="Name">
-                    {getFieldDecorator('name', {
-                      rules: [{ required: true, message: 'Please input your name!' }],
-                    })(
-                      <Input placeholder="Name" />
-                    )}
+                    {getFieldDecorator("name", {
+                      rules: [
+                        { required: true, message: "Please input your name!" }
+                      ]
+                    })(<Input placeholder="Name" />)}
                   </FormItem>
                   <FormItem label="E-mail">
-                    {getFieldDecorator('email', {
-                      rules: [{ required: true, message: 'Please input your Email!' }],
-                    })(
-                      <Input type="email" placeholder="Email" />
-                    )}
+                    {getFieldDecorator("email", {
+                      rules: [
+                        { required: true, message: "Please input your Email!" }
+                      ]
+                    })(<Input type="email" placeholder="Email" />)}
                   </FormItem>
                   <div style={{ display: "flex", justifyContent: "center" }}>
-                    <Button loading={this.state.loading} type="primary" htmlType="submit" className="login-form-button">
+                    <Button
+                      loading={this.state.loading}
+                      type="primary"
+                      htmlType="submit"
+                      className="login-form-button"
+                    >
                       Sign Up
                     </Button>
-                    </div>
+                  </div>
                 </Form>
                 <div className="register-wrapper">
                   <p>Already have an account?</p>
@@ -99,8 +117,8 @@ class Signup extends React.Component {
           </Col>
         </Row>
       </div>
-    )
+    );
   }
 }
 
-export default  Form.create()(Signup);
+export default Form.create()(Signup);

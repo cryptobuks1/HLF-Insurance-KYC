@@ -48,7 +48,6 @@ class KYC {
       txId: tx_id,
       chainId: config.chainId
     };
-    console.log(requestData);
     return this.connection.submitTransaction(requestData).then(data => {
       return this.createUserCard(data[0], args.email);
     });
@@ -126,7 +125,6 @@ class KYC {
       txId: tx_id,
       chainId: config.chainId
     };
-    console.log(requestData);
     return this.connection.submitTransaction(requestData);
   }
 

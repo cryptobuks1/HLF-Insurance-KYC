@@ -13,7 +13,8 @@ const router = express.Router();
 // 1. Login x
 router.post("/login", function(req, res) {
   let token = card.upload(req.files.card);
-  res.json({ token: token });
+
+  res.json({ token });
 });
 
 // 2. Add an Organization to state x
@@ -462,9 +463,13 @@ router.get("/list-org-requests", function(req, res) {
     })
     .then(function(data) {
       data = Parser.parseOrgReq(data);
+      console.log("TCL: data", data);
+
       res.status(200).json({ response: data });
     })
     .catch(function(err) {
+      console.log("Error", err);
+
       res.status(500).json({ error: err.toString() });
     });
 });

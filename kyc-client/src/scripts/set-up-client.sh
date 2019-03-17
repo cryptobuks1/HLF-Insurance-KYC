@@ -1,3 +1,5 @@
+mkdir -p cards
+mkdir -p KeyStore
 rm -rf ./KeyStore
 rm -rf ./cards/*
 echo "================Enrolling Network admin================"

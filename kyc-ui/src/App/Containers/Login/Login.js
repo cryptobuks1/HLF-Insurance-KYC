@@ -1,8 +1,8 @@
-import React from 'react';
-import { Redirect, Link } from 'react-router-dom';
-import { login } from '../../Models/Auth';
-import { WALLET_IMPORT } from '../../Config/Routes';
-import { Upload, message, Icon, Row, Col, Spin, Button } from 'antd';
+import React from "react";
+import { Redirect, Link } from "react-router-dom";
+import { login } from "../../Models/Auth";
+import { WALLET_IMPORT } from "../../Config/Routes";
+import { Upload, message, Icon, Row, Col, Spin, Button } from "antd";
 const Dragger = Upload.Dragger;
 
 export default class Login extends React.Component {
@@ -13,28 +13,27 @@ export default class Login extends React.Component {
     this.state = {
       newLink: null,
       loading: false
-    }
+    };
   }
 
   // Component helper methods
   onUpload(info) {
     const status = info.file.status;
 
-    if (status === 'uploading') {
-      this.setState({ loading: true })
+    if (status === "uploading") {
+      this.setState({ loading: true });
       return;
     }
 
-    if (status === 'done') {
+    if (status === "done") {
       login({ data: info.file.response });
       this.setState({
         newLink: "/kyc-home",
         loading: false
       });
       return;
-
-    } else if (status === 'error') {
-      this.setState({ loading: false })
+    } else if (status === "error") {
+      this.setState({ loading: false });
       message.error(`Unable to Login!`);
       return;
     }
@@ -43,7 +42,7 @@ export default class Login extends React.Component {
   // Renderer methods
   renderUploadStatus() {
     if (this.state.loading) {
-      return <Spin />
+      return <Spin />;
     }
     return (
       <div>
@@ -52,15 +51,13 @@ export default class Login extends React.Component {
         </p>
         <p className="ant-upload-text">Upload keystore file</p>
       </div>
-    )
+    );
   }
 
   // Renderer
   render() {
     if (this.state.newLink) {
-      return (
-        <Redirect to={this.state.newLink} />
-      )
+      return <Redirect to={this.state.newLink} />;
     }
     return (
       <div className="login-wrapper">
@@ -69,15 +66,16 @@ export default class Login extends React.Component {
             <div className="login-box">
               <div className="login-width">
                 <div className="logo-wrapper">
-                  <h1>AtCash KYC Management</h1>
+                  <h1>Decentralized Insurance - TARP</h1>
                   <h2>Sign-in</h2>
                 </div>
                 <Dragger
-                  name='card'
+                  name="card"
                   showUploadList={false}
                   accept=".card"
                   onChange={this.onUpload.bind(this)}
-                  action={WALLET_IMPORT}>
+                  action={WALLET_IMPORT}
+                >
                   {this.renderUploadStatus()}
                 </Dragger>
                 <div className="register-wrapper">
@@ -91,6 +89,6 @@ export default class Login extends React.Component {
           </Col>
         </Row>
       </div>
-    )
+    );
   }
 }

@@ -1,58 +1,59 @@
-import moment from 'moment';
+import moment from "moment";
 
-var isAuthenticated = function () {
-  return JSON.parse(localStorage.getItem('currentUser'));
-}
+var isAuthenticated = function() {
+  return JSON.parse(localStorage.getItem("currentUser"));
+};
 
-var clearLocal = function () {
+var clearLocal = function() {
   for (var key in localStorage) {
     if (localStorage.hasOwnProperty(key) && key) {
-      localStorage.removeItem(key)
+      localStorage.removeItem(key);
     }
   }
-}
+};
 
-var getHeaders = function (contentType) {
+var getHeaders = function(contentType) {
   var currentUser = isAuthenticated();
 
   if (!currentUser) {
     return {
-      'Accept': 'application/json',
-      'Content-Type': contentType,
-      'dataType': 'json',
+      Accept: "application/json",
+      "Content-Type": contentType,
+      dataType: "json"
     };
   } else {
     return {
-      'Accept': 'application/json',
-      'Content-Type': contentType,
-      'dataType': 'json',
-      'token': currentUser.token
+      Accept: "application/json",
+      "Content-Type": contentType,
+      dataType: "json",
+      token: currentUser.token
     };
   }
-}
+};
 
-let timeParser = (GMT) => {
-  let date = moment(GMT).format('LLL')
+let timeParser = GMT => {
+  let date = moment(GMT).format("LLL");
   return date;
-}
+};
 
-let unixToLocal = (unixTime) => {
-  var local = moment(unixTime, "YYYYMMDD").format('LLL')
-  return local
-}
+let unixToLocal = unixTime => {
+  var local = moment(unixTime, "YYYYMMDD").format("LLL");
+  return local;
+};
 
 let formatDateTime = (date, time) => {
   var local;
   if (!date) {
-    return "-"
+    return "-";
   } else if (!time) {
-    local = moment(date.toString(), "YYYYMMDD").format('LL')
+    local = moment(date.toString(), "YYYYMMDD").format("LL");
   } else {
-    local = moment(date.toString() + time.toString(), "YYYYMMDDhhmmss").format('LLL')
+    local = moment(date.toString() + time.toString(), "YYYYMMDDhhmmss").format(
+      "LLL"
+    );
   }
-  return local
-}
-
+  return local;
+};
 
 export {
   isAuthenticated,
@@ -61,4 +62,4 @@ export {
   timeParser,
   unixToLocal,
   formatDateTime
-}
+};

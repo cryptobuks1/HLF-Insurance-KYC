@@ -74,25 +74,25 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 		return s.addIDRecordForUser(APIstub, args)
 	}
 
-	// *---- for testing without attrs ----*
-	currentUser := user.User{
-		ID:             "User-Client1",
-		OrganizationID: "InsuranceCompany1",
-		Role:           "Client",
-	}
-	currentUserOrg := org.Organization{
-		ID:    "InsuranceCompany1",
-		Roles: []string{"Admin", "Client"},
-	}
-
-	// // *---- for testing with attrs ----*
-	// prereqs, shimError := GetPrerequisites(APIstub)
-	// if shimError.GetMessage() != "" {
-	// 	return shimError
+	// // *---- for testing without attrs ----*
+	// currentUser := user.User{
+	// 	ID:             "User-Client1",
+	// 	OrganizationID: "InsuranceCompany1",
+	// 	Role:           "Client",
+	// }
+	// currentUserOrg := org.Organization{
+	// 	ID:    "InsuranceCompany1",
+	// 	Roles: []string{"Admin", "Client"},
 	// }
 
-	// currentUser := prereqs.User
-	// currentUserOrg := prereqs.Org
+	// *---- for testing with attrs ----*
+	prereqs, shimError := GetPrerequisites(APIstub)
+	if shimError.GetMessage() != "" {
+		return shimError
+	}
+
+	currentUser := prereqs.User
+	currentUserOrg := prereqs.Org
 
 	if function == "getCurrentUser" {
 		return GetCurrentUser(APIstub, []string{currentUser.ID}, currentUserOrg)

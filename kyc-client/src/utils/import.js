@@ -16,6 +16,8 @@ let upload = card => {
     fs.writeFileSync(key_store + "/" + key, zip.files[key]["_data"]);
   }
 
+  console.log("Username", userName);
+
   // Generate jwt token
   let token = jwt.generate(userName);
 

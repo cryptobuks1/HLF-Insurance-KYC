@@ -7,6 +7,6 @@ cd kyc-chaincode
 sleep 3
 cd ..
 cd kyc-client/src
-npm install
+# npm install
 ./scripts/set-up-client.sh
 node app.js

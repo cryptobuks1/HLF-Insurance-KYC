@@ -1,0 +1,75 @@
+{
+  "approved_requests": [
+    [
+      {
+        "aadhar_subrecord": {
+          "kycId": "7837c3d137e9dcc64d4a4fe899cb3343",
+          "mspId": "Org1MSP"
+        },
+        "kyc_record": {
+          "id": "7837c3d137e9dcc64d4a4fe899cb3343",
+          "name": "Priyansh Jain",
+          "aadharId": "125214426596",
+          "phoneNumbers": ["9789096037"],
+          "addressIds": ["b666504e07bf80db118508ff7cace25d"],
+          "owner": "User-480351bac86f52132047fb965f18cc10",
+          "created_by": "User-480351bac86f52132047fb965f18cc10",
+          "mspId": "Org1MSP",
+          "createdAt": "2019-03-17T18:15:14Z",
+          "updatedAt": "",
+          "class": "Record",
+          "date_of_birth": "12/04/1998",
+          "birth_marks": "Chin",
+          "mothers_maiden_name": "Mother",
+          "drivers_license": "DriverLicense",
+          "passport": "11",
+          "card_information": "11",
+          "nationality": "Indian",
+          "email_address": "priyanshjain412@gmail.com",
+          "loyalty_cards": "Card0",
+          "preferences": "NIL",
+          "status": "Processed",
+          "addresses": [
+            {
+              "id": "b666504e07bf80db118508ff7cace25d",
+              "addressType": "Home",
+              "addressLine1": "Lin1",
+              "addressLine2": "Lin2",
+              "addressLine3": "Lin3",
+              "cityOrTownOrVillage": "Chennai",
+              "postalCode": "600007",
+              "stateOrUT": "Tamil Nadu",
+              "createdAt": "2019-03-17T18:15:14Z",
+              "updatedAt": "",
+              "class": "Address"
+            }
+          ]
+        },
+        "verification_record": {
+          "class": "VerificationRecord",
+          "createdAt": "2019-03-17T18:17:34Z",
+          "id": "d0ca2742ac369a7b884451446c2392ef",
+          "kycId": "7837c3d137e9dcc64d4a4fe899cb3343",
+          "organizationId": "96e248295fbf44e9854aefa31c484e4f",
+          "referencedFrom": "",
+          "status": "Processed",
+          "updatedAt": "",
+          "verifiedBy": "User-96e248295fbf44e9854aefa31c484e4f"
+        }
+      }
+    ]
+  ],
+  "pending_requests": [],
+  "rejected_requests": [],
+  "approved_infos": [
+    {
+      "infos": [
+        "Name",
+        "CardInformation",
+        "AadharID",
+        "PhoneNumbers",
+        "EmailAddress"
+      ]
+    }
+  ]
+}

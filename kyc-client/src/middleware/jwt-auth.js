@@ -6,6 +6,7 @@ module.exports = {
     console.log(req.url);
     if (noAuthRoutes.includes(req.url)) return next();
     const user = jwt.verify(req.headers.token);
+
     if (user) {
       req.user = user;
       return next();

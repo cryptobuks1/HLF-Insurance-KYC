@@ -1,54 +1,56 @@
-import axios from 'axios';
-import { getHeaders, clearLocal } from './Utils';
+import axios from "axios";
+import { getHeaders, clearLocal } from "./Utils";
 
 // Add a response interceptor
-axios.interceptors.response.use(function (response) {
+axios.interceptors.response.use(function(response) {
   return response;
 }, handleErrors);
 
 class Api {
-  static headers(contentType = 'application/json') {
+  static headers(contentType = "application/json") {
     return getHeaders(contentType);
   }
 
   static get(route, params) {
-    return this.xhr(route, params, 'GET');
+    console.log("route", route);
+
+    return this.xhr(route, params, "GET");
   }
 
   static put(route, params) {
-    return this.xhr(route, params, 'PUT');
+    return this.xhr(route, params, "PUT");
   }
 
   static post(route, params) {
-    return this.xhr(route, params, 'POST');
+    return this.xhr(route, params, "POST");
   }
 
   static postWithFiles(route, params) {
-    return this.xhr(route, params, 'POST', 'multipart/form-data');
+    return this.xhr(route, params, "POST", "multipart/form-data");
   }
 
   static delete(route, params) {
-    return this.xhr(route, params, 'DELETE');
+    return this.xhr(route, params, "DELETE");
   }
 
   static patch(route, params) {
-    return this.xhr(route, params, 'PATCH');
+    return this.xhr(route, params, "PATCH");
   }
 
   static xhr(route, params, verb, contentType) {
     var dataOption = {};
-    if (params && verb === 'GET') {
-      dataOption['params'] = params;
+    if (params && verb === "GET") {
+      dataOption["params"] = params;
     } else {
-      dataOption['data'] = params;
+      dataOption["data"] = params;
     }
 
     let options = Object.assign({ method: verb, url: route }, dataOption);
     options.headers = Api.headers(contentType);
-    return axios(options)
-      .then((responseJson) => {
-        return responseJson.data;
-      });
+
+    return axios(options).then(responseJson => {
+      return responseJson.data;
+    });
   }
 }
 
@@ -67,6 +69,5 @@ function handleErrors(error) {
   }
   return Promise.reject(error);
 }
-
 
 export default Api;
