@@ -694,7 +694,8 @@ func GetAllClaims(APIstub shim.ChaincodeStubInterface, args []string, orgID stri
 
 // GetUserClaims returns all the claims for a user
 func GetUserClaims(APIstub shim.ChaincodeStubInterface, args []string, userID string) sc.Response {
-	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"status\":\""+args[0]+"\"},{\"insureeId\":\""+userID+"\"},{\"class\": \"Claim\"}]}}")
+	fmt.Println("get user claims called")
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"insureeId\":\""+userID+"\"},{\"class\": \"Claim\"}]}}")
 	if err != nil {
 		fmt.Println(err.Error())
 		if err.Error() == "No records found" {

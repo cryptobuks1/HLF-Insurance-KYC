@@ -7,7 +7,7 @@ let config = require("./utils/config");
 let Variables = require("./utils/variables");
 let parseArgs = require("./utils/parse-args");
 
-class KYC {
+class Handler {
   constructor(userName) {
     this.currentUser;
     this.issuer;
@@ -593,4 +593,4 @@ class KYC {
   }
 }
 
-module.exports = KYC;
+module.exports = Handler;

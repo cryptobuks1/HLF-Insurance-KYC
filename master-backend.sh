@@ -2,11 +2,11 @@
 
 set -ev
 
-cd kyc-chaincode
+cd tarp-chaincode
 ./start.sh && ./install.sh
 sleep 3
 cd ..
-cd kyc-client/src
+cd tarp-client/src
 # npm install
 ./scripts/set-up-client.sh
 node app.js

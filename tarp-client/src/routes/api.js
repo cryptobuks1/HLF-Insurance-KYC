@@ -1,7 +1,7 @@
 // require modules
 require("dotenv").config();
 const express = require("express");
-const KYC = require("../kyc");
+const Handler = require("../handler");
 const card = require("../utils/import");
 let query = require("url");
 let Parser = require("../utils/Parser");
@@ -19,12 +19,12 @@ router.post("/login", function(req, res) {
 
 // 2. Add an Organization to state x
 router.post("/add-organization", function(req, res) {
-  let kyc = new KYC("admin");
+  let handler = new Handler("admin");
   req.body["organization_type"] = "Bank";
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.addOrganization(req.body);
+      return handler.addOrganization(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -36,11 +36,11 @@ router.post("/add-organization", function(req, res) {
 
 // 3. Add a role to the organization x
 router.post("/add-role-to-org", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.addRoleToOrganization(req.body);
+      return handler.addRoleToOrganization(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -52,11 +52,11 @@ router.post("/add-role-to-org", function(req, res) {
 
 // 4. Add a user to the state x
 router.post("/add-user", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.addUser(req.body);
+      return handler.addUser(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -68,11 +68,11 @@ router.post("/add-user", function(req, res) {
 
 // 6. Add Identity Record for a user x
 router.post("/issue-identity", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.addIDRecordForUser(req.body.user_id);
+      return handler.addIDRecordForUser(req.body.user_id);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -84,11 +84,11 @@ router.post("/issue-identity", function(req, res) {
 
 // 7. Revoke an Enrollment ID of a User x
 router.post("/revoke-identity-record", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.revokeIdentityRecord(req.body);
+      return handler.revokeIdentityRecord(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -100,11 +100,11 @@ router.post("/revoke-identity-record", function(req, res) {
 
 // 8. Revoke a User completely
 router.post("/revoke-user", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.revokeUser(req.body);
+      return handler.revokeUser(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -114,14 +114,14 @@ router.post("/revoke-user", function(req, res) {
     });
 });
 
-router.post("/add-kyc-record", function(req, res) {
-  let kyc = new KYC(req.user);
+router.post("/add-handler-record", function(req, res) {
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.addKYCRecord(req.body);
+      return handler.addHandlerRecord(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -131,12 +131,12 @@ router.post("/add-kyc-record", function(req, res) {
     });
 });
 
-router.post("/add-address-to-kyc", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+router.post("/add-address-to-handler", function(req, res) {
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.addAddressToKYC(req.body);
+      return handler.addAddressToHandler(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -147,11 +147,11 @@ router.post("/add-address-to-kyc", function(req, res) {
 });
 
 router.post("/add-verification-record", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.addVerificationRecord(req.body);
+      return handler.addVerificationRecord(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -162,11 +162,11 @@ router.post("/add-verification-record", function(req, res) {
 });
 
 router.post("/update-verification-record", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.updateVerificationRecord(req.body);
+      return handler.updateVerificationRecord(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -177,12 +177,12 @@ router.post("/update-verification-record", function(req, res) {
     });
 });
 
-router.post("/update-kyc-record", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+router.post("/update-handler-record", function(req, res) {
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.updateKYCRecord(req.body);
+      return handler.updateHandlerRecord(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -194,11 +194,11 @@ router.post("/update-kyc-record", function(req, res) {
 
 router.post("/create-request", function(req, res) {
   console.log("heklk");
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.createRequest(req.body);
+      return handler.createRequest(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -209,11 +209,11 @@ router.post("/create-request", function(req, res) {
 });
 
 router.post("/approve-request", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.approveRequest(req.body);
+      return handler.approveRequest(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -224,11 +224,11 @@ router.post("/approve-request", function(req, res) {
 });
 
 router.post("/release-request", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.approveCBBankRequest(req.body);
+      return handler.approveCBBankRequest(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -239,11 +239,11 @@ router.post("/release-request", function(req, res) {
 });
 
 router.get("/list-users", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getAllUsers();
+      return handler.getAllUsers();
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -254,11 +254,11 @@ router.get("/list-users", function(req, res) {
 });
 
 router.get("/get-user-details", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getUserDetails(query.parse(req.url, true).query);
+      return handler.getUserDetails(query.parse(req.url, true).query);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -270,11 +270,13 @@ router.get("/get-user-details", function(req, res) {
 
 router.get("/get-records-by-aadhar", function(req, res) {
   console.log("came");
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getRecordIDsByAadharNumber(query.parse(req.url, true).query);
+      return handler.getRecordIDsByAadharNumber(
+        query.parse(req.url, true).query
+      );
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -287,11 +289,11 @@ router.get("/get-records-by-aadhar", function(req, res) {
 
 router.get("/search-aadhaar", function(req, res) {
   console.log("came");
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getNameFromAadhar(query.parse(req.url, true).query);
+      return handler.getNameFromAadhar(query.parse(req.url, true).query);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -302,12 +304,14 @@ router.get("/search-aadhaar", function(req, res) {
     });
 });
 
-router.get("/get-verification-record-by-kycid", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+router.get("/get-verification-record-by-handlerid", function(req, res) {
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getVerificationRecordByKYCID(query.parse(req.url, true).query);
+      return handler.getVerificationRecordByHandlerID(
+        query.parse(req.url, true).query
+      );
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -317,12 +321,12 @@ router.get("/get-verification-record-by-kycid", function(req, res) {
     });
 });
 
-router.get("/get-kyc-record-details", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+router.get("/get-handler-record-details", function(req, res) {
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getKYCRecordDetails(query.parse(req.url, true).query);
+      return handler.getHandlerRecordDetails(query.parse(req.url, true).query);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -333,11 +337,11 @@ router.get("/get-kyc-record-details", function(req, res) {
 });
 
 router.get("/get-address-details", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getAddressDetails(query.parse(req.url, true).query);
+      return handler.getAddressDetails(query.parse(req.url, true).query);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -348,11 +352,11 @@ router.get("/get-address-details", function(req, res) {
 });
 
 router.get("/get-user-enrollments", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getUserEnrollments(query.parse(req.url, true).query);
+      return handler.getUserEnrollments(query.parse(req.url, true).query);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -363,11 +367,11 @@ router.get("/get-user-enrollments", function(req, res) {
 });
 
 router.get("/get-current-user", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getCurrentUser();
+      return handler.getCurrentUser();
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -377,12 +381,12 @@ router.get("/get-current-user", function(req, res) {
     });
 });
 
-router.get("/list-client-kyc", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+router.get("/list-client-handler", function(req, res) {
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getUserRecords();
+      return handler.getUserRecords();
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -392,12 +396,12 @@ router.get("/list-client-kyc", function(req, res) {
     });
 });
 
-router.get("/list-kycs", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+router.get("/list-handlers", function(req, res) {
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getAllRecords();
+      return handler.getAllRecords();
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -408,11 +412,11 @@ router.get("/list-kycs", function(req, res) {
 });
 
 router.get("/list-user-requests", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getUserRequests();
+      return handler.getUserRequests();
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -422,13 +426,13 @@ router.get("/list-user-requests", function(req, res) {
     });
 });
 
-router.get("/get-client-kyc", function(req, res) {
+router.get("/get-client-handler", function(req, res) {
   console.log(query.parse(req.url, true).query);
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getCurrentUserKYC(query.parse(req.url, true).query);
+      return handler.getCurrentUserHandler(query.parse(req.url, true).query);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -439,11 +443,11 @@ router.get("/get-client-kyc", function(req, res) {
 });
 
 router.get("/get-client-approved-request", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getAllOrgRequests();
+      return handler.getAllOrgRequests();
     })
     .then(function(data) {
       console.log("data", data);
@@ -455,11 +459,11 @@ router.get("/get-client-approved-request", function(req, res) {
 });
 
 router.get("/list-org-requests", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.getOrgRequests();
+      return handler.getOrgRequests();
     })
     .then(function(data) {
       data = Parser.parseOrgReq(data);
@@ -474,12 +478,12 @@ router.get("/list-org-requests", function(req, res) {
     });
 });
 
-router.post("/import-kyc", function(req, res) {
-  let kyc = new KYC(req.user);
-  kyc
+router.post("/import-handler", function(req, res) {
+  let handler = new Handler(req.user);
+  handler
     .init()
     .then(function() {
-      return kyc.importKYC(req.files.kyc.data.toString());
+      return handler.importHandler(req.files.handler.data.toString());
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -492,13 +496,13 @@ router.post("/import-kyc", function(req, res) {
 // Insurance routes
 // 9. Add an Claim to state x
 router.post("/add-claim", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.addClaim(req.body);
+      return handler.addClaim(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -510,13 +514,13 @@ router.post("/add-claim", function(req, res) {
 
 // 11. Update the Status of a Claim x
 router.post("/update-claim-status", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.updateClaimStatus(req.body);
+      return handler.updateClaimStatus(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -528,13 +532,13 @@ router.post("/update-claim-status", function(req, res) {
 
 // 12. Get Details of a Claim x
 router.get("/get-claim-details", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.getClaimDetails(req.body);
+      return handler.getClaimDetails(req.query);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -546,13 +550,13 @@ router.get("/get-claim-details", function(req, res) {
 
 // 13. Get Transactions for a Month x
 router.get("/get-tx-details", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.getTxnsByMonth(req.body);
+      return handler.getTxnsByMonth(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -564,13 +568,13 @@ router.get("/get-tx-details", function(req, res) {
 
 // 14. Add Proof to a claim x
 router.post("/add-proof", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.addProofToClaim(req.body);
+      return handler.addProofToClaim(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -582,13 +586,13 @@ router.post("/add-proof", function(req, res) {
 
 // 16. Get Details of a User x
 router.get("/get-all-users", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.getAllUsers(req.body);
+      return handler.getAllUsers(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -600,13 +604,13 @@ router.get("/get-all-users", function(req, res) {
 
 // 17. Search organisation
 router.get("/search-organisation", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.searchOrganization(req.body);
+      return handler.searchOrganization(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -618,13 +622,13 @@ router.get("/search-organisation", function(req, res) {
 
 // 18. Get identity records
 router.get("/list-identity", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.getUserEnrollments(req.body);
+      return handler.getUserEnrollments(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -636,13 +640,13 @@ router.get("/list-identity", function(req, res) {
 
 // 19. Get claims of a Hospital x
 router.get("/get-org-claims", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.getClaimsByOrg(req.body);
+      return handler.getClaimsByOrg(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -654,13 +658,13 @@ router.get("/get-org-claims", function(req, res) {
 
 // 20. Get claims of a Insuree x
 router.get("/get-user-claims", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.getUserClaims(req.body);
+      return handler.getUserClaims();
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -672,13 +676,13 @@ router.get("/get-user-claims", function(req, res) {
 
 // 20. Get claims of a Insurer x
 router.get("/get-all-claims", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.getAllClaims(req.body);
+      return handler.getAllClaims(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -690,13 +694,13 @@ router.get("/get-all-claims", function(req, res) {
 
 // 21. Get proof of a claim x
 router.get("/get-claim-proof", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
 
-  kyc
+  handler
     .init()
     .then(function() {
-      return kyc.getClaimProofs(req.body);
+      return handler.getClaimProofs(req.query);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -708,13 +712,13 @@ router.get("/get-claim-proof", function(req, res) {
 
 // 21. Get status timelinex
 router.get("/get-status-timeline", function(req, res) {
-  let kyc = new KYC(req.user);
+  let handler = new Handler(req.user);
   console.log(req.body);
-
-  kyc
+  console.log(req.query.claim_id);
+  handler
     .init()
     .then(function() {
-      return kyc.getStatusTimeline(req.body);
+      return handler.getStatusTimeline(req.query);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
