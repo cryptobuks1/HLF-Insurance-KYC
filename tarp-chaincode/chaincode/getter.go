@@ -829,7 +829,7 @@ func populateClaims(APIstub shim.ChaincodeStubInterface, searchResultsBytes []by
 	type PopulatedClaim struct {
 		claim.Claim
 		InsureeDetails    user.User        `json:"insureeDetails"`
-		HospitalDetails   org.Organization `json:"hospitalDetails"`
+		InsurerDetails    org.Organization `json:"insurerDetails"`
 		InsureeOrg        org.Organization `json:"insureeOrg"`
 		TransactionDetail txn.Transaction  `json:"transactionDetail"`
 	}
@@ -850,14 +850,14 @@ func populateClaims(APIstub shim.ChaincodeStubInterface, searchResultsBytes []by
 		claim := searchResults[i].Record
 		populatedClaim := PopulatedClaim{}
 
-		// adding the hospital
-		hospital := org.Organization{}
-		hospitalAsBytes, _ := APIstub.GetState(claim.OrganizationID)
-		err := json.Unmarshal(hospitalAsBytes, &hospital)
+		// adding the insurer
+		insurer := org.Organization{}
+		insurerAsBytes, _ := APIstub.GetState(claim.InsurerOrgID)
+		err := json.Unmarshal(insurerAsBytes, &insurer)
 		if err != nil {
 			return shim.Error(err.Error())
 		}
-		populatedClaim.HospitalDetails = hospital
+		populatedClaim.InsurerDetails = insurer
 
 		// adding the user details
 		user := user.User{}
