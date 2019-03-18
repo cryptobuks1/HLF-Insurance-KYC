@@ -381,7 +381,7 @@ router.get("/get-current-user", function(req, res) {
     });
 });
 
-router.get("/list-client-handler", function(req, res) {
+router.get("/list-client-kyc", function(req, res) {
   let handler = new Handler(req.user);
   handler
     .init()
@@ -396,7 +396,7 @@ router.get("/list-client-handler", function(req, res) {
     });
 });
 
-router.get("/list-handlers", function(req, res) {
+router.get("/list-kycs", function(req, res) {
   let handler = new Handler(req.user);
   handler
     .init()
@@ -647,6 +647,23 @@ router.get("/get-org-claims", function(req, res) {
     .init()
     .then(function() {
       return handler.getClaimsByOrg(req.body);
+    })
+    .then(function(data) {
+      res.status(200).json({ response: data });
+    })
+    .catch(function(err) {
+      res.status(500).json({ error: err.toString() });
+    });
+});
+
+router.get("/get-insurer-claims", function(req, res) {
+  let handler = new Handler(req.user);
+  console.log(req.body);
+
+  handler
+    .init()
+    .then(function() {
+      return handler.getInsurerClaims(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });

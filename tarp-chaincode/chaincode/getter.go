@@ -717,7 +717,7 @@ func GetOrgClaims(APIstub shim.ChaincodeStubInterface, args []string, orgID stri
 
 // GetInsurerClaims returns all claims of an org
 func GetInsurerClaims(APIstub shim.ChaincodeStubInterface, args []string, orgID string) sc.Response {
-	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"insurerId\":\""+orgID+"\"},{\"class\": \"Claim\"}]}}")
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"insurerOrgId\":\""+orgID+"\"},{\"class\": \"Claim\"}]}}")
 	if err != nil {
 		return shim.Error(err.Error())
 	}

@@ -153,7 +153,12 @@ let approveRequestArray = function(args) {
 };
 
 let addClaimArray = function(args) {
-  return [getRandomValue(), args.description, args.cost, args.organization_id];
+  return [
+    getRandomValue(),
+    args.description,
+    args.cost,
+    args.organization_name
+  ];
 };
 
 let updateClaimStatusArray = function(args) {

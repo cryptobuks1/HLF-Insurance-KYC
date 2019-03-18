@@ -2,7 +2,6 @@ console.log(process.env);
 const BASE_URL = process.env.REACT_APP_BASE_ENDPOINT + "/api";
 // const BASE_URL = "http://192.168.31.126:3000/api";
 
-
 const SYSTEM_PING = BASE_URL + "/system/ping";
 const SIGNUP = BASE_URL + "/add-organization";
 const WALLET_IMPORT = BASE_URL + "/login";
@@ -31,65 +30,58 @@ const RELEASE = BASE_URL + "/release-request";
 // const ISSUE_IDENTITY = BASE_URL + "/issue-identity";
 // const REVOKE_IDENTITY = BASE_URL + "/revoke-identity-record";
 // const FETCH_ALL_USERS = BASE_URL + "/get-all-users";
-// const ADD_CLAIM = BASE_URL + "/add-claim";
-// const GET_USER_CLAIMS = BASE_URL + "/get-user-claims";
-// const GET_HOSP_CLAIMS = BASE_URL + "/get-hosp-claims";
-// const GET_INSURER_CLAIMS = BASE_URL + "/get-all-claims";
-// const REVOKE_USER = BASE_URL + "/revoke-user";
-// const ADD_PROOF = BASE_URL + "/add-proof";
-// const GET_CLAIM_PROOF = BASE_URL + "/get-claim-proof"
-// const UPDATE_CLAIM_STATUS = BASE_URL + "/update-claim-status"
-// const GET_STATUS_TIMELINE = BASE_URL + "/get-status-timeline"
-// const GET_TX_BY_MONTH = BASE_URL + "/get-tx-details"
-// const GET_CLAIM_DETAILS = BASE_URL + "/claim-info"
-
-// // 
+const ADD_CLAIM = BASE_URL + "/add-claim";
+const GET_USER_CLAIMS = BASE_URL + "/get-user-claims";
+const GET_ORG_CLAIMS = BASE_URL + "/get-org-claims";
+const GET_INSURER_CLAIMS = BASE_URL + "/get-insurer-claims";
+const GET_ALL_CLAIMS = BASE_URL + "/get-all-claims";
+const ADD_PROOF = BASE_URL + "/add-proof";
+const GET_CLAIM_PROOF = BASE_URL + "/get-claim-proof";
+const UPDATE_CLAIM_STATUS = BASE_URL + "/update-claim-status";
+const GET_STATUS_TIMELINE = BASE_URL + "/get-status-timeline";
+const GET_TX_BY_MONTH = BASE_URL + "/get-tx-details";
+const GET_CLAIM_DETAILS = BASE_URL + "/claim-info";
+const SEARCH_ORGANIZATION = BASE_URL + "/search-organization";
+const LIST_IDENTITY = BASE_URL + "/list-identity";
+// //
 // const GET_MCO_CLAIMS = BASE_URL + "/list-entity-claims";
 // const BATCH_LIST = BASE_URL + "/list-batch";
 // const IMPORT_BATCH = BASE_URL + "/import-batch";
 
-
 export {
-	SYSTEM_PING,
-	SIGNUP,
-	WALLET_IMPORT,
-	KYC_IMPORT,
-	LOGOUT,
-	CREATE_USER,
+  SYSTEM_PING,
+  SIGNUP,
+  WALLET_IMPORT,
+  KYC_IMPORT,
+  LOGOUT,
+  CREATE_USER,
   IDENTITY_ISSUE,
   LIST_KYCS,
   LIST_USERS,
   CURRENT_USER_INFO,
   KYC_INFO,
-	GET_KYC_BY_AADHAAR,
-	APPROVE,
-	GET_CLIENT_KYC,
-	ADD_KYC,
-	PROCESS,
-	SEARCH_AADHAAR,
-	CREATE_REQUEST,
-	LIST_ORG_KYC,
-	LIST_REQUEST,
-	LIST_CLIENT_APPROVED_REQUEST,
-	RELEASE
-	// SEARCH_ORGANIZATION,
-	// LIST_IDENTITY,
-	// REVOKE_IDENTITY,
-	// FETCH_ALL_USERS,
-	// ISSUE_IDENTITY,
-	// ADD_CLAIM,
-	// GET_USER_CLAIMS,
-	// REVOKE_USER,
-	// GET_HOSP_CLAIMS,
-	// ADD_PROOF,
-	// GET_INSURER_CLAIMS,
-	// GET_CLAIM_PROOF,
-	// UPDATE_CLAIM_STATUS,
-	// GET_STATUS_TIMELINE,
-	// GET_TX_BY_MONTH,
-	// GET_CLAIM_DETAILS,
-	// // 
-	// GET_MCO_CLAIMS,
-	// BATCH_LIST,
-	// IMPORT_BATCH
+  GET_KYC_BY_AADHAAR,
+  APPROVE,
+  GET_CLIENT_KYC,
+  ADD_KYC,
+  PROCESS,
+  SEARCH_AADHAAR,
+  CREATE_REQUEST,
+  LIST_ORG_KYC,
+  LIST_REQUEST,
+  LIST_CLIENT_APPROVED_REQUEST,
+  RELEASE,
+  ADD_CLAIM,
+  GET_USER_CLAIMS,
+  GET_ORG_CLAIMS,
+  GET_ALL_CLAIMS,
+  ADD_PROOF,
+  GET_CLAIM_PROOF,
+  UPDATE_CLAIM_STATUS,
+  GET_STATUS_TIMELINE,
+  GET_TX_BY_MONTH,
+  GET_CLAIM_DETAILS,
+  SEARCH_ORGANIZATION,
+  LIST_IDENTITY,
+  GET_INSURER_CLAIMS
 };

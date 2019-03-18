@@ -548,10 +548,10 @@ func (s *SmartContract) addClaim(APIstub shim.ChaincodeStubInterface, args []str
 		return shim.Error(err.Error())
 	}
 
-	orgAsResponse := eh.AbsentError(APIstub, args[3])
-	if orgAsResponse.GetMessage() != "" {
-		return orgAsResponse
-	}
+	// orgAsResponse := eh.AbsentError(APIstub, args[3])
+	// if orgAsResponse.GetMessage() != "" {
+	// 	return orgAsResponse
+	// }
 
 	// acceptedStatus := []string{"Pending"}
 	// if !utils.StringInSlice(args[2], acceptedStatus) {

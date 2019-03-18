@@ -9,4 +9,4 @@ cd ..
 cd tarp-client/src
 # npm install
 ./scripts/set-up-client.sh
-node app.js
+nodemon

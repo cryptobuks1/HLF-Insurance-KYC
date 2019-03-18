@@ -171,6 +171,15 @@ class Handler {
     return this.connection.query(requestData);
   }
 
+  getInsurerClaims() {
+    let requestData = {
+      chaincodeId: config.chaincodeId,
+      fcn: "getInsurerClaims",
+      args: []
+    };
+    return this.connection.query(requestData);
+  }
+
   getAllClaims() {
     let requestData = {
       chaincodeId: config.chaincodeId,
