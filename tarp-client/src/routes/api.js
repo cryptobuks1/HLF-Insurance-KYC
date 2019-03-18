@@ -114,14 +114,14 @@ router.post("/revoke-user", function(req, res) {
     });
 });
 
-router.post("/add-handler-record", function(req, res) {
+router.post("/add-kyc-record", function(req, res) {
   let handler = new Handler(req.user);
   console.log(req.body);
 
   handler
     .init()
     .then(function() {
-      return handler.addHandlerRecord(req.body);
+      return handler.addKYCRecord(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -131,12 +131,12 @@ router.post("/add-handler-record", function(req, res) {
     });
 });
 
-router.post("/add-address-to-handler", function(req, res) {
+router.post("/add-address-to-kyc", function(req, res) {
   let handler = new Handler(req.user);
   handler
     .init()
     .then(function() {
-      return handler.addAddressToHandler(req.body);
+      return handler.addAddressToKYC(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -177,12 +177,12 @@ router.post("/update-verification-record", function(req, res) {
     });
 });
 
-router.post("/update-handler-record", function(req, res) {
+router.post("/update-kyc-record", function(req, res) {
   let handler = new Handler(req.user);
   handler
     .init()
     .then(function() {
-      return handler.updateHandlerRecord(req.body);
+      return handler.updateKYCRecord(req.body);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -304,12 +304,12 @@ router.get("/search-aadhaar", function(req, res) {
     });
 });
 
-router.get("/get-verification-record-by-handlerid", function(req, res) {
+router.get("/get-verification-record-by-kycid", function(req, res) {
   let handler = new Handler(req.user);
   handler
     .init()
     .then(function() {
-      return handler.getVerificationRecordByHandlerID(
+      return handler.getVerificationRecordByKYCID(
         query.parse(req.url, true).query
       );
     })
@@ -321,12 +321,12 @@ router.get("/get-verification-record-by-handlerid", function(req, res) {
     });
 });
 
-router.get("/get-handler-record-details", function(req, res) {
+router.get("/get-kyc-record-details", function(req, res) {
   let handler = new Handler(req.user);
   handler
     .init()
     .then(function() {
-      return handler.getHandlerRecordDetails(query.parse(req.url, true).query);
+      return handler.getKYCRecordDetails(query.parse(req.url, true).query);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -426,13 +426,13 @@ router.get("/list-user-requests", function(req, res) {
     });
 });
 
-router.get("/get-client-handler", function(req, res) {
+router.get("/get-client-kyc", function(req, res) {
   console.log(query.parse(req.url, true).query);
   let handler = new Handler(req.user);
   handler
     .init()
     .then(function() {
-      return handler.getCurrentUserHandler(query.parse(req.url, true).query);
+      return handler.getCurrentUserKYC(query.parse(req.url, true).query);
     })
     .then(function(data) {
       res.status(200).json({ response: data });
@@ -478,12 +478,12 @@ router.get("/list-org-requests", function(req, res) {
     });
 });
 
-router.post("/import-handler", function(req, res) {
+router.post("/import-kyc", function(req, res) {
   let handler = new Handler(req.user);
   handler
     .init()
     .then(function() {
-      return handler.importHandler(req.files.handler.data.toString());
+      return handler.importHandler(req.files.kyc.data.toString());
     })
     .then(function(data) {
       res.status(200).json({ response: data });

@@ -1,5 +1,5 @@
 require("dotenv").config();
-const KYC = require("../kyc");
+const Handler = require("../handler");
 let registerCentralBank = () => {
   let requestData = {
     name: "Central Bank",
@@ -7,11 +7,11 @@ let registerCentralBank = () => {
     organization_type: "CentralBank",
     created_at: new Date().toISOString()
   };
-  let kyc = new KYC("admin");
-  kyc
+  let handler = new Handler("admin");
+  handler
     .init()
     .then(function() {
-      return kyc.addOrganization(requestData);
+      return handler.addOrganization(requestData);
     })
     .then(function(data) {
       console.log(data);
