@@ -123,6 +123,8 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 		return GetUserClaims(APIstub, args, currentUser.ID)
 	} else if function == "getClaimsByOrg" {
 		return GetOrgClaims(APIstub, args, currentUserOrg.ID)
+	} else if function == "getInsurerClaims" {
+		return GetInsurerClaims(APIstub, args, currentUserOrg.ID)
 	} else if function == "getUserEnrollments" {
 		return GetUserEnrollments(APIstub, args)
 	} else if function == "getStatusTimeline" {
