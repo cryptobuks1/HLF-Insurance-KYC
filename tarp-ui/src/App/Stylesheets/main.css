@@ -286,7 +286,7 @@ body .ant-layout-header {
   margin-bottom: 20px; }
 
 .ant-layout {
-  background: #F4F7F9 !important; }
+  background: #f4f7f9 !important; }
 
 .empty-container {
   display: flex;
@@ -357,7 +357,8 @@ body .ant-layout-header {
         margin-right: 5px; }
     .Main-Layout .Page-Head-Buttons .button-primary span {
       margin-right: 5px; }
-    .Main-Layout .Page-Head-Buttons .button-primary i, .Main-Layout .Page-Head-Buttons .button-primary span {
+    .Main-Layout .Page-Head-Buttons .button-primary i,
+    .Main-Layout .Page-Head-Buttons .button-primary span {
       color: #052B82; }
   .Main-Layout .Page-Table .ant-table-body {
     background: white; }

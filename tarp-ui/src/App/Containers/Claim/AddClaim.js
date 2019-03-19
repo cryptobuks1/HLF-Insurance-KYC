@@ -40,7 +40,7 @@ class AddClaim extends Component {
         this.setState({
           loading: false
         });
-        message.error("Unable to get Claim records!");
+        message.error("Organization not found!");
       }
     });
   };

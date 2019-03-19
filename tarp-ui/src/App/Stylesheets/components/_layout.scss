@@ -1,7 +1,6 @@
-.ant-layout{
-  background: #F4F7F9 !important;
+.ant-layout {
+  background: #f4f7f9 !important;
 }
-
 
 .empty-container {
   display: flex;
@@ -20,7 +19,7 @@
 .demo-key-container {
   padding: 10px;
   flex-wrap: wrap;
-  .ant-btn{
+  .ant-btn {
     margin: 10px 4px;
   }
 }
@@ -35,79 +34,80 @@
   p {
     font-size: 20px;
   }
-  h3{
+  h3 {
     margin-top: 10px;
   }
 }
 
-.Page-Wrapper{
+.Page-Wrapper {
   padding: 5px 20px;
   margin: -20px;
   margin-top: 15px;
-  @include breakpoint(tablet){
+  @include breakpoint(tablet) {
     margin-top: 60px;
   }
 }
 
-.Main-Layout{
+.Main-Layout {
   display: flex;
   justify-content: center;
   align-items: center;
-  .ant-layout-content{
+  .ant-layout-content {
     width: 80%;
-    @include breakpoint(tablet){
+    @include breakpoint(tablet) {
       width: 95%;
     }
   }
-  .Page-Head{
+  .Page-Head {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
   }
-  .Page-Title{
-    h3{
+  .Page-Title {
+    h3 {
       font-weight: 500;
       font-size: 25px;
       margin-bottom: 0px;
     }
-    p{
+    p {
       margin-bottom: 0px;
     }
   }
-  .Page-Head-Buttons{
+  .Page-Head-Buttons {
     display: flex;
-    .Head-right-buttons{
+    .Head-right-buttons {
       display: flex;
     }
-    button{
+    button {
       margin-left: 10px;
       height: 33px;
-      span{
+      span {
         margin-right: 5px;
       }
     }
-    .button-primary{
-      span{
+    .button-primary {
+      span {
         margin-right: 5px;
       }
-      i, span{
+      i,
+      span {
         color: $brand_color;
       }
     }
   }
-  .Page-Table{
-    .ant-table-body{
+  .Page-Table {
+    .ant-table-body {
       background: white;
-      .ant-input-number{
+      .ant-input-number {
         margin-right: 10px;
       }
     }
-    td{
+    td {
       font-size: 13px;
     }
-    .ant-table-thead{
-      th{
+    .ant-table-thead {
+      th {
         font-weight: 700;
         font-size: 13px;
       }
@@ -119,17 +119,17 @@
   text-align: right !important;
 }
 
-.create-user{
-    width: 500px;
-    margin: 0 auto;
-    padding: 10px 30px;
-    background: white;
-    border-radius: 4px;
-   @include breakpoint(tablet){
+.create-user {
+  width: 500px;
+  margin: 0 auto;
+  padding: 10px 30px;
+  background: white;
+  border-radius: 4px;
+  @include breakpoint(tablet) {
     width: 100%;
     padding: 10px;
   }
-  .ant-btn{
+  .ant-btn {
     width: 100%;
     margin-top: 15px;
   }
@@ -157,7 +157,7 @@
   }
 }
 
-.add-kyc-form{
+.add-kyc-form {
   // width: 800px;
   margin: 0 auto;
   @include breakpoint(tablet) {
