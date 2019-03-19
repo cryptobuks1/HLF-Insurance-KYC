@@ -81,6 +81,11 @@ export default class App extends React.Component {
             path="/list-org-claims"
             component={Containers.ListOrgClaims}
           />
+          <Layouts.PrivateRoute
+            exact
+            path="/list-all-claims"
+            component={Containers.ListAllClaims}
+          />
           {/* 404 */}
           <Route component={Containers.NotFound} />
         </Switch>

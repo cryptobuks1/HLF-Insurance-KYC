@@ -13,6 +13,7 @@ import ClientApprovedRequest from "./KYC/ClientApprovedRequest";
 import AddClaim from "./Claim/AddClaim";
 import ListClientClaims from "./Claim/ListClientClaims";
 import ListOrgClaims from "./Claim/ListOrgClaims";
+import ListAllClaims from "./Claim/ListAllClaims";
 export {
   Login,
   NotFound,
@@ -28,5 +29,6 @@ export {
   ClientApprovedRequest,
   AddClaim,
   ListClientClaims,
-  ListOrgClaims
+  ListOrgClaims,
+  ListAllClaims
 };

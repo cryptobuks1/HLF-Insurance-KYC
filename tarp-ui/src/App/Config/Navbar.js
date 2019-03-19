@@ -1,7 +1,8 @@
 const CB_ADMIN_LINKS = [
   { name: "KYC Records", link: "/list-kycs" },
   { name: "KYC Requests", link: "/client-approved-requests" },
-  { name: "User Management", link: "/users" }
+  { name: "User Management", link: "/users" },
+  { name: "Claims", link: "/list-all-claims" }
 ];
 
 const CLIENT_LINKS = [

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card, Table, Button, message, Tag } from "antd";
-import { getInsurerClaims } from "../../Models/ClaimRecords";
-import ProcessModal from "../../Components/Claim/ProcessModal";
+import { getAllClaims } from "../../Models/ClaimRecords";
+import ProcessModal from "../../Components/KYC/ProcessModal";
 import { Link } from "react-router-dom";
 
 export default class ListClaim extends Component {
@@ -38,32 +38,37 @@ export default class ListClaim extends Component {
         key: "insureeDetails.name"
       },
       {
+        title: "Insurer Name",
+        dataIndex: "insurerDetails.name",
+        key: "insurerDetails.name"
+      },
+      {
         title: "Status",
         dataIndex: "status",
         key: "status"
-      },
-      {
-        title: "Actions",
-        dataIndex: "actions",
-        render: (text, record, index) => {
-          return (
-            <div style={{ display: "flex" }}>
-              <ProcessModal record={record} list={this.getInsurerClaims} />
-            </div>
-          );
-        }
       }
+      // {
+      //   title: "Actions",
+      //   dataIndex: "actions",
+      //   render: (text, record, index) => {
+      //     return (
+      //       <div style={{ display: "flex" }}>
+      //         <ProcessModal record={record} list={this.listClaims} />
+      //       </div>
+      //     );
+      //   }
+      // }
     ];
   }
 
   componentDidMount() {
-    this.getInsurerClaims();
+    this.getAllClaims();
   }
 
-  getInsurerClaims = () => {
+  getAllClaims = () => {
     message.loading("Fetching claims from Blockchain Ledger...", 0);
     this.setState({ loading: true });
-    getInsurerClaims({
+    getAllClaims({
       onSuccess: data => {
         this.setState({
           loading: false,
@@ -85,7 +90,7 @@ export default class ListClaim extends Component {
     return (
       <div>
         <Card
-          title="List Of Claims hehe"
+          title="List Of Claims"
           extra={
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <Link to="/client/claim/add-claim" />
