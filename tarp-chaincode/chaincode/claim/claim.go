@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
+	org "github.com/chaincode/organization"
 	txn "github.com/chaincode/transaction"
 	"github.com/chaincode/utils"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
@@ -58,19 +59,31 @@ func Add(APIstub shim.ChaincodeStubInterface, args []string, txnID string, userI
 	timestampAsInt := timestamp.GetSeconds()
 	isotimestamp := time.Unix(timestampAsInt, 0).Format(time.RFC3339)
 	txnDetails := []string{txnID, "CA - Claim Addition", isotimestamp, "", args[0]}
-
+	type SearchResult struct {
+		Key    string           `json:"key"`
+		Record org.Organization `json:"record"`
+	}
+	searchResultsBytes, err := utils.GetQueryResultForQueryString(APIstub, "{\"selector\": {\"$and\": [{\"name\":\""+args[3]+"\"},{\"class\": \"Organization\"}]}}")
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+	searchResults := []SearchResult{}
+	json.Unmarshal([]byte(searchResultsBytes), &searchResults)
+	if len(searchResults) < 1 {
+		return shim.Error("No org found with given name")
+	}
+	fmt.Println("Organization-Insurer ID is", searchResults[0].Record)
 	claim := Claim{
 		ID:             args[0],
 		Description:    args[1],
 		Status:         "Pending",
 		Cost:           args[2],
 		InsureeID:      userID,
-		InsurerOrgID:   args[3],
+		InsurerOrgID:   searchResults[0].Record.ID,
 		OrganizationID: currentOrgID,
 		CreatedAt:      isotimestamp,
 		Class:          "Claim",
 	}
-
 	claimAsBytes, _ := json.Marshal(claim)
 	APIstub.PutState(args[0], claimAsBytes)
 	txn.Add(APIstub, txnDetails)

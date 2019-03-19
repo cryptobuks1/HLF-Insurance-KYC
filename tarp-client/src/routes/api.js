@@ -12,6 +12,7 @@ const router = express.Router();
 // Routes
 // 1. Login x
 router.post("/login", function(req, res) {
+
   let token = card.upload(req.files.card);
 
   res.json({ token });

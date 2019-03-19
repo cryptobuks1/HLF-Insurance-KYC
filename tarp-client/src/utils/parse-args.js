@@ -12,7 +12,7 @@ let addOrganizationArray = args => {
     args.name,
     args.email,
     args.organization_type,
-    args.created_at
+    new Date().toUTCString()
   ];
 
   return returnData;
@@ -25,17 +25,24 @@ let addRoleToOrganizationArray = args => {
 };
 
 let addUserArray = args => {
+  console.log("TCL: args", args);
   if (args.aadhaarId) {
     return [
       getRandomValue(),
       args.name,
       args.role,
       args.email,
-      args.timestamp,
+      args.timestamp || new Date().toISOString(),
       args.aadhaarId
     ];
   } else {
-    return [getRandomValue(), args.name, args.role, args.email, args.timestamp];
+    return [
+      getRandomValue(),
+      args.name,
+      args.role,
+      args.email,
+      args.timestamp || new Date().toISOString()
+    ];
   }
 };
 

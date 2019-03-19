@@ -59,7 +59,7 @@ class AddClaim extends Component {
     ) {
       return "/claim";
     } else {
-      return "/client/claim";
+      return "/list-client-claims";
     }
   };
 

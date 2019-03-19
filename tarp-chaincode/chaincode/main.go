@@ -58,7 +58,7 @@ func (s *SmartContract) Init(APIstub shim.ChaincodeStubInterface) sc.Response {
 func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response {
 
 	function, args := APIstub.GetFunctionAndParameters()
-	fmt.Println(function, args)
+	fmt.Println("FunctionAndArgs", function, args)
 
 	if function == "testEncrypt" {
 		return s.testEncrypt(APIstub)
@@ -535,6 +535,7 @@ func (s *SmartContract) addProofToClaim(APIstub shim.ChaincodeStubInterface, arg
 
 func (s *SmartContract) addClaim(APIstub shim.ChaincodeStubInterface, args []string, txnID string, currentUser user.User, currentOrg org.Organization) sc.Response {
 
+	fmt.Println("Entered addClaim")
 	argAsResponse := eh.ArgumentError(4, args)
 	if argAsResponse.GetMessage() != "" {
 		return argAsResponse
@@ -558,6 +559,7 @@ func (s *SmartContract) addClaim(APIstub shim.ChaincodeStubInterface, args []str
 	// 	return shim.Error("Status update rejected.")
 	// }
 
+	fmt.Println("Attempting addClaim")
 	return claim.Add(APIstub, args, txnID, currentUser.ID, currentOrg.ID)
 }
 
