@@ -125,7 +125,7 @@ class Handler {
       txId: tx_id,
       chainId: config.chainId
     };
-    return this.connection.submitTransaction(requestData);
+    return this.connection.query(requestData);
   }
 
   getUserRecords() {
@@ -138,7 +138,7 @@ class Handler {
       chainId: config.chainId
     };
     console.log(requestData);
-    return this.connection.submitTransaction(requestData);
+    return this.connection.query(requestData);
   }
 
   addClaim(args) {

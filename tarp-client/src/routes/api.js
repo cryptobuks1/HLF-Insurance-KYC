@@ -3,18 +3,30 @@ require("dotenv").config();
 const express = require("express");
 const Handler = require("../handler");
 const card = require("../utils/import");
+const cloudinary = require("cloudinary").v2;
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET
+});
+
 let query = require("url");
 let Parser = require("../utils/Parser");
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
+
+const storage = multer.memoryStorage();
+const uploadBuffer = multer({ storage: storage });
 
 // Config
 const router = express.Router();
 
 // Routes
 // 1. Login x
-router.post("/login", function(req, res) {
+router.post("/login", uploadBuffer.single("card"), function(req, res) {
+  console.log(req.file);
 
-  let token = card.upload(req.files.card);
-
+  let token = card.upload(req.file);
   res.json({ token });
 });
 
@@ -116,6 +128,7 @@ router.post("/revoke-user", function(req, res) {
 });
 
 router.post("/add-kyc-record", function(req, res) {
+  const time1 = Date.now();
   let handler = new Handler(req.user);
   console.log(req.body);
 
@@ -125,6 +138,8 @@ router.post("/add-kyc-record", function(req, res) {
       return handler.addKYCRecord(req.body);
     })
     .then(function(data) {
+      const time2 = Date.now();
+      console.log("Time taken to add KYC record", time2 - time1);
       res.status(200).json({ response: data });
     })
     .catch(function(err) {
@@ -398,6 +413,7 @@ router.get("/list-client-kyc", function(req, res) {
 });
 
 router.get("/list-kycs", function(req, res) {
+  const time1 = Date.now();
   let handler = new Handler(req.user);
   handler
     .init()
@@ -405,6 +421,9 @@ router.get("/list-kycs", function(req, res) {
       return handler.getAllRecords();
     })
     .then(function(data) {
+      const time2 = Date.now();
+      console.log("Time taken to list KYC", time2 - time1);
+
       res.status(200).json({ response: data });
     })
     .catch(function(err) {
@@ -568,21 +587,25 @@ router.get("/get-tx-details", function(req, res) {
 });
 
 // 14. Add Proof to a claim x
-router.post("/add-proof", function(req, res) {
+router.post("/add-proof", upload.single("proofimg"), function(req, res) {
   let handler = new Handler(req.user);
-  console.log(req.body);
-
-  handler
-    .init()
-    .then(function() {
-      return handler.addProofToClaim(req.body);
-    })
-    .then(function(data) {
-      res.status(200).json({ response: data });
-    })
-    .catch(function(err) {
-      res.status(500).json({ error: err.toString() });
-    });
+  cloudinary.uploader.upload(req.file.path, function(err, result) {
+    console.log(err, result);
+    handler
+      .init()
+      .then(function() {
+        return handler.addProofToClaim({
+          proofUrl: result.url,
+          claim_id: req.headers.claim_id
+        });
+      })
+      .then(function(data) {
+        res.status(200).json({ response: data });
+      })
+      .catch(function(err) {
+        res.status(500).json({ error: err.toString() });
+      });
+  });
 });
 
 // 16. Get Details of a User x

@@ -1,0 +1,2541 @@
+[33m[nodemon] 1.18.4[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/login
+Username User-4a47410844a87bcfdfa2c8e13b0eebe6cfddb0fa
+/api/add-user
+TCL: args { name: 'client1Name',
+  email: 'priyansh.jain2016@vitstudent.ac.in',
+  role: 'Client',
+  aadhaarId: '123123123' }
+Transaction proposal was good
+{"id":"User-27e563543e00ba3cb94469af4475bf16","name":"client1Name","role":"Client","email":"priyansh.jain2016@vitstudent.ac.in","organizationId":"4a47410844a87bcfdfa2c8e13b0eebe6","national_id":"123123123","status":"Allow","enrollmentIds":null,"recordIds":null,"createdAt":"2019-04-04T08:16:37.632Z","updatedAt":"","class":"User"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+{ id: 'User-27e563543e00ba3cb94469af4475bf16',
+  name: 'client1Name',
+  role: 'Client',
+  email: 'priyansh.jain2016@vitstudent.ac.in',
+  organizationId: '4a47410844a87bcfdfa2c8e13b0eebe6',
+  national_id: '123123123',
+  status: 'Allow',
+  enrollmentIds: null,
+  recordIds: null,
+  createdAt: '2019-04-04T08:16:37.632Z',
+  updatedAt: '',
+  class: 'User' }
+Transaction proposal was good
+{"id":"55b3ff07464375cbc99e4b49c8bba10d","enrollmentId":"User-27e563543e00ba3cb94469af4475bf16d4aa37f0","userId":"User-27e563543e00ba3cb94469af4475bf16","status":"Allow","createdAt":"2019-04-04T08:16:40Z","revokedAt":"","class":"IdentityRecord"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+client1Name.card priyansh.jain2016@vitstudent.ac.in
+{ accepted: [ 'priyansh.jain2016@vitstudent.ac.in' ],
+  rejected: [],
+  envelopeTime: 887,
+  messageTime: 992,
+  messageSize: 3230,
+  response: '250 2.0.0 OK  1554365807 e10sm6930666iok.85 - gsmtp',
+  envelope: 
+   { from: 'priyanshjain412@gmail.com',
+     to: [ 'priyansh.jain2016@vitstudent.ac.in' ] },
+  messageId: '<356a2999-9f06-3666-9af4-3aa05618e497@gmail.com>' }
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+/api/login
+Username User-27e563543e00ba3cb94469af4475bf16d4aa37f0
+/api/get-current-user
+/api/get-client-kyc?aadhaarId=123123123
+{ aadhaarId: '123123123' }
+/api/list-user-requests
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: e496416a210c2bc7396d25ca0396ebb0 Doesn't Exist)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+/api/get-user-claims
+{}
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Test' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'Yesy1' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'hrlloo' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'hrllooa' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'hrllooaa' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'hrllooaaa' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'hrllooaaaa' }
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: No org found with given name)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+Transaction proposal was bad
+/api/add-claim
+{ description: 'Priyansh Jain',
+  cost: '1000',
+  organization_name: 'InsuranceCompany1' }
+Transaction proposal was good
+{"id":"6dcbb9ceda06232cbf7d9b239ad9af2b","description":"Priyansh Jain","status":"Pending","cost":"1000","insureeId":"User-27e563543e00ba3cb94469af4475bf16","userIds":null,"organizationId":"4a47410844a87bcfdfa2c8e13b0eebe6","insurerOrgId":"85fa1d012f6e7e340448a43cb3ae7806","createdAt":"2019-04-04T10:58:58Z","class":"Claim"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+/api/get-user-claims
+{}
+/api/login
+Username User-85fa1d012f6e7e340448a43cb3ae780627dc9d48
+/api/get-current-user
+/api/list-org-requests
+{ chaincodeId: 'mycc', fcn: 'getOrgRequests', args: [] }
+TCL: data []
+/api/login
+Username User-27e563543e00ba3cb94469af4475bf16d4aa37f0
+/api/get-current-user
+/api/get-client-kyc?aadhaarId=123123123
+{ aadhaarId: '123123123' }
+/api/list-user-requests
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: e496416a210c2bc7396d25ca0396ebb0 Doesn't Exist)
+    at new createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:64:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client.js:583:15
+/api/get-user-claims
+{}
+/api/login
+Username User-85fa1d012f6e7e340448a43cb3ae780627dc9d48
+/api/get-current-user
+/api/list-org-requests
+{ chaincodeId: 'mycc', fcn: 'getOrgRequests', args: [] }
+TCL: data []
+/api/search-aadhaar?aadhar_number=111
+came
+{ chaincodeId: 'mycc',
+  fcn: 'getNameFromAadhar',
+  args: [ '111' ] }
+/api/search-aadhaar?aadhar_number=111
+came
+{ chaincodeId: 'mycc',
+  fcn: 'getNameFromAadhar',
+  args: [ '111' ] }
+/api/get-insurer-claims
+{}
+/api/update-claim-status
+{ claim_id: '6dcbb9ceda06232cbf7d9b239ad9af2b',
+  status_update: 'Rejected' }
+Transaction proposal was good
+{"id":"6dcbb9ceda06232cbf7d9b239ad9af2b","description":"Priyansh Jain","status":"Rejected","cost":"1000","insureeId":"User-27e563543e00ba3cb94469af4475bf16","userIds":null,"organizationId":"4a47410844a87bcfdfa2c8e13b0eebe6","insurerOrgId":"85fa1d012f6e7e340448a43cb3ae7806","createdAt":"2019-04-04T10:58:58Z","class":"Claim"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+/api/get-insurer-claims
+{}
+/api/login
+Username User-85fa1d012f6e7e340448a43cb3ae780627dc9d48
+/api/get-current-user
+/api/list-org-requests
+{ chaincodeId: 'mycc', fcn: 'getOrgRequests', args: [] }
+TCL: data []
+/api/get-insurer-claims
+{}
+/api/login
+Username User-4a47410844a87bcfdfa2c8e13b0eebe6cfddb0fa
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 28
+/api/get-all-claims
+{}
+/api/list-users
+/api/get-client-approved-request
+{ chaincodeId: 'mycc', fcn: 'getAllOrgRequests', args: [] }
+data []
+/api/list-kycs
+Time taken to list KYC 29
+/api/get-all-claims
+{}
+/api/list-users
+/api/login
+Username User-85fa1d012f6e7e340448a43cb3ae780627dc9d48
+/api/get-current-user
+/api/list-org-requests
+{ chaincodeId: 'mycc', fcn: 'getOrgRequests', args: [] }
+TCL: data []
+/api/search-aadhaar?aadhar_number=12
+came
+{ chaincodeId: 'mycc', fcn: 'getNameFromAadhar', args: [ '12' ] }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/login
+Username User-27e563543e00ba3cb94469af4475bf16d4aa37f0
+/api/get-user-claims
+{}
+/api/add-proof
+{}
+TypeError: Cannot read property 'destination' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:589:39
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Immediate.<anonymous> (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/multer/lib/make-middleware.js:53:37)
+    at runCallback (timers.js:814:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+{}
+TypeError: Cannot read property 'path' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:589:39
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Immediate.<anonymous> (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/multer/lib/make-middleware.js:53:37)
+    at runCallback (timers.js:814:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+/api/add-proof
+{}
+TypeError: Cannot read property 'path' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:589:39
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Immediate.<anonymous> (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/multer/lib/make-middleware.js:53:37)
+    at runCallback (timers.js:814:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+/api/add-proof
+{}
+TypeError: Cannot read property 'path' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:589:39
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Immediate.<anonymous> (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/multer/lib/make-middleware.js:53:37)
+    at runCallback (timers.js:814:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+/api/add-proof
+{}
+TypeError: Cannot read property 'path' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:589:39
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Immediate.<anonymous> (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/multer/lib/make-middleware.js:53:37)
+    at runCallback (timers.js:814:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+/api/add-proof
+{}
+TypeError: Cannot read property 'path' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:589:39
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Immediate.<anonymous> (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/multer/lib/make-middleware.js:53:37)
+    at runCallback (timers.js:814:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+{}
+TypeError: Cannot read property 'path' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:589:39
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Immediate.<anonymous> (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/multer/lib/make-middleware.js:53:37)
+    at runCallback (timers.js:814:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+/api/add-proof
+{}
+TypeError: Cannot read property 'path' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:589:39
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Immediate.<anonymous> (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/multer/lib/make-middleware.js:53:37)
+    at runCallback (timers.js:814:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+{}
+TypeError: Cannot read property 'path' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:589:39
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Immediate.<anonymous> (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/multer/lib/make-middleware.js:53:37)
+    at runCallback (timers.js:814:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+{ proofimg: 
+   { name: 'oop3.jpeg',
+     data: <Buffer ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 03 02 02 02 02 02 03 02 02 02 03 03 03 03 04 06 04 04 04 04 04 08 06 06 05 ... >,
+     encoding: '7bit',
+     truncated: false,
+     mimetype: 'image/jpeg',
+     md5: 'b3e78d361eb4125090a1a0327fcc5719',
+     mv: [Function: mv] } }
+undefined
+TypeError: Cannot read property 'path' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:590:39
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Immediate.<anonymous> (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/multer/lib/make-middleware.js:53:37)
+    at runCallback (timers.js:814:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:13
+app.use(express.json());.use(express.)
+                        ^
+
+SyntaxError: Unexpected token .
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:616:28)
+    at Object.Module._extensions..js (module.js:663:10)
+    at Module.load (module.js:565:32)
+    at tryModuleLoad (module.js:505:12)
+    at Function.Module._load (module.js:497:3)
+    at Function.Module.runMain (module.js:693:10)
+    at startup (bootstrap_node.js:191:16)
+    at bootstrap_node.js:612:3
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:13
+app.use(express.json());.use(express.)
+                        ^
+
+SyntaxError: Unexpected token .
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:616:28)
+    at Object.Module._extensions..js (module.js:663:10)
+    at Module.load (module.js:565:32)
+    at tryModuleLoad (module.js:505:12)
+    at Function.Module._load (module.js:497:3)
+    at Function.Module.runMain (module.js:693:10)
+    at startup (bootstrap_node.js:191:16)
+    at bootstrap_node.js:612:3
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:14
+app.use(express.json());.use(express.)
+                        ^
+
+SyntaxError: Unexpected token .
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:616:28)
+    at Object.Module._extensions..js (module.js:663:10)
+    at Module.load (module.js:565:32)
+    at tryModuleLoad (module.js:505:12)
+    at Function.Module._load (module.js:497:3)
+    at Function.Module.runMain (module.js:693:10)
+    at startup (bootstrap_node.js:191:16)
+    at bootstrap_node.js:612:3
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:15
+app.use(express.json());.use(express.)
+                        ^
+
+SyntaxError: Unexpected token .
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:616:28)
+    at Object.Module._extensions..js (module.js:663:10)
+    at Module.load (module.js:565:32)
+    at tryModuleLoad (module.js:505:12)
+    at Function.Module._load (module.js:497:3)
+    at Function.Module.runMain (module.js:693:10)
+    at startup (bootstrap_node.js:191:16)
+    at bootstrap_node.js:612:3
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:14
+app.use(express.json());.use(express.)
+                        ^
+
+SyntaxError: Unexpected token .
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:616:28)
+    at Object.Module._extensions..js (module.js:663:10)
+    at Module.load (module.js:565:32)
+    at tryModuleLoad (module.js:505:12)
+    at Function.Module._load (module.js:497:3)
+    at Function.Module.runMain (module.js:693:10)
+    at startup (bootstrap_node.js:191:16)
+    at bootstrap_node.js:612:3
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:15
+app.use(express.json());.use(express.)
+                        ^
+
+SyntaxError: Unexpected token .
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:616:28)
+    at Object.Module._extensions..js (module.js:663:10)
+    at Module.load (module.js:565:32)
+    at tryModuleLoad (module.js:505:12)
+    at Function.Module._load (module.js:497:3)
+    at Function.Module.runMain (module.js:693:10)
+    at startup (bootstrap_node.js:191:16)
+    at bootstrap_node.js:612:3
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:14
+app.use(express.json());.use(express.)
+                        ^
+
+SyntaxError: Unexpected token .
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:616:28)
+    at Object.Module._extensions..js (module.js:663:10)
+    at Module.load (module.js:565:32)
+    at tryModuleLoad (module.js:505:12)
+    at Function.Module._load (module.js:497:3)
+    at Function.Module.runMain (module.js:693:10)
+    at startup (bootstrap_node.js:191:16)
+    at bootstrap_node.js:612:3
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:14
+app.use(express.json());.use(express.)
+                        ^
+
+SyntaxError: Unexpected token .
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:616:28)
+    at Object.Module._extensions..js (module.js:663:10)
+    at Module.load (module.js:565:32)
+    at tryModuleLoad (module.js:505:12)
+    at Function.Module._load (module.js:497:3)
+    at Function.Module.runMain (module.js:693:10)
+    at startup (bootstrap_node.js:191:16)
+    at bootstrap_node.js:612:3
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+{ proofimg: 
+   { name: 'oop3.jpeg',
+     data: <Buffer ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 03 02 02 02 02 02 03 02 02 02 03 03 03 03 04 06 04 04 04 04 04 08 06 06 05 ... >,
+     encoding: '7bit',
+     truncated: false,
+     mimetype: 'image/jpeg',
+     md5: 'b3e78d361eb4125090a1a0327fcc5719',
+     mv: [Function: mv] } }
+undefined
+TypeError: Cannot read property 'path' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:590:39
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Immediate.<anonymous> (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/multer/lib/make-middleware.js:53:37)
+    at runCallback (timers.js:814:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:32:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+{ proofimg: 
+   { name: 'oop3.jpeg',
+     data: <Buffer ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 03 02 02 02 02 02 03 02 02 02 03 03 03 03 04 06 04 04 04 04 04 08 06 06 05 ... >,
+     encoding: '7bit',
+     truncated: false,
+     mimetype: 'image/jpeg',
+     md5: 'b3e78d361eb4125090a1a0327fcc5719',
+     mv: [Function: mv] } }
+undefined
+TypeError: Cannot read property 'path' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:590:39
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Immediate.<anonymous> (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/multer/lib/make-middleware.js:53:37)
+    at runCallback (timers.js:814:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:32:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+undefined
+{ fieldname: 'proofimg',
+  originalname: 'oop3.jpeg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'uploads/',
+  filename: '5b71f0dcb3b8a3fe12f01640caa74184',
+  path: 'uploads/5b71f0dcb3b8a3fe12f01640caa74184',
+  size: 112940 }
+/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:592
+    req.body.proofUrl = result.url;
+                               ^
+
+TypeError: Cannot read property 'url' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:592:32
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cloudinary/lib/utils/index.js:1142:16
+    at IncomingMessage.res.on (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cloudinary/lib/uploader.js:391:16)
+    at emitNone (events.js:111:20)
+    at IncomingMessage.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+undefined
+{ fieldname: 'proofimg',
+  originalname: 'oop3.jpeg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'uploads/',
+  filename: 'bd3841d1ee27625639c2b276355f7ffd',
+  path: 'uploads/bd3841d1ee27625639c2b276355f7ffd',
+  size: 112940 }
+undefined
+/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:592
+    req.body.proofUrl = result.url;
+                               ^
+
+TypeError: Cannot read property 'url' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:592:32
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cloudinary/lib/utils/index.js:1142:16
+    at IncomingMessage.res.on (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cloudinary/lib/uploader.js:391:16)
+    at emitNone (events.js:111:20)
+    at IncomingMessage.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+undefined
+{ fieldname: 'proofimg',
+  originalname: 'oop3.jpeg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'uploads/',
+  filename: 'ecd3197b9398509488d7654b1e526912',
+  path: 'uploads/ecd3197b9398509488d7654b1e526912',
+  size: 112940 }
+undefined { public_id: 'e57uhw03fablksxcvjwt',
+  version: 1554379816,
+  signature: '7aac02a7c65e631a5549dae82aa73b7512c0ed6d',
+  width: 1280,
+  height: 692,
+  format: 'jpg',
+  resource_type: 'image',
+  created_at: '2019-04-04T12:10:16Z',
+  tags: [],
+  bytes: 112940,
+  type: 'upload',
+  etag: 'b3e78d361eb4125090a1a0327fcc5719',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554379816/e57uhw03fablksxcvjwt.jpg',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554379816/e57uhw03fablksxcvjwt.jpg',
+  original_filename: 'ecd3197b9398509488d7654b1e526912' }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+undefined
+{ fieldname: 'proofimg',
+  originalname: 'oop3.jpeg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'uploads/',
+  filename: 'b08b30df9022e2eae4901533c60fb2e7',
+  path: 'uploads/b08b30df9022e2eae4901533c60fb2e7',
+  size: 112940 }
+undefined { public_id: 'gtucyl85dztmfpbgeqlp',
+  version: 1554380001,
+  signature: 'b20e681a7c7872ea143c3d54ff549b70231c0105',
+  width: 1280,
+  height: 692,
+  format: 'jpg',
+  resource_type: 'image',
+  created_at: '2019-04-04T12:13:21Z',
+  tags: [],
+  bytes: 112940,
+  type: 'upload',
+  etag: 'b3e78d361eb4125090a1a0327fcc5719',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554380001/gtucyl85dztmfpbgeqlp.jpg',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554380001/gtucyl85dztmfpbgeqlp.jpg',
+  original_filename: 'b08b30df9022e2eae4901533c60fb2e7' }
+Transaction proposal was good
+{"id":"588d634005e711a335d81ef175bc34c1","claimId":"6dcbb9ceda06232cbf7d9b239ad9af2b","certificateId":"ThisIsASampleProofID234","url":"http://res.cloudinary.com/dtonolwac/image/upload/v1554380001/gtucyl85dztmfpbgeqlp.jpg","class":"Proof"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+2019-04-04T12:13:22.384Z - [31merror[39m: [Orderer.js]: sendBroadcast - on error: "Error: 8 RESOURCE_EXHAUSTED: Sent message larger than max (5444 vs. 15)\n    at Object.exports.createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/common.js:87:15)\n    at ClientDuplexStream._emitStatusIfDone (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client.js:235:26)\n    at ClientDuplexStream._readsDone (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client.js:201:8)\n    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:679:15"
+Error: Received status message on the block stream. status:FORBIDDEN
+    at ClientDuplexStream._stream.on (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/lib/ChannelEventHub.js:454:23)
+    at emitOne (events.js:116:13)
+    at ClientDuplexStream.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at ClientDuplexStream.Readable.push (_stream_readable.js:208:10)
+    at Object.onReceiveMessage (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:1276:19)
+    at InterceptingListener.recvMessageWithContext (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:603:19)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:702:14
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+undefined
+{ fieldname: 'proofimg',
+  originalname: 'oop3.jpeg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'uploads/',
+  filename: '39ea1138a40dfee0d9f77cd1c4bce69b',
+  path: 'uploads/39ea1138a40dfee0d9f77cd1c4bce69b',
+  size: 112940 }
+undefined { public_id: 'zlt5qux9wu1rhqvbta0v',
+  version: 1554380151,
+  signature: 'e53812afeb5eef1635124018cc60ad5ceced2350',
+  width: 1280,
+  height: 692,
+  format: 'jpg',
+  resource_type: 'image',
+  created_at: '2019-04-04T12:15:51Z',
+  tags: [],
+  bytes: 112940,
+  type: 'upload',
+  etag: 'b3e78d361eb4125090a1a0327fcc5719',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554380151/zlt5qux9wu1rhqvbta0v.jpg',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554380151/zlt5qux9wu1rhqvbta0v.jpg',
+  original_filename: '39ea1138a40dfee0d9f77cd1c4bce69b' }
+Transaction proposal was good
+{"id":"b765af171707c037d1df1bc9e418f838","claimId":"6dcbb9ceda06232cbf7d9b239ad9af2b","certificateId":"ThisIsASampleProofID234","url":"http://res.cloudinary.com/dtonolwac/image/upload/v1554380151/zlt5qux9wu1rhqvbta0v.jpg","class":"Proof"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+Error: Received status message on the block stream. status:FORBIDDEN
+    at ClientDuplexStream._stream.on (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/lib/ChannelEventHub.js:454:23)
+    at emitOne (events.js:116:13)
+    at ClientDuplexStream.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at ClientDuplexStream.Readable.push (_stream_readable.js:208:10)
+    at Object.onReceiveMessage (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:1276:19)
+    at InterceptingListener.recvMessageWithContext (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:603:19)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:702:14
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+undefined
+{ fieldname: 'proofimg',
+  originalname: 'oop3.jpeg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'uploads/',
+  filename: '4df61dfd361082761ec5a8d94a2f1f3d',
+  path: 'uploads/4df61dfd361082761ec5a8d94a2f1f3d',
+  size: 112940 }
+undefined { public_id: 'tmfwrdizokeauab9wvez',
+  version: 1554380393,
+  signature: 'b1d7b29c57f54096a1ae4ea26043888a4606f7cf',
+  width: 1280,
+  height: 692,
+  format: 'jpg',
+  resource_type: 'image',
+  created_at: '2019-04-04T12:19:53Z',
+  tags: [],
+  bytes: 112940,
+  type: 'upload',
+  etag: 'b3e78d361eb4125090a1a0327fcc5719',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554380393/tmfwrdizokeauab9wvez.jpg',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554380393/tmfwrdizokeauab9wvez.jpg',
+  original_filename: '4df61dfd361082761ec5a8d94a2f1f3d' }
+Transaction proposal was good
+{"id":"8e7004e6665c4d211ea7ac3a5b37cd54","claimId":"6dcbb9ceda06232cbf7d9b239ad9af2b","certificateId":"ThisIsASampleProofID234","url":"http://res.cloudinary.com/dtonolwac/image/upload/v1554380393/tmfwrdizokeauab9wvez.jpg","class":"Proof"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+Error: Received status message on the block stream. status:FORBIDDEN
+    at ClientDuplexStream._stream.on (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/lib/ChannelEventHub.js:454:23)
+    at emitOne (events.js:116:13)
+    at ClientDuplexStream.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at ClientDuplexStream.Readable.push (_stream_readable.js:208:10)
+    at Object.onReceiveMessage (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:1276:19)
+    at InterceptingListener.recvMessageWithContext (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:603:19)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:702:14
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+/api/add-proof
+undefined
+{ fieldname: 'proofimg',
+  originalname: 'oop3.jpeg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'uploads/',
+  filename: '49e1bcfa3ae8fc56d7fb4de18d5c6e24',
+  path: 'uploads/49e1bcfa3ae8fc56d7fb4de18d5c6e24',
+  size: 112940 }
+undefined { public_id: 'kpujrsyxu0cyxmm7txtk',
+  version: 1554380579,
+  signature: '8175384d00b64920c5bf507023ce199f9e383a14',
+  width: 1280,
+  height: 692,
+  format: 'jpg',
+  resource_type: 'image',
+  created_at: '2019-04-04T12:22:59Z',
+  tags: [],
+  bytes: 112940,
+  type: 'upload',
+  etag: 'b3e78d361eb4125090a1a0327fcc5719',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554380579/kpujrsyxu0cyxmm7txtk.jpg',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554380579/kpujrsyxu0cyxmm7txtk.jpg',
+  original_filename: '49e1bcfa3ae8fc56d7fb4de18d5c6e24' }
+[ Peer {
+    _options: 
+     { name: 'peer0.org1.example.com',
+       'grpc.keepalive_time_ms': 600000,
+       'grpc.ssl_target_name_override': 'peer0.org1.example.com',
+       'grpc.default_authority': 'peer0.org1.example.com',
+       'grpc.max_receive_message_length': -1,
+       'grpc.max_send_message_length': -1 },
+    clientCert: undefined,
+    _url: 'grpc://localhost:7051',
+    _endpoint: Endpoint { addr: 'localhost:7051', creds: ChannelCredentials {} },
+    _name: 'peer0.org1.example.com',
+    _request_timeout: 45000,
+    _grpc_wait_for_ready_timeout: 3000,
+    _endorserClient: 
+     ServiceClient {
+       '$interceptors': [],
+       '$interceptor_providers': [],
+       '$channel': Channel {} },
+    _discoveryClient: 
+     ServiceClient {
+       '$interceptors': [],
+       '$interceptor_providers': [],
+       '$channel': Channel {} } } ]
+Transaction proposal was good
+{"id":"bbef8b0128a1e6b16d50e80b2a60b754","claimId":"6dcbb9ceda06232cbf7d9b239ad9af2b","certificateId":"ThisIsASampleProofID234","url":"http://res.cloudinary.com/dtonolwac/image/upload/v1554380579/kpujrsyxu0cyxmm7txtk.jpg","class":"Proof"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+Error: Received status message on the block stream. status:FORBIDDEN
+    at ClientDuplexStream._stream.on (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/lib/ChannelEventHub.js:454:23)
+    at emitOne (events.js:116:13)
+    at ClientDuplexStream.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at ClientDuplexStream.Readable.push (_stream_readable.js:208:10)
+    at Object.onReceiveMessage (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:1276:19)
+    at InterceptingListener.recvMessageWithContext (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:603:19)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/fabric-client/node_modules/grpc/src/client_interceptors.js:702:14
+[33m[nodemon] 1.18.4[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[33m[nodemon] 1.18.4[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node app.js`[39m
+Listening to port 3000
+[33m[nodemon] 1.18.4[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:19439) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[33m[nodemon] 1.18.4[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:26834) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+/api/login
+TypeError: Cannot read property 'card' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:24:37
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:127:14)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:27583) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:27854) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:27874) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+/api/login
+TypeError: Cannot read property 'card' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:24:37
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:127:14)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+/api/login
+TypeError: Cannot read property 'card' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:24:37
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:127:14)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+/api/login
+TypeError: Cannot read property 'card' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:24:37
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:127:14)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+/api/login
+TypeError: Cannot read property 'card' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:24:37
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:127:14)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+/api/login
+TypeError: Cannot read property 'card' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:24:37
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:127:14)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+/api/login
+TypeError: Cannot read property 'card' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:24:37
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:127:14)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+/api/login
+TypeError: Cannot read property 'card' of undefined
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/routes/api.js:24:37
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:127:14)
+RangeError: Invalid status code: undefined
+    at ServerResponse.writeHead (_http_server.js:194:11)
+    at ServerResponse._implicitHeader (_http_server.js:185:8)
+    at write_ (_http_outgoing.js:632:9)
+    at ServerResponse.end (_http_outgoing.js:751:5)
+    at ServerResponse.send (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/response.js:267:15)
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:30:33)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:315:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:29034) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:29189) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:29274) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:29438) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:29507) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+/api/login
+{ fieldname: 'card',
+  originalname: 'InsuranceCompany1-AdminUser.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  destination: 'uploads/',
+  filename: '92042cfd10198d3354d5f5d8e9013811',
+  path: 'uploads/92042cfd10198d3354d5f5d8e9013811',
+  size: 2087 }
+Username undefined
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+/api/login
+{ fieldname: 'card',
+  originalname: 'InsuranceCompany1-AdminUser.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  destination: 'uploads/',
+  filename: '48e0db13500dc84165282c6de0bf07eb',
+  path: 'uploads/48e0db13500dc84165282c6de0bf07eb',
+  size: 2087 }
+Username undefined
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:29915) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:29980) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+/api/login
+Username undefined
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:30445) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+/api/login
+{ files: {}, comment: null, root: '', clone: [Function] }
+Username undefined
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:30853) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+/api/login
+undefined
+{ files: {}, comment: null, root: '', clone: [Function] }
+Username undefined
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:31057) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:31070) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:31130) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+/api/login
+{ fieldname: 'card',
+  originalname: 'InsuranceCompany1-AdminUser.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  destination: 'uploads/',
+  filename: '14d4d5d54ef1dbb5d020ff85d372b87e',
+  path: 'uploads/14d4d5d54ef1dbb5d020ff85d372b87e',
+  size: 2087 }
+undefined
+{ files: {}, comment: null, root: '', clone: [Function] }
+Username undefined
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+/api/get-current-user
+{ Error: Invalid token supplied with request.
+    at isAuthenticated (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/middleware/jwt-auth.js:14:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:137:13)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:281:22
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:354:14)
+    at param (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:410:3)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10) status: 500, message: 'Invalid token supplied with request.' }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:31724) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:31772) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:31834) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+/api/login
+{ fieldname: 'card',
+  originalname: 'Central Bank-AdminUser.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 fc 99 84 4e ce 14 40 9d 9b 00 00 00 b6 00 00 00 44 00 00 00 62 30 65 39 64 65 36 38 36 38 39 66 30 37 34 36 30 39 32 66 ... >,
+  size: 2080 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 fc 99 84 4e ce 14 40 9d 9b 00 00 00 b6 00 00 00 44 00 00 00 62 30 65 39 64 65 36 38 36 38 39 66 30 37 34 36 30 39 32 66 ... >
+{ files: 
+   { 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-pub': 
+      { name: 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-pub',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6Ctmd3PekOu8zDDVqOc1r7+BhAwo\r\nhSQG6ERsruU68BQmdfdOLfcStvUzI5/d1vnR1UV3StlVIfEcnJLgBsdfwg==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-priv': 
+      { name: 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-priv',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQghDIPzJEdeBQGWwQe\r\nZVFRQBt4tKnFDQ5naMqFHxt2unahRANCAAToK2Z3c96Q67zMMNWo5zWvv4GEDCiF\r\nJAboRGyu5TrwFCZ1904t9xK29TMjn93W+dHVRXdK2VUh8RyckuAGx1/C\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-d4e27796f5137dad4b074accd631af2e02e8ef59': 
+      { name: 'User-d4e27796f5137dad4b074accd631af2e02e8ef59',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-d4e27796f5137dad4b074accd631af2e02e8ef59","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDnTCCA0SgAwIBAgIUO1BMVDNgfmM1yrHZAlFkrb/e6VkwCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM0MTAwWhcNMjAwNDAzMTM0\\nNjAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItZDRlMjc3OTZmNTEzN2RhZDRiMDc0YWNj\\nZDYzMWFmMmUwMmU4ZWY1OTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABOgrZndz\\n3pDrvMww1ajnNa+/gYQMKIUkBuhEbK7lOvAUJnX3Ti33Erb1MyOf3db50dVFd0rZ\\nVSHxHJyS4AbHX8KjggG9MIIBuTAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQUwzlpBkCVfoHDDsVt4KIwkaAbjYAwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFLBggqAwQFBgcIAQSCAT17\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLWQ0ZTI3Nzk2ZjUxMzdkYWQ0\\nYjA3NGFjY2Q2MzFhZjJlMDJlOGVmNTkiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLWQ0ZTI3Nzk2ZjUx\\nMzdkYWQ0YjA3NGFjY2Q2MzFhZjJlIiwibmFtZSI6IkNlbnRyYWwgQmFuay1BZG1p\\nblVzZXIiLCJ1c2VyX3JvbGUiOiJBZG1pbiJ9fTAKBggqhkjOPQQDAgNHADBEAiAl\\ni0elCXVyu5Eb8O+UnSNCRaxVYoWPctHf2BbERyzDqgIgZtqECFIQbecFVMV+75VP\\nQC4/ynC0mAcEnfEQhAXcM9I=\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-d4e27796f5137dad4b074accd631af2e02e8ef59
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 65
+/api/get-client-approved-request
+{ chaincodeId: 'mycc', fcn: 'getAllOrgRequests', args: [] }
+data []
+/api/login
+{ fieldname: 'card',
+  originalname: 'Central Bank-AdminUser.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 fc 99 84 4e ce 14 40 9d 9b 00 00 00 b6 00 00 00 44 00 00 00 62 30 65 39 64 65 36 38 36 38 39 66 30 37 34 36 30 39 32 66 ... >,
+  size: 2080 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 fc 99 84 4e ce 14 40 9d 9b 00 00 00 b6 00 00 00 44 00 00 00 62 30 65 39 64 65 36 38 36 38 39 66 30 37 34 36 30 39 32 66 ... >
+{ files: 
+   { 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-pub': 
+      { name: 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-pub',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6Ctmd3PekOu8zDDVqOc1r7+BhAwo\r\nhSQG6ERsruU68BQmdfdOLfcStvUzI5/d1vnR1UV3StlVIfEcnJLgBsdfwg==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-priv': 
+      { name: 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-priv',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQghDIPzJEdeBQGWwQe\r\nZVFRQBt4tKnFDQ5naMqFHxt2unahRANCAAToK2Z3c96Q67zMMNWo5zWvv4GEDCiF\r\nJAboRGyu5TrwFCZ1904t9xK29TMjn93W+dHVRXdK2VUh8RyckuAGx1/C\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-d4e27796f5137dad4b074accd631af2e02e8ef59': 
+      { name: 'User-d4e27796f5137dad4b074accd631af2e02e8ef59',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-d4e27796f5137dad4b074accd631af2e02e8ef59","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDnTCCA0SgAwIBAgIUO1BMVDNgfmM1yrHZAlFkrb/e6VkwCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM0MTAwWhcNMjAwNDAzMTM0\\nNjAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItZDRlMjc3OTZmNTEzN2RhZDRiMDc0YWNj\\nZDYzMWFmMmUwMmU4ZWY1OTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABOgrZndz\\n3pDrvMww1ajnNa+/gYQMKIUkBuhEbK7lOvAUJnX3Ti33Erb1MyOf3db50dVFd0rZ\\nVSHxHJyS4AbHX8KjggG9MIIBuTAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQUwzlpBkCVfoHDDsVt4KIwkaAbjYAwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFLBggqAwQFBgcIAQSCAT17\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLWQ0ZTI3Nzk2ZjUxMzdkYWQ0\\nYjA3NGFjY2Q2MzFhZjJlMDJlOGVmNTkiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLWQ0ZTI3Nzk2ZjUx\\nMzdkYWQ0YjA3NGFjY2Q2MzFhZjJlIiwibmFtZSI6IkNlbnRyYWwgQmFuay1BZG1p\\nblVzZXIiLCJ1c2VyX3JvbGUiOiJBZG1pbiJ9fTAKBggqhkjOPQQDAgNHADBEAiAl\\ni0elCXVyu5Eb8O+UnSNCRaxVYoWPctHf2BbERyzDqgIgZtqECFIQbecFVMV+75VP\\nQC4/ynC0mAcEnfEQhAXcM9I=\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-d4e27796f5137dad4b074accd631af2e02e8ef59
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 35
+/api/login
+{ fieldname: 'card',
+  originalname: 'Central Bank-AdminUser.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 fc 99 84 4e ce 14 40 9d 9b 00 00 00 b6 00 00 00 44 00 00 00 62 30 65 39 64 65 36 38 36 38 39 66 30 37 34 36 30 39 32 66 ... >,
+  size: 2080 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 fc 99 84 4e ce 14 40 9d 9b 00 00 00 b6 00 00 00 44 00 00 00 62 30 65 39 64 65 36 38 36 38 39 66 30 37 34 36 30 39 32 66 ... >
+{ files: 
+   { 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-pub': 
+      { name: 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-pub',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6Ctmd3PekOu8zDDVqOc1r7+BhAwo\r\nhSQG6ERsruU68BQmdfdOLfcStvUzI5/d1vnR1UV3StlVIfEcnJLgBsdfwg==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-priv': 
+      { name: 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-priv',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQghDIPzJEdeBQGWwQe\r\nZVFRQBt4tKnFDQ5naMqFHxt2unahRANCAAToK2Z3c96Q67zMMNWo5zWvv4GEDCiF\r\nJAboRGyu5TrwFCZ1904t9xK29TMjn93W+dHVRXdK2VUh8RyckuAGx1/C\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-d4e27796f5137dad4b074accd631af2e02e8ef59': 
+      { name: 'User-d4e27796f5137dad4b074accd631af2e02e8ef59',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-d4e27796f5137dad4b074accd631af2e02e8ef59","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDnTCCA0SgAwIBAgIUO1BMVDNgfmM1yrHZAlFkrb/e6VkwCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM0MTAwWhcNMjAwNDAzMTM0\\nNjAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItZDRlMjc3OTZmNTEzN2RhZDRiMDc0YWNj\\nZDYzMWFmMmUwMmU4ZWY1OTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABOgrZndz\\n3pDrvMww1ajnNa+/gYQMKIUkBuhEbK7lOvAUJnX3Ti33Erb1MyOf3db50dVFd0rZ\\nVSHxHJyS4AbHX8KjggG9MIIBuTAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQUwzlpBkCVfoHDDsVt4KIwkaAbjYAwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFLBggqAwQFBgcIAQSCAT17\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLWQ0ZTI3Nzk2ZjUxMzdkYWQ0\\nYjA3NGFjY2Q2MzFhZjJlMDJlOGVmNTkiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLWQ0ZTI3Nzk2ZjUx\\nMzdkYWQ0YjA3NGFjY2Q2MzFhZjJlIiwibmFtZSI6IkNlbnRyYWwgQmFuay1BZG1p\\nblVzZXIiLCJ1c2VyX3JvbGUiOiJBZG1pbiJ9fTAKBggqhkjOPQQDAgNHADBEAiAl\\ni0elCXVyu5Eb8O+UnSNCRaxVYoWPctHf2BbERyzDqgIgZtqECFIQbecFVMV+75VP\\nQC4/ynC0mAcEnfEQhAXcM9I=\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-d4e27796f5137dad4b074accd631af2e02e8ef59
+/api/add-user
+TCL: args { name: 'client1Name',
+  email: 'priyansh.jain2016@vitstudent.ac.in',
+  role: 'Client',
+  aadhaarId: '123123123' }
+Transaction proposal was good
+{"id":"User-5bf9fe4bf5d3c38455fa25e02f88e3a6","name":"client1Name","role":"Client","email":"priyansh.jain2016@vitstudent.ac.in","organizationId":"d4e27796f5137dad4b074accd631af2e","national_id":"123123123","status":"Allow","enrollmentIds":null,"recordIds":null,"createdAt":"2019-04-04T14:00:13.693Z","updatedAt":"","class":"User"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+{ id: 'User-5bf9fe4bf5d3c38455fa25e02f88e3a6',
+  name: 'client1Name',
+  role: 'Client',
+  email: 'priyansh.jain2016@vitstudent.ac.in',
+  organizationId: 'd4e27796f5137dad4b074accd631af2e',
+  national_id: '123123123',
+  status: 'Allow',
+  enrollmentIds: null,
+  recordIds: null,
+  createdAt: '2019-04-04T14:00:13.693Z',
+  updatedAt: '',
+  class: 'User' }
+Transaction proposal was good
+{"id":"1ed3ef5554bd94079517b12531891087","enrollmentId":"User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d","userId":"User-5bf9fe4bf5d3c38455fa25e02f88e3a6","status":"Allow","createdAt":"2019-04-04T14:00:16Z","revokedAt":"","class":"IdentityRecord"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+client1Name.card priyansh.jain2016@vitstudent.ac.in
+{ accepted: [ 'priyansh.jain2016@vitstudent.ac.in' ],
+  rejected: [],
+  envelopeTime: 856,
+  messageTime: 1027,
+  messageSize: 3230,
+  response: '250 2.0.0 OK  1554386424 b63sm52653544pfj.54 - gsmtp',
+  envelope: 
+   { from: 'priyanshjain412@gmail.com',
+     to: [ 'priyansh.jain2016@vitstudent.ac.in' ] },
+  messageId: '<4346d71d-adbe-4e18-8604-bf514ee06def@gmail.com>' }
+/api/login
+{ fieldname: 'card',
+  originalname: 'client1Name.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 c9 9b 84 4e 03 1f dd 90 9c 00 00 00 b6 00 00 00 44 00 00 00 30 32 36 32 61 62 35 32 30 38 66 61 34 39 61 64 39 32 61 34 ... >,
+  size: 2067 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 c9 9b 84 4e 03 1f dd 90 9c 00 00 00 b6 00 00 00 44 00 00 00 30 32 36 32 61 62 35 32 30 38 66 61 34 39 61 64 39 32 61 34 ... >
+{ files: 
+   { '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-pub': 
+      { name: '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-pub',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGqaexIhiCvtkicns8NTvpbdHmejc\r\nyrUA0dUQS1uXP7nqhyt6Rdnu63is5X+YBerfi0vYSnF13KRFVS02H8tzSA==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-priv': 
+      { name: '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-priv',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQggFiAeJ8WfBM+Ltj8\r\nDp3FY9As9+2fAbNyqWUpUXZ5hIShRANCAAQapp7EiGIK+2SJyezw1O+lt0eZ6NzK\r\ntQDR1RBLW5c/ueqHK3pF2e7reKzlf5gF6t+LS9hKcXXcpEVVLTYfy3NI\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d': 
+      { name: 'User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDkzCCAzqgAwIBAgIUBpUF/wo5lknQZT2FD+NLBsaOwYowCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM1NTAwWhcNMjAwNDAzMTQw\\nMDAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItNWJmOWZlNGJmNWQzYzM4NDU1ZmEyNWUw\\nMmY4OGUzYTY0MjM1YWEwZDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABBqmnsSI\\nYgr7ZInJ7PDU76W3R5no3Mq1ANHVEEtblz+56ocrekXZ7ut4rOV/mAXq34tL2Epx\\nddykRVUtNh/Lc0ijggGzMIIBrzAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQU7Hkt8ZIZVuqV11L7v2zglCoIA/IwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFBBggqAwQFBgcIAQSCATN7\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLTViZjlmZTRiZjVkM2MzODQ1\\nNWZhMjVlMDJmODhlM2E2NDIzNWFhMGQiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLTViZjlmZTRiZjVk\\nM2MzODQ1NWZhMjVlMDJmODhlM2E2IiwibmFtZSI6ImNsaWVudDFOYW1lIiwidXNl\\ncl9yb2xlIjoiQ2xpZW50In19MAoGCCqGSM49BAMCA0cAMEQCIENBBf0QupE7H+33\\nTwJW0kZ+Dbk42YYIuwtkbF4iUX7nAiBVhmvDvYWD/6I0J5X8Ooqn1SXH0305FmoM\\nBlFodA47yQ==\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d
+/api/get-current-user
+/api/get-client-kyc?aadhaarId=123123123
+{ aadhaarId: '123123123' }
+/api/list-user-requests
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: f8a72025033e88eb333b20545f949c98 Doesn't Exist)
+    at Object.exports.createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/common.js:91:15)
+    at Object.onReceiveStatus (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client_interceptors.js:1204:28)
+    at InterceptingListener._callNext (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client_interceptors.js:568:42)
+    at InterceptingListener.onReceiveStatus (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client_interceptors.js:618:8)
+    at callback (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client_interceptors.js:845:24)
+/api/get-user-claims
+{}
+/api/get-client-kyc?aadhaarId=123123123
+{ aadhaarId: '123123123' }
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/add-claim
+{ description: 'Hello',
+  cost: 'Cost',
+  organization_name: 'InsuranceCompany1' }
+Transaction proposal was good
+{"id":"86e38425e8904eed64ef206be038efa2","description":"Hello","status":"Pending","cost":"Cost","insureeId":"User-5bf9fe4bf5d3c38455fa25e02f88e3a6","userIds":null,"organizationId":"d4e27796f5137dad4b074accd631af2e","insurerOrgId":"36cdf03884254fb6fd482a4321fb4acf","createdAt":"2019-04-04T14:02:47Z","class":"Claim"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:7143) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/add-proof
+undefined { public_id: 'pzqlujyc13vifn6djb4c',
+  version: 1554388024,
+  signature: '71ea0d38cf22451ede3c3a29bdd8e72bc180c2e3',
+  width: 3508,
+  height: 2480,
+  format: 'png',
+  resource_type: 'image',
+  created_at: '2019-04-04T14:27:04Z',
+  tags: [],
+  bytes: 388400,
+  type: 'upload',
+  etag: 'ac07b0b3257744a0b1778b37e263032c',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554388024/pzqlujyc13vifn6djb4c.png',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554388024/pzqlujyc13vifn6djb4c.png',
+  original_filename: '1d9a68a8e284d172c2c86debdbfdcd21' }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:8316) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:8450) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:8526) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:8645) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:8673) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:8785) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:8838) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+(node:8907) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+Listening to port 3000
+/api/get-current-user
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/add-proof
+undefined { public_id: 'dahodsgavx1d1ub2rys9',
+  version: 1554388323,
+  signature: '9a7cc58a3def3bb65bf7042b63ce076e9c3a1221',
+  width: 3508,
+  height: 2480,
+  format: 'png',
+  resource_type: 'image',
+  created_at: '2019-04-04T14:32:03Z',
+  tags: [],
+  bytes: 467950,
+  type: 'upload',
+  etag: 'f5ab280fb3a81d944a493025b7b80798',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554388323/dahodsgavx1d1ub2rys9.png',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554388323/dahodsgavx1d1ub2rys9.png',
+  original_filename: 'b66fe0720f9b0c87b1ace216a6e8c7c8' }
+Transaction proposal was good
+{"id":"ca1bfe3fc5707cbe8773402a7bd3a970","claimId":"86e38425e8904eed64ef206be038efa2","certificateId":"35ca276ba4cc8ddd6d42fad6fc091de8","url":"http://res.cloudinary.com/dtonolwac/image/upload/v1554388323/dahodsgavx1d1ub2rys9.png","class":"Proof"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+{ Error: Not Found
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:21:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:188:7)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:214:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:204:7)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12) status: 404 }
+{ Error: Not Found
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:21:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:188:7)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:214:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:204:7)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12) status: 404 }
+{ Error: Not Found
+    at app.use (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/app.js:21:15)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:188:7)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:214:15)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/cors/lib/index.js:204:7)
+    at Layer.handle [as handle_request] (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
+    at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12) status: 404 }

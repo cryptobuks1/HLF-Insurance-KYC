@@ -509,7 +509,7 @@ func (s *SmartContract) addUserToClaim(APIstub shim.ChaincodeStubInterface, args
 }
 func (s *SmartContract) addProofToClaim(APIstub shim.ChaincodeStubInterface, args []string, txnID string) sc.Response {
 
-	argAsResponse := eh.ArgumentError(3, args)
+	argAsResponse := eh.ArgumentError(4, args)
 	if argAsResponse.GetMessage() != "" {
 		return argAsResponse
 	}

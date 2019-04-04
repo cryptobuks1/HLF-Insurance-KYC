@@ -35,7 +35,7 @@ class FBClient extends FabricClient {
           throw new Error(results[0][0].details);
         }
         returnData = proposalResponses[0].response.payload.toString();
-        console.log(returnData)
+        console.log(returnData);
         returnData = JSON.parse(returnData);
         if (isProposalGood) {
           console.log(

@@ -27,6 +27,7 @@ let registerUser = () => {
 
   return request(options, function(error, response, body) {
     if (error) throw new Error(error);
+    console.log("hello", body);
 
     let token = JSON.parse(body).token;
     options = {

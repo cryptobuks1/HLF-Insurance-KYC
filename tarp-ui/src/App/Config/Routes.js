@@ -1,5 +1,5 @@
 console.log(process.env);
-const BASE_URL = process.env.REACT_APP_BASE_ENDPOINT + "/api";
+const BASE_URL = "http://localhost:3000" + "/api";
 // const BASE_URL = "http://192.168.31.126:3000/api";
 
 const SYSTEM_PING = BASE_URL + "/system/ping";
@@ -49,6 +49,7 @@ const LIST_IDENTITY = BASE_URL + "/list-identity";
 // const IMPORT_BATCH = BASE_URL + "/import-batch";
 
 export {
+  BASE_URL,
   SYSTEM_PING,
   SIGNUP,
   WALLET_IMPORT,

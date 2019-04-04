@@ -32,6 +32,7 @@ type Proof struct {
 	ID            string `json:"id"`
 	ClaimID       string `json:"claimId"`
 	CertificateID string `json:"certificateId"`
+	URL           string `json:"url"`
 	Class         string `json:"class"`
 
 	// more can be accomodated according to the use case
@@ -132,6 +133,7 @@ func AddProof(APIstub shim.ChaincodeStubInterface, args []string, txnID string) 
 		ID:            args[0],
 		ClaimID:       args[1],
 		CertificateID: args[2],
+		URL:           args[3],
 		Class:         "Proof",
 	}
 	proofAsBytes, _ := json.Marshal(proof)

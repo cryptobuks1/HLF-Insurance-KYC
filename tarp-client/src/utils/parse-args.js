@@ -173,7 +173,7 @@ let updateClaimStatusArray = function(args) {
 };
 
 let addProofToClaimArray = function(args) {
-  return [getRandomValue(), args.claim_id, args.certificate_id];
+  return [getRandomValue(), args.claim_id, getRandomValue(), args.proofUrl];
 };
 
 module.exports = {
