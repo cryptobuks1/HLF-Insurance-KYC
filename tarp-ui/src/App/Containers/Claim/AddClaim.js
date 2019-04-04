@@ -89,6 +89,11 @@ class AddClaim extends Component {
                 {getFieldDecorator("cost", {
                   rules: [
                     {
+                      type: "string",
+                      pattern: /^[1-9]{1}[0-9]{0,}$/g,
+                      message: "The input is not valid numerics!"
+                    },
+                    {
                       required: true,
                       message: "Please input the cost!"
                     }

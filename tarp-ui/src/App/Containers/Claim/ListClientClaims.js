@@ -8,10 +8,12 @@ import {
   Upload,
   Icon,
   Input,
-  Form
+  Form,
+  Divider
 } from "antd";
 import { getUserClaims } from "../../Models/ClaimRecords";
 import { getCurrentUser } from "../../Models/Auth";
+import { getClaimProof } from "../../Models/ClaimRecords";
 import { Link } from "react-router-dom";
 import { BASE_URL } from "../../Config/Routes";
 
@@ -64,12 +66,46 @@ export default class ListClaim extends Component {
               <Button type="primary" onClick={() => this.openModal(record)}>
                 Add Proof
               </Button>
+              <Divider type="vertical" />
+              <Button
+                type="primary"
+                onClick={() => this.downloadProofs(record)}
+              >
+                View Proofs
+              </Button>
             </div>
           );
         }
       }
     ];
   }
+
+  downloadProofs = record => {
+    this.setState({ loading: true });
+    getClaimProof({
+      claim_id: record.id,
+      onSuccess: data => {
+        data.response.forEach(element => {
+          const link = document.createElement("a");
+          link.setAttribute("href", element.record.url);
+          link.setAttribute("target", "_blank");
+          link.click();
+        });
+        message.success("Successfully downloaded proof");
+        this.setState({
+          loading: false
+        });
+      },
+      onError: data => {
+        this.setState({
+          loading: false
+        });
+        console.log(data);
+
+        message.error("Unable to download proof");
+      }
+    });
+  };
 
   renderContent = () => {
     const props = {
@@ -99,31 +135,14 @@ export default class ListClaim extends Component {
             <Icon type="upload" /> Click to Upload
           </Button>
         </Upload>
-        ,
       </div>
     );
   };
-
-  componentDidMount() {
-    this.getUserClaims();
-  }
 
   openModal = record => {
     this.setState({
       visible: true,
       selectedRecord: record
-    });
-  };
-  handleApprove = e => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        this.approveRequest(
-          this.state.selectedRecord,
-          "Approved",
-          values.timeLimit
-        );
-      }
     });
   };
 
@@ -133,6 +152,11 @@ export default class ListClaim extends Component {
       selectedRecord: null
     });
   };
+
+  componentDidMount() {
+    this.getUserClaims();
+  }
+
   getUserClaims = () => {
     message.loading("Fetching claims from Blockchain Ledger...", 0);
     this.setState({ loading: true });
@@ -182,6 +206,7 @@ export default class ListClaim extends Component {
             okText={"Approve"}
             onOk={this.handleApprove}
             width={800}
+            footer={null}
           >
             {this.renderContent()}
           </Modal>

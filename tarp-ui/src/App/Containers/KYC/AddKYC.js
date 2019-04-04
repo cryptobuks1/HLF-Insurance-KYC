@@ -120,7 +120,13 @@ class AddKYC extends Component {
               <FormItem>
                 {getFieldDecorator("phone_numbers", {
                   rules: [
-                    { required: true, message: "Please input mobile number!" }
+                    { required: true, message: "Please input mobile number!" },
+                    {
+                      type: "string",
+                      pattern: /[0-9]{10}/g,
+                      // len: 10,
+                      message: "Incorrect phone number"
+                    }
                   ]
                 })(<Input placeholder="Mobile Number" />)}
               </FormItem>

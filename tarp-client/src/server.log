@@ -2539,3 +2539,1031 @@ Successfully committed the change to the ledger by the peer
     at trim_prefix (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:317:13)
     at /home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:284:7
     at Function.process_params (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/express/lib/router/index.js:335:12) status: 404 }
+/api/login
+{ fieldname: 'card',
+  originalname: 'client1Name.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 c9 9b 84 4e 03 1f dd 90 9c 00 00 00 b6 00 00 00 44 00 00 00 30 32 36 32 61 62 35 32 30 38 66 61 34 39 61 64 39 32 61 34 ... >,
+  size: 2067 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 c9 9b 84 4e 03 1f dd 90 9c 00 00 00 b6 00 00 00 44 00 00 00 30 32 36 32 61 62 35 32 30 38 66 61 34 39 61 64 39 32 61 34 ... >
+{ files: 
+   { '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-pub': 
+      { name: '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-pub',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGqaexIhiCvtkicns8NTvpbdHmejc\r\nyrUA0dUQS1uXP7nqhyt6Rdnu63is5X+YBerfi0vYSnF13KRFVS02H8tzSA==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-priv': 
+      { name: '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-priv',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQggFiAeJ8WfBM+Ltj8\r\nDp3FY9As9+2fAbNyqWUpUXZ5hIShRANCAAQapp7EiGIK+2SJyezw1O+lt0eZ6NzK\r\ntQDR1RBLW5c/ueqHK3pF2e7reKzlf5gF6t+LS9hKcXXcpEVVLTYfy3NI\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d': 
+      { name: 'User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDkzCCAzqgAwIBAgIUBpUF/wo5lknQZT2FD+NLBsaOwYowCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM1NTAwWhcNMjAwNDAzMTQw\\nMDAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItNWJmOWZlNGJmNWQzYzM4NDU1ZmEyNWUw\\nMmY4OGUzYTY0MjM1YWEwZDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABBqmnsSI\\nYgr7ZInJ7PDU76W3R5no3Mq1ANHVEEtblz+56ocrekXZ7ut4rOV/mAXq34tL2Epx\\nddykRVUtNh/Lc0ijggGzMIIBrzAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQU7Hkt8ZIZVuqV11L7v2zglCoIA/IwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFBBggqAwQFBgcIAQSCATN7\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLTViZjlmZTRiZjVkM2MzODQ1\\nNWZhMjVlMDJmODhlM2E2NDIzNWFhMGQiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLTViZjlmZTRiZjVk\\nM2MzODQ1NWZhMjVlMDJmODhlM2E2IiwibmFtZSI6ImNsaWVudDFOYW1lIiwidXNl\\ncl9yb2xlIjoiQ2xpZW50In19MAoGCCqGSM49BAMCA0cAMEQCIENBBf0QupE7H+33\\nTwJW0kZ+Dbk42YYIuwtkbF4iUX7nAiBVhmvDvYWD/6I0J5X8Ooqn1SXH0305FmoM\\nBlFodA47yQ==\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d
+/api/get-current-user
+/api/get-client-kyc?aadhaarId=123123123
+{ aadhaarId: '123123123' }
+/api/list-user-requests
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: f8a72025033e88eb333b20545f949c98 Doesn't Exist)
+    at Object.exports.createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/common.js:91:15)
+    at Object.onReceiveStatus (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client_interceptors.js:1204:28)
+    at InterceptingListener._callNext (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client_interceptors.js:568:42)
+    at InterceptingListener.onReceiveStatus (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client_interceptors.js:618:8)
+    at callback (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client_interceptors.js:845:24)
+/api/get-user-claims
+{}
+/api/get-client-kyc?aadhaarId=123123123
+{ aadhaarId: '123123123' }
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=6dcbb9ceda06232cbf7d9b239ad9af2b
+{}
+/api/login
+{ fieldname: 'card',
+  originalname: 'client1Name.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 c9 9b 84 4e 03 1f dd 90 9c 00 00 00 b6 00 00 00 44 00 00 00 30 32 36 32 61 62 35 32 30 38 66 61 34 39 61 64 39 32 61 34 ... >,
+  size: 2067 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 c9 9b 84 4e 03 1f dd 90 9c 00 00 00 b6 00 00 00 44 00 00 00 30 32 36 32 61 62 35 32 30 38 66 61 34 39 61 64 39 32 61 34 ... >
+{ files: 
+   { '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-pub': 
+      { name: '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-pub',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGqaexIhiCvtkicns8NTvpbdHmejc\r\nyrUA0dUQS1uXP7nqhyt6Rdnu63is5X+YBerfi0vYSnF13KRFVS02H8tzSA==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-priv': 
+      { name: '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-priv',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQggFiAeJ8WfBM+Ltj8\r\nDp3FY9As9+2fAbNyqWUpUXZ5hIShRANCAAQapp7EiGIK+2SJyezw1O+lt0eZ6NzK\r\ntQDR1RBLW5c/ueqHK3pF2e7reKzlf5gF6t+LS9hKcXXcpEVVLTYfy3NI\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d': 
+      { name: 'User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDkzCCAzqgAwIBAgIUBpUF/wo5lknQZT2FD+NLBsaOwYowCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM1NTAwWhcNMjAwNDAzMTQw\\nMDAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItNWJmOWZlNGJmNWQzYzM4NDU1ZmEyNWUw\\nMmY4OGUzYTY0MjM1YWEwZDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABBqmnsSI\\nYgr7ZInJ7PDU76W3R5no3Mq1ANHVEEtblz+56ocrekXZ7ut4rOV/mAXq34tL2Epx\\nddykRVUtNh/Lc0ijggGzMIIBrzAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQU7Hkt8ZIZVuqV11L7v2zglCoIA/IwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFBBggqAwQFBgcIAQSCATN7\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLTViZjlmZTRiZjVkM2MzODQ1\\nNWZhMjVlMDJmODhlM2E2NDIzNWFhMGQiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLTViZjlmZTRiZjVk\\nM2MzODQ1NWZhMjVlMDJmODhlM2E2IiwibmFtZSI6ImNsaWVudDFOYW1lIiwidXNl\\ncl9yb2xlIjoiQ2xpZW50In19MAoGCCqGSM49BAMCA0cAMEQCIENBBf0QupE7H+33\\nTwJW0kZ+Dbk42YYIuwtkbF4iUX7nAiBVhmvDvYWD/6I0J5X8Ooqn1SXH0305FmoM\\nBlFodA47yQ==\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/add-proof
+undefined { public_id: 'dnddvfrjfmlz1ktn1qzb',
+  version: 1554393549,
+  signature: '36b93521298315bb197242c66f97b7873f3d89b5',
+  width: 128,
+  height: 128,
+  format: 'jpg',
+  resource_type: 'image',
+  created_at: '2019-04-04T15:59:09Z',
+  tags: [],
+  bytes: 4905,
+  type: 'upload',
+  etag: '2b6481031f8a1d450fb72d04762bcfd7',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554393549/dnddvfrjfmlz1ktn1qzb.jpg',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554393549/dnddvfrjfmlz1ktn1qzb.jpg',
+  original_filename: 'a2ee6e402b89af6de469f767de1aa72d' }
+/api/add-proof
+undefined { public_id: 'b00anhmfytfgvhxjhl2w',
+  version: 1554393602,
+  signature: 'a1fef2240af5ab5ccc8d17ea156438040cc49804',
+  width: 1280,
+  height: 720,
+  format: 'jpg',
+  resource_type: 'image',
+  created_at: '2019-04-04T16:00:02Z',
+  tags: [],
+  bytes: 40257,
+  type: 'upload',
+  etag: 'd6f223ab478c3a78ad83d3f2970fc21f',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554393602/b00anhmfytfgvhxjhl2w.jpg',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554393602/b00anhmfytfgvhxjhl2w.jpg',
+  original_filename: '9a500fe0f5c3c220a515334242946bdb' }
+/api/add-proof
+undefined { public_id: 'ei7hla14dwl5pzy5tv1k',
+  version: 1554393616,
+  signature: 'faa8a4f9a5378c55b84ff3f4f9e5cf35473f371f',
+  width: 1280,
+  height: 720,
+  format: 'jpg',
+  resource_type: 'image',
+  created_at: '2019-04-04T16:00:16Z',
+  tags: [],
+  bytes: 40257,
+  type: 'upload',
+  etag: 'd6f223ab478c3a78ad83d3f2970fc21f',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554393616/ei7hla14dwl5pzy5tv1k.jpg',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554393616/ei7hla14dwl5pzy5tv1k.jpg',
+  original_filename: 'aa71efe5d93148bf0b54db992ccd1660' }
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/add-proof
+undefined { public_id: 'm7g2u0dlaldskffjusya',
+  version: 1554393774,
+  signature: '63ed1aca3112428f492b71f2907bcdeb031b69ef',
+  width: 1280,
+  height: 720,
+  format: 'jpg',
+  resource_type: 'image',
+  created_at: '2019-04-04T16:02:54Z',
+  tags: [],
+  bytes: 40257,
+  type: 'upload',
+  etag: 'd6f223ab478c3a78ad83d3f2970fc21f',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554393774/m7g2u0dlaldskffjusya.jpg',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554393774/m7g2u0dlaldskffjusya.jpg',
+  original_filename: '8f4b13e0af7a1e34810d4e4d54e2dfde' }
+Transaction proposal was good
+{"id":"4060eb119638699ff00384ebbabe466b","claimId":"86e38425e8904eed64ef206be038efa2","certificateId":"d0c77d8faa81899b9f6cdf915c503aab","url":"http://res.cloudinary.com/dtonolwac/image/upload/v1554393774/m7g2u0dlaldskffjusya.jpg","class":"Proof"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/add-proof
+undefined { public_id: 'k5fizolnsrggozuagkf4',
+  version: 1554394876,
+  signature: '016006322f3003dcc0f2725c22847bd91439add7',
+  width: 720,
+  height: 540,
+  format: 'pdf',
+  resource_type: 'image',
+  created_at: '2019-04-04T16:21:16Z',
+  tags: [],
+  pages: 1,
+  bytes: 160336,
+  type: 'upload',
+  etag: '015669dd582a4162815371a45183b597',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554394876/k5fizolnsrggozuagkf4.pdf',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554394876/k5fizolnsrggozuagkf4.pdf',
+  original_filename: 'df23cd0a5a411324bfe6486564bbc8e2' }
+Transaction proposal was good
+{"id":"7f057c48441265eb7175f969a2d7bc22","claimId":"86e38425e8904eed64ef206be038efa2","certificateId":"6d834bfe959fc288a5384c04249df778","url":"http://res.cloudinary.com/dtonolwac/image/upload/v1554394876/k5fizolnsrggozuagkf4.pdf","class":"Proof"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/login
+{ fieldname: 'card',
+  originalname: 'InsuranceCompany1-AdminUser.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 04 9a 84 4e e9 28 b7 de 9c 00 00 00 b6 00 00 00 44 00 00 00 63 34 38 30 37 31 64 63 63 66 36 64 35 66 33 61 63 64 36 36 ... >,
+  size: 2087 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 04 9a 84 4e e9 28 b7 de 9c 00 00 00 b6 00 00 00 44 00 00 00 63 34 38 30 37 31 64 63 63 66 36 64 35 66 33 61 63 64 36 36 ... >
+{ files: 
+   { 'c48071dccf6d5f3acd66c57e4a9d5f13fe44346d9a679aae02974fa0db3afa00-pub': 
+      { name: 'c48071dccf6d5f3acd66c57e4a9d5f13fe44346d9a679aae02974fa0db3afa00-pub',
+        dir: false,
+        date: 2019-04-04T13:46:08.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE8X2HgxWYbDPuLF30lNiapo7Qjeqb\r\n8Byvx4Kcm97ZpxP7Aphj/tOBwcZYi9QQmvUQnDZrOm/woti1mnl6BoWO3g==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'c48071dccf6d5f3acd66c57e4a9d5f13fe44346d9a679aae02974fa0db3afa00-priv': 
+      { name: 'c48071dccf6d5f3acd66c57e4a9d5f13fe44346d9a679aae02974fa0db3afa00-priv',
+        dir: false,
+        date: 2019-04-04T13:46:08.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQg0r1ghY/YSa0vqPd2\r\neFXT5bvnMPO/kZ0FKaln0DyFtauhRANCAATxfYeDFZhsM+4sXfSU2JqmjtCN6pvw\r\nHK/Hgpyb3tmnE/sCmGP+04HBxliL1BCa9RCcNms6b/Ci2LWaeXoGhY7e\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-36cdf03884254fb6fd482a4321fb4acf1e6d769b': 
+      { name: 'User-36cdf03884254fb6fd482a4321fb4acf1e6d769b',
+        dir: false,
+        date: 2019-04-04T13:46:08.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-36cdf03884254fb6fd482a4321fb4acf1e6d769b","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"c48071dccf6d5f3acd66c57e4a9d5f13fe44346d9a679aae02974fa0db3afa00","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDojCCA0mgAwIBAgIUKUvTOee6jdTNYZ6yiirjvSG2C2swCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM0MTAwWhcNMjAwNDAzMTM0\\nNjAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItMzZjZGYwMzg4NDI1NGZiNmZkNDgyYTQz\\nMjFmYjRhY2YxZTZkNzY5YjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABPF9h4MV\\nmGwz7ixd9JTYmqaO0I3qm/Acr8eCnJve2acT+wKYY/7TgcHGWIvUEJr1EJw2azpv\\n8KLYtZp5egaFjt6jggHCMIIBvjAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQU1X2SvOjYwM8lMGrwJleK6VAlKrEwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFQBggqAwQFBgcIAQSCAUJ7\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLTM2Y2RmMDM4ODQyNTRmYjZm\\nZDQ4MmE0MzIxZmI0YWNmMWU2ZDc2OWIiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLTM2Y2RmMDM4ODQy\\nNTRmYjZmZDQ4MmE0MzIxZmI0YWNmIiwibmFtZSI6Ikluc3VyYW5jZUNvbXBhbnkx\\nLUFkbWluVXNlciIsInVzZXJfcm9sZSI6IkFkbWluIn19MAoGCCqGSM49BAMCA0cA\\nMEQCIDUTip/rrzqDyOvXhVndfE2ChZUoduQJ8rsu0bbZFoblAiAotSb1B2tQqZ1T\\nQ7xcZ+KbL+hJKjYMND1kBqklIpdHrQ==\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-36cdf03884254fb6fd482a4321fb4acf1e6d769b
+/api/get-current-user
+/api/list-org-requests
+{ chaincodeId: 'mycc', fcn: 'getOrgRequests', args: [] }
+TCL: data []
+/api/get-insurer-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/update-claim-status
+{ claim_id: '86e38425e8904eed64ef206be038efa2',
+  status_update: 'Accepted' }
+Transaction proposal was good
+{"id":"86e38425e8904eed64ef206be038efa2","description":"Hello","status":"Accepted","cost":"Cost","insureeId":"User-5bf9fe4bf5d3c38455fa25e02f88e3a6","userIds":null,"organizationId":"d4e27796f5137dad4b074accd631af2e","insurerOrgId":"36cdf03884254fb6fd482a4321fb4acf","createdAt":"2019-04-04T14:02:47Z","class":"Claim"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+/api/get-insurer-claims
+{}
+/api/login
+{ fieldname: 'card',
+  originalname: 'Central Bank-AdminUser.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 fc 99 84 4e ce 14 40 9d 9b 00 00 00 b6 00 00 00 44 00 00 00 62 30 65 39 64 65 36 38 36 38 39 66 30 37 34 36 30 39 32 66 ... >,
+  size: 2080 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 fc 99 84 4e ce 14 40 9d 9b 00 00 00 b6 00 00 00 44 00 00 00 62 30 65 39 64 65 36 38 36 38 39 66 30 37 34 36 30 39 32 66 ... >
+{ files: 
+   { 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-pub': 
+      { name: 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-pub',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6Ctmd3PekOu8zDDVqOc1r7+BhAwo\r\nhSQG6ERsruU68BQmdfdOLfcStvUzI5/d1vnR1UV3StlVIfEcnJLgBsdfwg==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-priv': 
+      { name: 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-priv',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQghDIPzJEdeBQGWwQe\r\nZVFRQBt4tKnFDQ5naMqFHxt2unahRANCAAToK2Z3c96Q67zMMNWo5zWvv4GEDCiF\r\nJAboRGyu5TrwFCZ1904t9xK29TMjn93W+dHVRXdK2VUh8RyckuAGx1/C\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-d4e27796f5137dad4b074accd631af2e02e8ef59': 
+      { name: 'User-d4e27796f5137dad4b074accd631af2e02e8ef59',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-d4e27796f5137dad4b074accd631af2e02e8ef59","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDnTCCA0SgAwIBAgIUO1BMVDNgfmM1yrHZAlFkrb/e6VkwCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM0MTAwWhcNMjAwNDAzMTM0\\nNjAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItZDRlMjc3OTZmNTEzN2RhZDRiMDc0YWNj\\nZDYzMWFmMmUwMmU4ZWY1OTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABOgrZndz\\n3pDrvMww1ajnNa+/gYQMKIUkBuhEbK7lOvAUJnX3Ti33Erb1MyOf3db50dVFd0rZ\\nVSHxHJyS4AbHX8KjggG9MIIBuTAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQUwzlpBkCVfoHDDsVt4KIwkaAbjYAwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFLBggqAwQFBgcIAQSCAT17\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLWQ0ZTI3Nzk2ZjUxMzdkYWQ0\\nYjA3NGFjY2Q2MzFhZjJlMDJlOGVmNTkiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLWQ0ZTI3Nzk2ZjUx\\nMzdkYWQ0YjA3NGFjY2Q2MzFhZjJlIiwibmFtZSI6IkNlbnRyYWwgQmFuay1BZG1p\\nblVzZXIiLCJ1c2VyX3JvbGUiOiJBZG1pbiJ9fTAKBggqhkjOPQQDAgNHADBEAiAl\\ni0elCXVyu5Eb8O+UnSNCRaxVYoWPctHf2BbERyzDqgIgZtqECFIQbecFVMV+75VP\\nQC4/ynC0mAcEnfEQhAXcM9I=\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-d4e27796f5137dad4b074accd631af2e02e8ef59
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 32
+/api/get-all-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/list-users
+/api/get-all-claims
+{}
+/api/login
+{ fieldname: 'card',
+  originalname: 'client1Name.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 c9 9b 84 4e 03 1f dd 90 9c 00 00 00 b6 00 00 00 44 00 00 00 30 32 36 32 61 62 35 32 30 38 66 61 34 39 61 64 39 32 61 34 ... >,
+  size: 2067 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 c9 9b 84 4e 03 1f dd 90 9c 00 00 00 b6 00 00 00 44 00 00 00 30 32 36 32 61 62 35 32 30 38 66 61 34 39 61 64 39 32 61 34 ... >
+{ files: 
+   { '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-pub': 
+      { name: '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-pub',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGqaexIhiCvtkicns8NTvpbdHmejc\r\nyrUA0dUQS1uXP7nqhyt6Rdnu63is5X+YBerfi0vYSnF13KRFVS02H8tzSA==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-priv': 
+      { name: '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-priv',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQggFiAeJ8WfBM+Ltj8\r\nDp3FY9As9+2fAbNyqWUpUXZ5hIShRANCAAQapp7EiGIK+2SJyezw1O+lt0eZ6NzK\r\ntQDR1RBLW5c/ueqHK3pF2e7reKzlf5gF6t+LS9hKcXXcpEVVLTYfy3NI\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d': 
+      { name: 'User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDkzCCAzqgAwIBAgIUBpUF/wo5lknQZT2FD+NLBsaOwYowCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM1NTAwWhcNMjAwNDAzMTQw\\nMDAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItNWJmOWZlNGJmNWQzYzM4NDU1ZmEyNWUw\\nMmY4OGUzYTY0MjM1YWEwZDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABBqmnsSI\\nYgr7ZInJ7PDU76W3R5no3Mq1ANHVEEtblz+56ocrekXZ7ut4rOV/mAXq34tL2Epx\\nddykRVUtNh/Lc0ijggGzMIIBrzAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQU7Hkt8ZIZVuqV11L7v2zglCoIA/IwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFBBggqAwQFBgcIAQSCATN7\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLTViZjlmZTRiZjVkM2MzODQ1\\nNWZhMjVlMDJmODhlM2E2NDIzNWFhMGQiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLTViZjlmZTRiZjVk\\nM2MzODQ1NWZhMjVlMDJmODhlM2E2IiwibmFtZSI6ImNsaWVudDFOYW1lIiwidXNl\\ncl9yb2xlIjoiQ2xpZW50In19MAoGCCqGSM49BAMCA0cAMEQCIENBBf0QupE7H+33\\nTwJW0kZ+Dbk42YYIuwtkbF4iUX7nAiBVhmvDvYWD/6I0J5X8Ooqn1SXH0305FmoM\\nBlFodA47yQ==\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d
+/api/get-current-user
+/api/get-client-kyc?aadhaarId=123123123
+{ aadhaarId: '123123123' }
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/list-user-requests
+[31merror[39m: [client-utils.js]: sendPeersProposal - Promise is rejected: Error: 2 UNKNOWN: chaincode error (status: 500, message: f8a72025033e88eb333b20545f949c98 Doesn't Exist)
+    at Object.exports.createStatusError (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/common.js:91:15)
+    at Object.onReceiveStatus (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client_interceptors.js:1204:28)
+    at InterceptingListener._callNext (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client_interceptors.js:568:42)
+    at InterceptingListener.onReceiveStatus (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client_interceptors.js:618:8)
+    at callback (/home/priyansh/HyperledgerFabric/SkcriptProjects/tarp/tarp-client/src/node_modules/grpc/src/client_interceptors.js:845:24)
+/api/get-user-claims
+{}
+/api/get-client-kyc?aadhaarId=123123123
+{ aadhaarId: '123123123' }
+/api/login
+{ fieldname: 'card',
+  originalname: 'Central Bank-AdminUser.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 fc 99 84 4e ce 14 40 9d 9b 00 00 00 b6 00 00 00 44 00 00 00 62 30 65 39 64 65 36 38 36 38 39 66 30 37 34 36 30 39 32 66 ... >,
+  size: 2080 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 fc 99 84 4e ce 14 40 9d 9b 00 00 00 b6 00 00 00 44 00 00 00 62 30 65 39 64 65 36 38 36 38 39 66 30 37 34 36 30 39 32 66 ... >
+{ files: 
+   { 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-pub': 
+      { name: 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-pub',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6Ctmd3PekOu8zDDVqOc1r7+BhAwo\r\nhSQG6ERsruU68BQmdfdOLfcStvUzI5/d1vnR1UV3StlVIfEcnJLgBsdfwg==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-priv': 
+      { name: 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-priv',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQghDIPzJEdeBQGWwQe\r\nZVFRQBt4tKnFDQ5naMqFHxt2unahRANCAAToK2Z3c96Q67zMMNWo5zWvv4GEDCiF\r\nJAboRGyu5TrwFCZ1904t9xK29TMjn93W+dHVRXdK2VUh8RyckuAGx1/C\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-d4e27796f5137dad4b074accd631af2e02e8ef59': 
+      { name: 'User-d4e27796f5137dad4b074accd631af2e02e8ef59',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-d4e27796f5137dad4b074accd631af2e02e8ef59","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDnTCCA0SgAwIBAgIUO1BMVDNgfmM1yrHZAlFkrb/e6VkwCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM0MTAwWhcNMjAwNDAzMTM0\\nNjAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItZDRlMjc3OTZmNTEzN2RhZDRiMDc0YWNj\\nZDYzMWFmMmUwMmU4ZWY1OTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABOgrZndz\\n3pDrvMww1ajnNa+/gYQMKIUkBuhEbK7lOvAUJnX3Ti33Erb1MyOf3db50dVFd0rZ\\nVSHxHJyS4AbHX8KjggG9MIIBuTAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQUwzlpBkCVfoHDDsVt4KIwkaAbjYAwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFLBggqAwQFBgcIAQSCAT17\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLWQ0ZTI3Nzk2ZjUxMzdkYWQ0\\nYjA3NGFjY2Q2MzFhZjJlMDJlOGVmNTkiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLWQ0ZTI3Nzk2ZjUx\\nMzdkYWQ0YjA3NGFjY2Q2MzFhZjJlIiwibmFtZSI6IkNlbnRyYWwgQmFuay1BZG1p\\nblVzZXIiLCJ1c2VyX3JvbGUiOiJBZG1pbiJ9fTAKBggqhkjOPQQDAgNHADBEAiAl\\ni0elCXVyu5Eb8O+UnSNCRaxVYoWPctHf2BbERyzDqgIgZtqECFIQbecFVMV+75VP\\nQC4/ynC0mAcEnfEQhAXcM9I=\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-d4e27796f5137dad4b074accd631af2e02e8ef59
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 39
+/api/login
+{ fieldname: 'card',
+  originalname: 'Central Bank-AdminUser.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 fc 99 84 4e ce 14 40 9d 9b 00 00 00 b6 00 00 00 44 00 00 00 62 30 65 39 64 65 36 38 36 38 39 66 30 37 34 36 30 39 32 66 ... >,
+  size: 2080 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 fc 99 84 4e ce 14 40 9d 9b 00 00 00 b6 00 00 00 44 00 00 00 62 30 65 39 64 65 36 38 36 38 39 66 30 37 34 36 30 39 32 66 ... >
+{ files: 
+   { 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-pub': 
+      { name: 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-pub',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6Ctmd3PekOu8zDDVqOc1r7+BhAwo\r\nhSQG6ERsruU68BQmdfdOLfcStvUzI5/d1vnR1UV3StlVIfEcnJLgBsdfwg==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-priv': 
+      { name: 'b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f-priv',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQghDIPzJEdeBQGWwQe\r\nZVFRQBt4tKnFDQ5naMqFHxt2unahRANCAAToK2Z3c96Q67zMMNWo5zWvv4GEDCiF\r\nJAboRGyu5TrwFCZ1904t9xK29TMjn93W+dHVRXdK2VUh8RyckuAGx1/C\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-d4e27796f5137dad4b074accd631af2e02e8ef59': 
+      { name: 'User-d4e27796f5137dad4b074accd631af2e02e8ef59',
+        dir: false,
+        date: 2019-04-04T13:45:56.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-d4e27796f5137dad4b074accd631af2e02e8ef59","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"b0e9de68689f0746092f48866ebc46379cc590d7b5cb4a9fe199de562b014e0f","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDnTCCA0SgAwIBAgIUO1BMVDNgfmM1yrHZAlFkrb/e6VkwCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM0MTAwWhcNMjAwNDAzMTM0\\nNjAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItZDRlMjc3OTZmNTEzN2RhZDRiMDc0YWNj\\nZDYzMWFmMmUwMmU4ZWY1OTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABOgrZndz\\n3pDrvMww1ajnNa+/gYQMKIUkBuhEbK7lOvAUJnX3Ti33Erb1MyOf3db50dVFd0rZ\\nVSHxHJyS4AbHX8KjggG9MIIBuTAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQUwzlpBkCVfoHDDsVt4KIwkaAbjYAwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFLBggqAwQFBgcIAQSCAT17\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLWQ0ZTI3Nzk2ZjUxMzdkYWQ0\\nYjA3NGFjY2Q2MzFhZjJlMDJlOGVmNTkiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLWQ0ZTI3Nzk2ZjUx\\nMzdkYWQ0YjA3NGFjY2Q2MzFhZjJlIiwibmFtZSI6IkNlbnRyYWwgQmFuay1BZG1p\\nblVzZXIiLCJ1c2VyX3JvbGUiOiJBZG1pbiJ9fTAKBggqhkjOPQQDAgNHADBEAiAl\\ni0elCXVyu5Eb8O+UnSNCRaxVYoWPctHf2BbERyzDqgIgZtqECFIQbecFVMV+75VP\\nQC4/ynC0mAcEnfEQhAXcM9I=\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-d4e27796f5137dad4b074accd631af2e02e8ef59
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 39
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 35
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 22
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 34
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 65
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 48
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 39
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 66
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 91
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 69
+/api/login
+{ fieldname: 'card',
+  originalname: 'client1Name.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 c9 9b 84 4e 03 1f dd 90 9c 00 00 00 b6 00 00 00 44 00 00 00 30 32 36 32 61 62 35 32 30 38 66 61 34 39 61 64 39 32 61 34 ... >,
+  size: 2067 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 c9 9b 84 4e 03 1f dd 90 9c 00 00 00 b6 00 00 00 44 00 00 00 30 32 36 32 61 62 35 32 30 38 66 61 34 39 61 64 39 32 61 34 ... >
+{ files: 
+   { '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-pub': 
+      { name: '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-pub',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGqaexIhiCvtkicns8NTvpbdHmejc\r\nyrUA0dUQS1uXP7nqhyt6Rdnu63is5X+YBerfi0vYSnF13KRFVS02H8tzSA==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-priv': 
+      { name: '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-priv',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQggFiAeJ8WfBM+Ltj8\r\nDp3FY9As9+2fAbNyqWUpUXZ5hIShRANCAAQapp7EiGIK+2SJyezw1O+lt0eZ6NzK\r\ntQDR1RBLW5c/ueqHK3pF2e7reKzlf5gF6t+LS9hKcXXcpEVVLTYfy3NI\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d': 
+      { name: 'User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDkzCCAzqgAwIBAgIUBpUF/wo5lknQZT2FD+NLBsaOwYowCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM1NTAwWhcNMjAwNDAzMTQw\\nMDAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItNWJmOWZlNGJmNWQzYzM4NDU1ZmEyNWUw\\nMmY4OGUzYTY0MjM1YWEwZDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABBqmnsSI\\nYgr7ZInJ7PDU76W3R5no3Mq1ANHVEEtblz+56ocrekXZ7ut4rOV/mAXq34tL2Epx\\nddykRVUtNh/Lc0ijggGzMIIBrzAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQU7Hkt8ZIZVuqV11L7v2zglCoIA/IwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFBBggqAwQFBgcIAQSCATN7\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLTViZjlmZTRiZjVkM2MzODQ1\\nNWZhMjVlMDJmODhlM2E2NDIzNWFhMGQiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLTViZjlmZTRiZjVk\\nM2MzODQ1NWZhMjVlMDJmODhlM2E2IiwibmFtZSI6ImNsaWVudDFOYW1lIiwidXNl\\ncl9yb2xlIjoiQ2xpZW50In19MAoGCCqGSM49BAMCA0cAMEQCIENBBf0QupE7H+33\\nTwJW0kZ+Dbk42YYIuwtkbF4iUX7nAiBVhmvDvYWD/6I0J5X8Ooqn1SXH0305FmoM\\nBlFodA47yQ==\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d
+/api/get-current-user
+/api/get-client-kyc?aadhaarId=123123123
+{ aadhaarId: '123123123' }
+/api/get-current-user
+/api/get-client-kyc?aadhaarId=
+{ aadhaarId: '' }
+/api/get-client-approved-request
+{ chaincodeId: 'mycc', fcn: 'getAllOrgRequests', args: [] }
+data []
+/api/get-all-claims
+{}
+/api/get-claim-proof?claim_id=86e38425e8904eed64ef206be038efa2
+{}
+/api/get-current-user
+/api/get-current-user
+/api/list-kycs
+Time taken to list KYC 53
+/api/get-client-approved-request
+{ chaincodeId: 'mycc', fcn: 'getAllOrgRequests', args: [] }
+data []
+/api/get-all-claims
+{}
+/api/add-organization
+Transaction proposal was good
+[{"id":"User-cc528c26fc761a4b91e7a31cf458620f","name":"Kriti Inc-AdminUser","role":"Admin","email":"kritisrivastava2612@gmail.com","organizationId":"cc528c26fc761a4b91e7a31cf458620f","national_id":"","status":"Allow","enrollmentIds":null,"recordIds":null,"createdAt":"Thu, 04 Apr 2019 17:22:21 GMT","updatedAt":"","class":"User"},{"id":"cc528c26fc761a4b91e7a31cf458620f","name":"Kriti Inc","email":"kritisrivastava2612@gmail.com","roles":["Admin","Manager"],"type":"Bank","mspid":"Org1MSP","userIds":["User-cc528c26fc761a4b91e7a31cf458620f"],"recordIds":null,"approvalRequestIds":null,"createdAt":"Thu, 04 Apr 2019 17:22:21 GMT","updatedAt":"","class":"Organization"}]
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+{ id: 'User-cc528c26fc761a4b91e7a31cf458620f',
+  name: 'Kriti Inc-AdminUser',
+  role: 'Admin',
+  email: 'kritisrivastava2612@gmail.com',
+  organizationId: 'cc528c26fc761a4b91e7a31cf458620f',
+  national_id: '',
+  status: 'Allow',
+  enrollmentIds: null,
+  recordIds: null,
+  createdAt: 'Thu, 04 Apr 2019 17:22:21 GMT',
+  updatedAt: '',
+  class: 'User' }
+Transaction proposal was good
+{"id":"397b8f66d0ae45d53315d0349ef20838","enrollmentId":"User-cc528c26fc761a4b91e7a31cf458620f7103387f","userId":"User-cc528c26fc761a4b91e7a31cf458620f","status":"Allow","createdAt":"2019-04-04T17:22:24Z","revokedAt":"","class":"IdentityRecord"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+Kriti Inc-AdminUser.card kritisrivastava2612@gmail.com
+{ accepted: [ 'kritisrivastava2612@gmail.com' ],
+  rejected: [],
+  envelopeTime: 1574,
+  messageTime: 1840,
+  messageSize: 3265,
+  response: '250 2.0.0 OK  1554398553 d75sm42684915pga.66 - gsmtp',
+  envelope: 
+   { from: 'priyanshjain412@gmail.com',
+     to: [ 'kritisrivastava2612@gmail.com' ] },
+  messageId: '<b9e1632a-2197-217f-d810-73b5b63a992d@gmail.com>' }
+/api/login
+{ fieldname: 'card',
+  originalname: 'Kriti Inc-AdminUser.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 8e b6 84 4e 8b 4e 4c a2 9b 00 00 00 b6 00 00 00 44 00 00 00 33 62 36 64 64 64 30 30 63 38 30 34 37 65 34 64 33 30 61 35 ... >,
+  size: 2081 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 8e b6 84 4e 8b 4e 4c a2 9b 00 00 00 b6 00 00 00 44 00 00 00 33 62 36 64 64 64 30 30 63 38 30 34 37 65 34 64 33 30 61 35 ... >
+{ files: 
+   { '3b6ddd00c8047e4d30a5f64c756f7ed39dcdb824eae9de8e86807152fdfdae6b-pub': 
+      { name: '3b6ddd00c8047e4d30a5f64c756f7ed39dcdb824eae9de8e86807152fdfdae6b-pub',
+        dir: false,
+        date: 2019-04-04T17:22:28.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3rzNm/xY8xioQDW6j01+8mF+7yEo\r\nq8KH3xQDiDaIvVFTsiliDzYxe+X3LurjvmupWF3yo34gwLsv4vvdEdTQeQ==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     '3b6ddd00c8047e4d30a5f64c756f7ed39dcdb824eae9de8e86807152fdfdae6b-priv': 
+      { name: '3b6ddd00c8047e4d30a5f64c756f7ed39dcdb824eae9de8e86807152fdfdae6b-priv',
+        dir: false,
+        date: 2019-04-04T17:22:28.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQguTzXS9J3GnEstQPC\r\nuFlm5aml3eMItGhP7IoXbkSh31OhRANCAATevM2b/FjzGKhANbqPTX7yYX7vISir\r\nwoffFAOINoi9UVOyKWIPNjF75fcu6uO+a6lYXfKjfiDAuy/i+90R1NB5\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-cc528c26fc761a4b91e7a31cf458620f7103387f': 
+      { name: 'User-cc528c26fc761a4b91e7a31cf458620f7103387f',
+        dir: false,
+        date: 2019-04-04T17:22:28.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-cc528c26fc761a4b91e7a31cf458620f7103387f","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"3b6ddd00c8047e4d30a5f64c756f7ed39dcdb824eae9de8e86807152fdfdae6b","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDmzCCA0GgAwIBAgIUHq/OQUNAlzCvXODNq2Nd3DifdsQwCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTcxNzAwWhcNMjAwNDAzMTcy\\nMjAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItY2M1MjhjMjZmYzc2MWE0YjkxZTdhMzFj\\nZjQ1ODYyMGY3MTAzMzg3ZjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABN68zZv8\\nWPMYqEA1uo9NfvJhfu8hKKvCh98UA4g2iL1RU7IpYg82MXvl9y7q475rqVhd8qN+\\nIMC7L+L73RHU0HmjggG6MIIBtjAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQUVTU+F6CyThTazp80jmK9bXy38I0wKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFIBggqAwQFBgcIAQSCATp7\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLWNjNTI4YzI2ZmM3NjFhNGI5\\nMWU3YTMxY2Y0NTg2MjBmNzEwMzM4N2YiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLWNjNTI4YzI2ZmM3\\nNjFhNGI5MWU3YTMxY2Y0NTg2MjBmIiwibmFtZSI6IktyaXRpIEluYy1BZG1pblVz\\nZXIiLCJ1c2VyX3JvbGUiOiJBZG1pbiJ9fTAKBggqhkjOPQQDAgNIADBFAiEAjBVL\\nC5QoCO6OJHOuU8/S5YSOhiGWA0/fUMfLkQw7KIYCIGPIoHDWxbGg8WngPXDirRn2\\ntP28gCQrgmmqCIgPTT76\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-cc528c26fc761a4b91e7a31cf458620f7103387f
+/api/get-current-user
+/api/list-org-requests
+{ chaincodeId: 'mycc', fcn: 'getOrgRequests', args: [] }
+TCL: data []
+/api/login
+{ fieldname: 'card',
+  originalname: 'client1Name.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 c9 9b 84 4e 03 1f dd 90 9c 00 00 00 b6 00 00 00 44 00 00 00 30 32 36 32 61 62 35 32 30 38 66 61 34 39 61 64 39 32 61 34 ... >,
+  size: 2067 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 c9 9b 84 4e 03 1f dd 90 9c 00 00 00 b6 00 00 00 44 00 00 00 30 32 36 32 61 62 35 32 30 38 66 61 34 39 61 64 39 32 61 34 ... >
+{ files: 
+   { '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-pub': 
+      { name: '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-pub',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGqaexIhiCvtkicns8NTvpbdHmejc\r\nyrUA0dUQS1uXP7nqhyt6Rdnu63is5X+YBerfi0vYSnF13KRFVS02H8tzSA==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-priv': 
+      { name: '0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1-priv',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQggFiAeJ8WfBM+Ltj8\r\nDp3FY9As9+2fAbNyqWUpUXZ5hIShRANCAAQapp7EiGIK+2SJyezw1O+lt0eZ6NzK\r\ntQDR1RBLW5c/ueqHK3pF2e7reKzlf5gF6t+LS9hKcXXcpEVVLTYfy3NI\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d': 
+      { name: 'User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d',
+        dir: false,
+        date: 2019-04-04T14:00:18.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"0262ab5208fa49ad92a46253ed315dc2e871705799a135b464cb3864391df4c1","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDkzCCAzqgAwIBAgIUBpUF/wo5lknQZT2FD+NLBsaOwYowCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTM1NTAwWhcNMjAwNDAzMTQw\\nMDAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItNWJmOWZlNGJmNWQzYzM4NDU1ZmEyNWUw\\nMmY4OGUzYTY0MjM1YWEwZDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABBqmnsSI\\nYgr7ZInJ7PDU76W3R5no3Mq1ANHVEEtblz+56ocrekXZ7ut4rOV/mAXq34tL2Epx\\nddykRVUtNh/Lc0ijggGzMIIBrzAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQU7Hkt8ZIZVuqV11L7v2zglCoIA/IwKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFBBggqAwQFBgcIAQSCATN7\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLTViZjlmZTRiZjVkM2MzODQ1\\nNWZhMjVlMDJmODhlM2E2NDIzNWFhMGQiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLTViZjlmZTRiZjVk\\nM2MzODQ1NWZhMjVlMDJmODhlM2E2IiwibmFtZSI6ImNsaWVudDFOYW1lIiwidXNl\\ncl9yb2xlIjoiQ2xpZW50In19MAoGCCqGSM49BAMCA0cAMEQCIENBBf0QupE7H+33\\nTwJW0kZ+Dbk42YYIuwtkbF4iUX7nAiBVhmvDvYWD/6I0J5X8Ooqn1SXH0305FmoM\\nBlFodA47yQ==\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-5bf9fe4bf5d3c38455fa25e02f88e3a64235aa0d
+/api/get-current-user
+/api/get-client-kyc?aadhaarId=123123123
+{ aadhaarId: '123123123' }
+/api/get-user-claims
+{}
+/api/get-current-user
+/api/get-current-user
+/api/list-org-requests
+{ chaincodeId: 'mycc', fcn: 'getOrgRequests', args: [] }
+TCL: data []
+/api/get-current-user
+/api/get-current-user
+/api/list-org-requests
+{ chaincodeId: 'mycc', fcn: 'getOrgRequests', args: [] }
+TCL: data []
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/get-current-user
+/api/add-claim
+{ description: 'ASada',
+  cost: '121',
+  organization_name: 'Kriti Inc' }
+Transaction proposal was good
+{"id":"39d0510901cb50e0539a8f1041b88661","description":"ASada","status":"Pending","cost":"121","insureeId":"User-5bf9fe4bf5d3c38455fa25e02f88e3a6","userIds":null,"organizationId":"d4e27796f5137dad4b074accd631af2e","insurerOrgId":"cc528c26fc761a4b91e7a31cf458620f","createdAt":"2019-04-04T17:28:19Z","class":"Claim"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+/api/get-user-claims
+{}
+/api/add-proof
+undefined { public_id: 'ie7u9uea8pz8dvelznsw',
+  version: 1554398928,
+  signature: 'd9ebd41dcec9b3aabd0ccab7a9295ced0f1f98d1',
+  width: 3508,
+  height: 2480,
+  format: 'png',
+  resource_type: 'image',
+  created_at: '2019-04-04T17:28:48Z',
+  tags: [],
+  bytes: 467950,
+  type: 'upload',
+  etag: 'f5ab280fb3a81d944a493025b7b80798',
+  placeholder: false,
+  url: 'http://res.cloudinary.com/dtonolwac/image/upload/v1554398928/ie7u9uea8pz8dvelznsw.png',
+  secure_url: 'https://res.cloudinary.com/dtonolwac/image/upload/v1554398928/ie7u9uea8pz8dvelznsw.png',
+  original_filename: 'e7507c9b603d9c22c859f72b1407e7da' }
+Transaction proposal was good
+{"id":"7675d8895690c1c3ea52dfec0498db74","claimId":"39d0510901cb50e0539a8f1041b88661","certificateId":"01085d6db6ba55881087a590a730fee0","url":"http://res.cloudinary.com/dtonolwac/image/upload/v1554398928/ie7u9uea8pz8dvelznsw.png","class":"Proof"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+/api/login
+{ fieldname: 'card',
+  originalname: 'Kriti Inc-AdminUser.card',
+  encoding: '7bit',
+  mimetype: 'application/octet-stream',
+  buffer: <Buffer 50 4b 03 04 0a 00 00 00 08 00 8e b6 84 4e 8b 4e 4c a2 9b 00 00 00 b6 00 00 00 44 00 00 00 33 62 36 64 64 64 30 30 63 38 30 34 37 65 34 64 33 30 61 35 ... >,
+  size: 2081 }
+<Buffer 50 4b 03 04 0a 00 00 00 08 00 8e b6 84 4e 8b 4e 4c a2 9b 00 00 00 b6 00 00 00 44 00 00 00 33 62 36 64 64 64 30 30 63 38 30 34 37 65 34 64 33 30 61 35 ... >
+{ files: 
+   { '3b6ddd00c8047e4d30a5f64c756f7ed39dcdb824eae9de8e86807152fdfdae6b-pub': 
+      { name: '3b6ddd00c8047e4d30a5f64c756f7ed39dcdb824eae9de8e86807152fdfdae6b-pub',
+        dir: false,
+        date: 2019-04-04T17:22:28.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PUBLIC KEY-----\r\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3rzNm/xY8xioQDW6j01+8mF+7yEo\r\nq8KH3xQDiDaIvVFTsiliDzYxe+X3LurjvmupWF3yo34gwLsv4vvdEdTQeQ==\r\n-----END PUBLIC KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     '3b6ddd00c8047e4d30a5f64c756f7ed39dcdb824eae9de8e86807152fdfdae6b-priv': 
+      { name: '3b6ddd00c8047e4d30a5f64c756f7ed39dcdb824eae9de8e86807152fdfdae6b-priv',
+        dir: false,
+        date: 2019-04-04T17:22:28.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQguTzXS9J3GnEstQPC\r\nuFlm5aml3eMItGhP7IoXbkSh31OhRANCAATevM2b/FjzGKhANbqPTX7yYX7vISir\r\nwoffFAOINoi9UVOyKWIPNjF75fcu6uO+a6lYXfKjfiDAuy/i+90R1NB5\r\n-----END PRIVATE KEY-----\r\n',
+        options: [Object],
+        _initialMetadata: [Object] },
+     'User-cc528c26fc761a4b91e7a31cf458620f7103387f': 
+      { name: 'User-cc528c26fc761a4b91e7a31cf458620f7103387f',
+        dir: false,
+        date: 2019-04-04T17:22:28.000Z,
+        comment: null,
+        unixPermissions: null,
+        dosPermissions: 0,
+        _data: '{"name":"User-cc528c26fc761a4b91e7a31cf458620f7103387f","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"3b6ddd00c8047e4d30a5f64c756f7ed39dcdb824eae9de8e86807152fdfdae6b","identity":{"certificate":"-----BEGIN CERTIFICATE-----\\nMIIDmzCCA0GgAwIBAgIUHq/OQUNAlzCvXODNq2Nd3DifdsQwCgYIKoZIzj0EAwIw\\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTkwNDA0MTcxNzAwWhcNMjAwNDAzMTcy\\nMjAwWjBqMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\\nYXJ0bWVudDExNjA0BgNVBAMTLVVzZXItY2M1MjhjMjZmYzc2MWE0YjkxZTdhMzFj\\nZjQ1ODYyMGY3MTAzMzg3ZjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABN68zZv8\\nWPMYqEA1uo9NfvJhfu8hKKvCh98UA4g2iL1RU7IpYg82MXvl9y7q475rqVhd8qN+\\nIMC7L+L73RHU0HmjggG6MIIBtjAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIw\\nADAdBgNVHQ4EFgQUVTU+F6CyThTazp80jmK9bXy38I0wKwYDVR0jBCQwIoAgDP0v\\nFKDjUG0XYSkk0ys2ol6IcXO1J5Ph9JRTQ/02rDQwggFIBggqAwQFBgcIAQSCATp7\\nImF0dHJzIjp7ImVucm9sbG1lbnRfaWQiOiJVc2VyLWNjNTI4YzI2ZmM3NjFhNGI5\\nMWU3YTMxY2Y0NTg2MjBmNzEwMzM4N2YiLCJoZi5SZWdpc3RyYXIuQXR0cmlidXRl\\ncyI6ImhmLlJlZ2lzdHJhci5Sb2xlcywgaGYuUmVnaXN0cmFyLkF0dHJpYnV0ZXMs\\nIGlkLCBlbWFpbCwgbmFtZSwgdXNlcl9yb2xlLCBlbnJvbGxtZW50X2lkIiwiaGYu\\nUmVnaXN0cmFyLlJvbGVzIjoiY2xpZW50IiwiaWQiOiJVc2VyLWNjNTI4YzI2ZmM3\\nNjFhNGI5MWU3YTMxY2Y0NTg2MjBmIiwibmFtZSI6IktyaXRpIEluYy1BZG1pblVz\\nZXIiLCJ1c2VyX3JvbGUiOiJBZG1pbiJ9fTAKBggqhkjOPQQDAgNIADBFAiEAjBVL\\nC5QoCO6OJHOuU8/S5YSOhiGWA0/fUMfLkQw7KIYCIGPIoHDWxbGg8WngPXDirRn2\\ntP28gCQrgmmqCIgPTT76\\n-----END CERTIFICATE-----\\n"}}}',
+        options: [Object],
+        _initialMetadata: [Object] } },
+  comment: null,
+  root: '',
+  clone: [Function] }
+Username User-cc528c26fc761a4b91e7a31cf458620f7103387f
+/api/get-current-user
+/api/list-org-requests
+{ chaincodeId: 'mycc', fcn: 'getOrgRequests', args: [] }
+TCL: data []
+/api/get-current-user
+/api/list-org-requests
+{ chaincodeId: 'mycc', fcn: 'getOrgRequests', args: [] }
+TCL: data []
+/api/get-current-user
+/api/get-current-user
+/api/list-org-requests
+{ chaincodeId: 'mycc', fcn: 'getOrgRequests', args: [] }
+TCL: data []
+/api/get-insurer-claims
+{}
+/api/get-claim-proof?claim_id=39d0510901cb50e0539a8f1041b88661
+{}
+/api/update-claim-status
+{ claim_id: '39d0510901cb50e0539a8f1041b88661',
+  status_update: 'Accepted' }
+Transaction proposal was good
+{"id":"39d0510901cb50e0539a8f1041b88661","description":"ASada","status":"Accepted","cost":"121","insureeId":"User-5bf9fe4bf5d3c38455fa25e02f88e3a6","userIds":null,"organizationId":"d4e27796f5137dad4b074accd631af2e","insurerOrgId":"cc528c26fc761a4b91e7a31cf458620f","createdAt":"2019-04-04T17:28:19Z","class":"Claim"}
+Successfully sent Proposal and received ProposalResponse: Status - 200, message - "OK"
+The transaction has been committed on peer localhost:7053
+Send transaction promise and event listener promise have completed
+Successfully sent transaction to the orderer.
+Successfully committed the change to the ledger by the peer
+/api/get-insurer-claims
+{}
+/api/get-current-user
+/api/get-user-claims
+{}
+/api/get-client-kyc?aadhaarId=123123123
+{ aadhaarId: '123123123' }

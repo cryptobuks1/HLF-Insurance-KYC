@@ -1,6 +1,6 @@
 console.log(process.env);
-const BASE_URL = "http://localhost:3000" + "/api";
-// const BASE_URL = "http://192.168.31.126:3000/api";
+// const BASE_URL = "http://localhost:3000" + "/api";
+const BASE_URL = "http://192.168.43.74:3000/api";
 
 const SYSTEM_PING = BASE_URL + "/system/ping";
 const SIGNUP = BASE_URL + "/add-organization";

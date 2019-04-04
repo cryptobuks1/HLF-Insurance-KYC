@@ -7,7 +7,7 @@ cd tarp-chaincode
 sleep 3
 
 cd ../tarp-client/src
-# npm install
+npm install
 ./scripts/set-up-client.sh
 nohup nodemon >> server.log 2>&1 &
 

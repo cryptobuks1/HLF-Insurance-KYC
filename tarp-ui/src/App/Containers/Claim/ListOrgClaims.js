@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Card, Table, Button, message, Tag } from "antd";
-import { getInsurerClaims } from "../../Models/ClaimRecords";
+import { Card, Table, Button, message, Tag, Divider } from "antd";
+import { getInsurerClaims, getClaimProof } from "../../Models/ClaimRecords";
 import ProcessModal from "../../Components/Claim/ProcessModal";
 import { Link } from "react-router-dom";
 
@@ -49,6 +49,13 @@ export default class ListClaim extends Component {
           return (
             <div style={{ display: "flex" }}>
               <ProcessModal record={record} list={this.getInsurerClaims} />
+              <Divider type="vertical" />
+              <Button
+                type="primary"
+                onClick={() => this.downloadProofs(record)}
+              >
+                View Proofs
+              </Button>
             </div>
           );
         }
@@ -59,6 +66,40 @@ export default class ListClaim extends Component {
   componentDidMount() {
     this.getInsurerClaims();
   }
+
+  downloadProofs = record => {
+    this.setState({ loading: true });
+    getClaimProof({
+      claim_id: record.id,
+      onSuccess: data => {
+        data.response.forEach(element => {
+          const link = document.createElement("a");
+          link.setAttribute("href", element.record.url);
+          link.setAttribute("target", "_blank");
+          link.click();
+        });
+        message.success("Successfully downloaded proof");
+        this.setState({
+          loading: false
+        });
+      },
+      onError: data => {
+        this.setState({
+          loading: false
+        });
+        console.log(data);
+
+        message.error("Unable to download proof");
+      }
+    });
+  };
+
+  handleCancel = () => {
+    this.setState({
+      visible: false,
+      selectedRecord: null
+    });
+  };
 
   getInsurerClaims = () => {
     message.loading("Fetching claims from Blockchain Ledger...", 0);

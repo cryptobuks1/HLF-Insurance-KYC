@@ -50,9 +50,9 @@ var getUserClaims = options => {
 };
 
 var getClaimProof = options => {
-  let { onSuccess, onError } = options;
+  let { claim_id, onSuccess, onError } = options;
   var url = Routes.GET_CLAIM_PROOF;
-  API.get(url)
+  API.get(url, { claim_id })
     .then(function(data) {
       onSuccess(data);
     })
