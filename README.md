@@ -1,4 +1,4 @@
-# TARP Project - Blockchain KYC + Insurance
+# Blockchain KYC + Insurance (Hyperledger Fabric)
 
 ## Steps to set-up
 
@@ -32,20 +32,6 @@ In a seperate terminal, Frontend
 ```sh
 ./master-frontend.sh
 ```
-
-## Steps to use
-
-- Login as Central bank with card found in kyc-client/cards folder
-- In the users tab, create a new user, role client.
-- Now the card for user is generated. Logout and login as the user.
-- Fill in the KYC details.
-- Log back in as central bank, process the KYC record.
-- Log out and create an organization by signing up.
-- Log in and search for the user by aadhar number.
-- request for their kyc.
-- Log in as user and approve the request.
-- Log in as central bank and release the details.
-- Log in as org and see the details.
 
 ## Steps to stop
 
