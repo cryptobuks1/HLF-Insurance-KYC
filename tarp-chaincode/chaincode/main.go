@@ -74,7 +74,7 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 		return s.addIDRecordForUser(APIstub, args)
 	}
 
-	// // *---- for testing without attrs ----*
+	// // // *---- for testing without attrs ----*
 	// currentUser := user.User{
 	// 	ID:             "User-Client1",
 	// 	OrganizationID: "InsuranceCompany1",

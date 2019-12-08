@@ -7,6 +7,6 @@ cd tarp-chaincode
 sleep 3
 cd ..
 cd tarp-client/src
-# npm install
+# docker-compose -f docker-compose.yaml up -d
 ./scripts/set-up-client.sh
-nodemon
+npm start

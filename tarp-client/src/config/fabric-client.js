@@ -16,6 +16,7 @@ class FBClient extends FabricClient {
     let channel = this.getChannel();
     let peers = this.getPeersForOrg();
     let event_hub = this.getEventHub(peers[0].getName());
+    // let event_hub = channel.getChannelEventHub(peers[0].getName());
     return channel
       .sendTransactionProposal(requestData)
       .then(function(results) {
