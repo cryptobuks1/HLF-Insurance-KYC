@@ -19,7 +19,7 @@ curl -sSL http://bit.ly/2ysbOFE | bash -s 1.1.0
 export PATH=<path to download location>/bin:$PATH
 ```
 
-## Steps to run (Working as of this commit)
+## Steps to run
 
 Network and Server and Frontend
 

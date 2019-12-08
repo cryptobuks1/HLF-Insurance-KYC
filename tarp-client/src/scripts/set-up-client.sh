@@ -1,3 +1,4 @@
+#!/bin/bash
 mkdir -p cards
 mkdir -p KeyStore
 rm -rf ./KeyStore

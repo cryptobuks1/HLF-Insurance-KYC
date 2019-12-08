@@ -5,25 +5,11 @@ set -ev
 cd tarp-chaincode
 ./start.sh && ./install.sh
 sleep 3
-
-cd ../tarp-client/src
+cd ..
+cd tarp-client/src
 npm install
+rm -rf ./node_modules/fabric-client
+cp -rf ../fabric-client ./node_modules
+# docker-compose -f docker-compose.yaml up -d
 ./scripts/set-up-client.sh
-nohup nodemon >> server.log 2>&1 &
-
-# 10 seconds to wait for server to start
-sleep 10
-cd ../../tarp-ui
-# npm install
-nohup npm run start >> frontend.log 2>&1 &
-
-sleep 10
-
-cd ../tarp-client/src
-
-echo "================Registering user================"
-node ./scripts/register-user.js
-echo "-------------------------------------------------"
-
-
-# mailing function TODO
+npm start
