@@ -1,4 +1,4 @@
-# TARP Project - Blockchain KYC + Insurance
+# Blockchain KYC + Insurance (Hyperledger Fabric)
 
 ## Steps to set-up
 
